@@ -3,7 +3,7 @@
         <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">
                 <a href="https://lfcatalog.jrsept.com" class="flex items-center">
-                    <img src="{{ asset('img/lfcatalog.png') }}" class="h-7 me-3" alt="LF_Catalog Logo" />
+                    <img src="{{ asset('img/lfcatalog.png') }}" class="h-12 me-3" alt="LF_Catalog Logo" />
                     <span class="text-heading self-center text-2xl font-semibold whitespace-nowrap">LF Catalog</span>
                 </a>
             </div>
