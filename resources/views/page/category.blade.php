@@ -16,8 +16,8 @@
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             @foreach($products as $product)
                 <div class="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition duration-300 group cursor-pointer" onclick="window.location='{{ route('product.detail', $product->slug) }}'">
-                    <div class="relative aspect-square bg-gray-50 flex items-center justify-center p-6">
-                        <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" class="max-w-full h-full object-contain transition-transform duration-500 group-hover:scale-110">
+                    <div class="relative aspect-square bg-gray-50 flex items-center justify-center p-2 sm:p-4">
+                        <img src="{{ asset($product->image) }}" alt="{{ $product->name }}" class="w-full h-full object-contain transition-transform duration-500 group-hover:scale-110">
                         @if($product->stock < 1)
                         <div class="absolute inset-0 bg-black/50 flex items-center justify-center rounded-t-xl">
                             <span class="text-white text-2xl font-bold tracking-wider">HABIS</span>

@@ -28,10 +28,10 @@
 
     <!-- Image Slider -->
     <div class="relative rounded-2xl overflow-hidden mb-8" id="sliderContainer">
-        <div class="relative w-full" style="padding-bottom: 75%;">
+        <div class="relative w-full" style="padding-bottom: 90%;" id="sliderAspect">
             @foreach($allImages as $idx => $img)
             <div class="slider-slide absolute inset-0 flex items-center justify-center transition-opacity duration-500 {{ $idx === 0 ? 'opacity-100' : 'opacity-0' }}" data-index="{{ $idx }}">
-                <img src="{{ asset($img) }}" alt="{{ $product->name }}" class="max-w-full max-h-full object-contain p-6">
+                <img src="{{ asset($img) }}" alt="{{ $product->name }}" class="w-full h-full object-contain p-2 sm:p-4 cursor-pointer" onclick="openLightbox({{ $idx }})">
             </div>
             @endforeach
             @if($product->stock < 1)
@@ -62,7 +62,7 @@
     @if(count($allImages) > 1)
     <div class="flex gap-3 mb-8 overflow-x-auto pb-2">
         @foreach($allImages as $idx => $img)
-        <button onclick="goToSlide({{ $idx }})" class="thumb-btn shrink-0 w-16 h-16 rounded-xl border-2 overflow-hidden transition {{ $idx === 0 ? 'border-gray-900' : 'border-gray-200 hover:border-gray-400' }}" data-index="{{ $idx }}">
+        <button onclick="goToSlide({{ $idx }})" class="thumb-btn shrink-0 w-20 h-20 sm:w-16 sm:h-16 rounded-xl border-2 overflow-hidden transition {{ $idx === 0 ? 'border-gray-900' : 'border-gray-200 hover:border-gray-400' }}" data-index="{{ $idx }}">
             <img src="{{ asset($img) }}" alt="" class="w-full h-full object-contain p-1">
         </button>
         @endforeach
@@ -174,6 +174,23 @@
     </div>
 </div>
 
+<!-- Image Lightbox Modal -->
+<div id="lightboxModal" class="fixed inset-0 z-[60] hidden items-center justify-center bg-black/90 backdrop-blur-sm">
+    <button onclick="closeLightbox()" class="absolute top-4 right-4 z-10 text-white/80 hover:text-white transition p-2">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+    </button>
+    <button onclick="lightboxNav(-1)" class="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 text-white rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+    </button>
+    <button onclick="lightboxNav(1)" class="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/20 hover:bg-white/40 text-white rounded-full w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center transition">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+    </button>
+    <div class="flex items-center justify-center w-full h-full p-4 sm:p-8">
+        <img id="lightboxImage" src="" alt="" class="max-w-full max-h-[85vh] object-contain rounded-lg transition-transform duration-300">
+    </div>
+    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 text-white/70 text-sm font-medium" id="lightboxCounter"></div>
+</div>
+
 <script>
     // ===== Image Slider =====
     let currentSlide = 0;
@@ -237,5 +254,60 @@
             modal.classList.add('hidden');
         }, 200);
     }
+
+    // ===== Image Lightbox =====
+    const allImageUrls = @json(array_map(fn($img) => asset($img), $allImages));
+    let lightboxIndex = 0;
+
+    function openLightbox(idx) {
+        lightboxIndex = idx;
+        const modal = document.getElementById('lightboxModal');
+        const img = document.getElementById('lightboxImage');
+        const counter = document.getElementById('lightboxCounter');
+        img.src = allImageUrls[idx];
+        counter.textContent = (idx + 1) + ' / ' + allImageUrls.length;
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        const modal = document.getElementById('lightboxModal');
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+
+    function lightboxNav(dir) {
+        lightboxIndex += dir;
+        if (lightboxIndex < 0) lightboxIndex = allImageUrls.length - 1;
+        if (lightboxIndex >= allImageUrls.length) lightboxIndex = 0;
+        const img = document.getElementById('lightboxImage');
+        const counter = document.getElementById('lightboxCounter');
+        img.src = allImageUrls[lightboxIndex];
+        counter.textContent = (lightboxIndex + 1) + ' / ' + allImageUrls.length;
+    }
+
+    // Close lightbox on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') lightboxNav(-1);
+        if (e.key === 'ArrowRight') lightboxNav(1);
+    });
+
+    // Close lightbox when clicking outside image
+    document.getElementById('lightboxModal').addEventListener('click', function(e) {
+        if (e.target === this || e.target.parentElement === this) closeLightbox();
+    });
+
+    // Responsive slider aspect ratio
+    function updateSliderAspect() {
+        const el = document.getElementById('sliderAspect');
+        if (el) {
+            el.style.paddingBottom = window.innerWidth < 640 ? '90%' : '75%';
+        }
+    }
+    updateSliderAspect();
+    window.addEventListener('resize', updateSliderAspect);
 </script>
 @endsection
