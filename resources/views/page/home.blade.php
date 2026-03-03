@@ -162,10 +162,10 @@
             {{-- Item 1 --}}
             <div class="signature-card relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] group cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl"
                 onclick="window.location='#'">
-                <div class="relative w-full h-70 sm:h-87,5 md:h-105 lg:h-120">
+                <div class="relative w-full h-[280px] sm:h-[350px] md:h-[420px] lg:h-[480px]">
                     <img src="{{ asset('img/sig3.jpg') }}" alt="Signature 1"
                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
-                    <div class="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-8 z-10">
                         <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-1 sm:mb-2">Judul Produk 1</h3>
                         <p class="text-xs sm:text-sm text-white/80 mb-3 sm:mb-5 font-medium">Deskripsi singkat produk 1</p>
