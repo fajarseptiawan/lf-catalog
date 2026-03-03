@@ -1,7 +1,7 @@
 <nav class="bg-neutral-primary-soft border-default fixed top-0 left-0 w-full z-50">
     <div class=" flex flex-wrap justify-between items-center mx-auto max-w-7xl p-4">
         <a href="https://lfcatalog.jrsept.com.com" class="flex items-center space-x-3 rtl:space-x-reverse">
-            <img src="{{ asset('img/lfcatalog.png') }}" class="h-72" alt="LF_Catalog Logo" />
+            <img src="{{ asset('img/lfcatalog.png') }}" class="h-9" alt="LF_Catalog Logo" />
             <span class="self-center text-xl font-semibold whitespace-nowrap text-heading">LF Catalog</span>
         </a>
         <button data-collapse-toggle="mega-menu-full-image" type="button"
