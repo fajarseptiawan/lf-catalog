@@ -17,4 +17,4 @@ const observer1 = new IntersectionObserver((entries) => {
 
         // Pastikan selector ini mencakup semua elemen yang ingin Anda animasikan
         const elements = document.querySelectorAll('.reveal-left, .reveal-right');
-        elements.forEach((el) => observer1.observe(el));
+        elements.forEach((el) => observer1.observe(el));s
