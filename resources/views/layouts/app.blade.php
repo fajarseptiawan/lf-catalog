@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'LF Catalog')</title>
     @vite('resources/css/app.css')
-    @stack('js')
+    @vite('resources/js/app.js')
     @stack('css')
 </head>
+
 <body class="bg-white text-gray-800">
 
     @include('partials.navbar')
@@ -18,7 +20,8 @@
 
     @include('partials.footer')
 
-     <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@4.0.1/dist/flowbite.min.js"></script>
+    @stack('jss')
 </body>
+
 </html>

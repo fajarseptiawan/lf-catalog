@@ -104,7 +104,7 @@
                 </div>
 
                 <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
-                onclick="window.location='{{ route('category', 'iphone15') }}'">
+                    onclick="window.location='{{ route('category', 'iphone15') }}'">
                     <div class="h-24 flex items-end mb-4">
                         <img src="{{ asset('img/tes1.png') }}" alt="iphone15" class="h-full">
                     </div>
@@ -113,7 +113,7 @@
                 </div>
 
                 <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
-                onclick="window.location='{{ route('category', 'iphone16') }}'">
+                    onclick="window.location='{{ route('category', 'iphone16') }}'">
                     <div class="h-24 flex items-end mb-4">
                         <img src="{{ asset('img/tes1.png') }}" alt="iphone16" class="h-full">
                     </div>
@@ -122,7 +122,7 @@
                 </div>
 
                 <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
-                onclick="window.location='{{ route('category', 'iphone17') }}'">
+                    onclick="window.location='{{ route('category', 'iphone17') }}'">
                     <div class="h-24 flex items-end mb-4">
                         <img src="{{ asset('img/tes1.png') }}" alt="iphone17" class="h-full">
                     </div>
@@ -131,7 +131,7 @@
                 </div>
 
                 <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
-                onclick="window.location='{{ route('category', 'g2g') }}'">
+                    onclick="window.location='{{ route('category', 'g2g') }}'">
                     <div class="h-24 flex items-end mb-4">
                         <img src="{{ asset('img/tes1.png') }}" alt="g2g" class="h-full">
                     </div>
@@ -140,7 +140,7 @@
                 </div>
 
                 <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
-                onclick="window.location='{{ route('category', 'softlens') }}'">
+                    onclick="window.location='{{ route('category', 'softlens') }}'">
                     <div class="h-24 flex items-end mb-4">
                         <img src="{{ asset('img/tes1.png') }}" alt="softlens" class="h-full">
                     </div>
@@ -160,11 +160,13 @@
         {{-- Row 1: 2 Large Items (gambar manual dari folder public) --}}
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             {{-- Item 1 --}}
-            <div class="relative overflow-hidden rounded-[2.5rem] group cursor-pointer aspect-square bg-white border border-gray-100 shadow-sm flex flex-col items-center pt-16 pb-0 px-8 transition-all duration-500 hover:shadow-xl" onclick="window.location='#'">
+            <div class="relative overflow-hidden rounded-[2.5rem] group cursor-pointer aspect-square bg-white border border-gray-100 shadow-sm flex flex-col items-center pt-16 pb-0 px-8 transition-all duration-500 hover:shadow-xl"
+                onclick="window.location='#'">
                 <div class="text-center mb-8 z-10">
                     <h3 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">Judul Produk 1</h3>
                     <p class="text-sm md:text-base text-gray-500 mb-6 font-medium">Deskripsi singkat produk 1</p>
-                    <span class="inline-block px-10 py-2.5 border-2 border-gray-900 text-gray-900 rounded-full text-sm font-bold hover:bg-gray-900 hover:text-white transition-all transform group-hover:scale-105">
+                    <span
+                        class="inline-block px-10 py-2.5 border-2 border-gray-900 text-gray-900 rounded-full text-sm font-bold hover:bg-gray-900 hover:text-white transition-all transform group-hover:scale-105">
                         Learn More
                     </span>
                 </div>
@@ -175,11 +177,13 @@
             </div>
 
             {{-- Item 2 --}}
-            <div class="relative overflow-hidden rounded-[2.5rem] group cursor-pointer aspect-square bg-[#E5E7EB] border border-gray-100 shadow-sm flex flex-col items-center pt-16 pb-0 px-8 transition-all duration-500 hover:shadow-xl" onclick="window.location='#'">
+            <div class="relative overflow-hidden rounded-[2.5rem] group cursor-pointer aspect-square bg-[#E5E7EB] border border-gray-100 shadow-sm flex flex-col items-center pt-16 pb-0 px-8 transition-all duration-500 hover:shadow-xl"
+                onclick="window.location='#'">
                 <div class="text-center mb-8 z-10">
                     <h3 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">Judul Produk 2</h3>
                     <p class="text-sm md:text-base text-gray-500 mb-6 font-medium">Deskripsi singkat produk 2</p>
-                    <span class="inline-block px-10 py-2.5 border-2 border-gray-900 text-gray-900 rounded-full text-sm font-bold hover:bg-gray-900 hover:text-white transition-all transform group-hover:scale-105">
+                    <span
+                        class="inline-block px-10 py-2.5 border-2 border-gray-900 text-gray-900 rounded-full text-sm font-bold hover:bg-gray-900 hover:text-white transition-all transform group-hover:scale-105">
                         Learn More
                     </span>
                 </div>
@@ -193,11 +197,13 @@
         {{-- Row 2: 3 Smaller Items (gambar manual dari folder public) --}}
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             {{-- Item 3 (Dark theme) --}}
-            <div class="relative overflow-hidden rounded-[2.5rem] group cursor-pointer aspect-square bg-[#0F172A] border border-gray-100 shadow-sm flex flex-col items-center pt-12 pb-0 px-6 transition-all duration-500 hover:shadow-xl" onclick="window.location='#'">
+            <div class="relative overflow-hidden rounded-[2.5rem] group cursor-pointer aspect-square bg-[#0F172A] border border-gray-100 shadow-sm flex flex-col items-center pt-12 pb-0 px-6 transition-all duration-500 hover:shadow-xl"
+                onclick="window.location='#'">
                 <div class="text-center mb-6 z-10">
                     <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-2">Judul Produk 3</h3>
                     <p class="text-xs md:text-sm text-gray-400 mb-5 font-medium">Deskripsi singkat produk 3</p>
-                    <span class="inline-block px-6 py-2 border-2 border-white text-white hover:bg-white hover:text-black rounded-full text-xs font-bold transition-all transform group-hover:scale-105">
+                    <span
+                        class="inline-block px-6 py-2 border-2 border-white text-white hover:bg-white hover:text-black rounded-full text-xs font-bold transition-all transform group-hover:scale-105">
                         Learn More
                     </span>
                 </div>
@@ -208,11 +214,13 @@
             </div>
 
             {{-- Item 4 --}}
-            <div class="relative overflow-hidden rounded-[2.5rem] group cursor-pointer aspect-square bg-white border border-gray-100 shadow-sm flex flex-col items-center pt-12 pb-0 px-6 transition-all duration-500 hover:shadow-xl" onclick="window.location='#'">
+            <div class="relative overflow-hidden rounded-[2.5rem] group cursor-pointer aspect-square bg-white border border-gray-100 shadow-sm flex flex-col items-center pt-12 pb-0 px-6 transition-all duration-500 hover:shadow-xl"
+                onclick="window.location='#'">
                 <div class="text-center mb-6 z-10">
                     <h3 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-2">Judul Produk 4</h3>
                     <p class="text-xs md:text-sm text-gray-500 mb-5 font-medium">Deskripsi singkat produk 4</p>
-                    <span class="inline-block px-6 py-2 border-2 border-gray-900 text-gray-900 rounded-full text-xs font-bold transition-all transform group-hover:scale-105">
+                    <span
+                        class="inline-block px-6 py-2 border-2 border-gray-900 text-gray-900 rounded-full text-xs font-bold transition-all transform group-hover:scale-105">
                         Learn More
                     </span>
                 </div>
@@ -223,11 +231,13 @@
             </div>
 
             {{-- Item 5 --}}
-            <div class="relative overflow-hidden rounded-[2.5rem] group cursor-pointer aspect-square bg-white border border-gray-100 shadow-sm flex flex-col items-center pt-12 pb-0 px-6 transition-all duration-500 hover:shadow-xl" onclick="window.location='#'">
+            <div class="relative overflow-hidden rounded-[2.5rem] group cursor-pointer aspect-square bg-white border border-gray-100 shadow-sm flex flex-col items-center pt-12 pb-0 px-6 transition-all duration-500 hover:shadow-xl"
+                onclick="window.location='#'">
                 <div class="text-center mb-6 z-10">
                     <h3 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-2">Judul Produk 5</h3>
                     <p class="text-xs md:text-sm text-gray-500 mb-5 font-medium">Deskripsi singkat produk 5</p>
-                    <span class="inline-block px-6 py-2 border-2 border-gray-900 text-gray-900 rounded-full text-xs font-bold transition-all transform group-hover:scale-105">
+                    <span
+                        class="inline-block px-6 py-2 border-2 border-gray-900 text-gray-900 rounded-full text-xs font-bold transition-all transform group-hover:scale-105">
                         Learn More
                     </span>
                 </div>
@@ -263,21 +273,24 @@
                             <span class="mt-3 font-semibold text-center text-gray-900">Tempered Glass</span>
                         </div>
                     </a>
-                    <a href="{{ route('category', 'iphone13') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'iphone13') }}"
+                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/tes.png') }}" alt="Wireless Chargers"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Iphone 13 Series</span>
                         </div>
                     </a>
-                    <a href="{{ route('category', 'iphone14') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'iphone14') }}"
+                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/tes.png') }}" alt="Car Chargers"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Iphone 14 Series</span>
                         </div>
                     </a>
-                    <a href="{{ route('category', 'iphone15') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'iphone15') }}"
+                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/tes.png') }}" alt="Power Strip"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -285,7 +298,8 @@
                         </div>
                     </a>
                     <!-- Item 6 -->
-                    <a href="{{ route('category', 'iphone16') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'iphone16') }}"
+                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/tes.png') }}" alt="Item 6"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -293,7 +307,8 @@
                         </div>
                     </a>
                     <!-- Item 7 -->
-                    <a href="{{ route('category', 'iphone17') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'iphone17') }}"
+                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/tes.png') }}" alt="Item 7"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -337,14 +352,16 @@
                 <!-- Container harus overflow-x-auto dan scroll-smooth -->
                 <div class="flex overflow-x-auto scroll-smooth no-scrollbar" data-carousel-items-container>
                     <!-- Items dengan flex: 0 0 20% agar 5 item muncul, tambahkan min-w untuk konsistensi di HP -->
-                    <a href="{{ route('category', 'softlens') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'softlens') }}"
+                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/tes.png') }}" alt="Power Banks"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Softlens</span>
                         </div>
                     </a>
-                    <a href="{{ route('category', 'g2g') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'g2g') }}"
+                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/tes.png') }}" alt="Chargers"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -626,16 +643,11 @@
 
 
 @push('js')
-
-
-
-
-    <script src="{{asset('assets/home.js')}}"></script>
-
+    <script src="{{ asset('assets/home.js') }}"></script>
 @endpush
 
 @push('css')
- <style>
+    <style>
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
