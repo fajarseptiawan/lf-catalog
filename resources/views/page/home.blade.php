@@ -630,7 +630,7 @@
 
 
 
-    @vite(['resources/js/home.js'])
+    <script src="{{asset('assets/home.js')}}"></script>
 
 @endpush
 
