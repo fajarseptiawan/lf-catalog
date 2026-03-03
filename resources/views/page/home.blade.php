@@ -154,96 +154,101 @@
 
 
 
-    <section class="max-w-7xl mx-auto px-6 py-20">
-        <h2 class="text-center text-3xl font-bold mb-12">Discover Our Signature Series</h2>
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+        <h2 class="text-center text-2xl sm:text-3xl font-bold mb-8 sm:mb-12">Discover Our Signature Series</h2>
 
-        {{-- Row 1: 2 Large Items (gambar manual dari folder public) --}}
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        {{-- Row 1: 2 Large Items --}}
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
             {{-- Item 1 --}}
-            <div class="relative overflow-hidden rounded-[2.5rem] group cursor-pointer aspect-square bg-white border border-gray-100 shadow-sm flex flex-col items-center pt-16 pb-0 px-8 transition-all duration-500 hover:shadow-xl"
+            <div class="signature-card relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] group cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl"
                 onclick="window.location='#'">
-                <div class="text-center mb-8 z-10">
-                    <h3 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">Judul Produk 1</h3>
-                    <p class="text-sm md:text-base text-gray-500 mb-6 font-medium">Deskripsi singkat produk 1</p>
-                    <span
-                        class="inline-block px-10 py-2.5 border-2 border-gray-900 text-gray-900 rounded-full text-sm font-bold hover:bg-gray-900 hover:text-white transition-all transform group-hover:scale-105">
-                        Learn More
-                    </span>
-                </div>
-                <div class="flex-1 w-full relative h-full flex items-center justify-center overflow-hidden">
+                <div class="relative w-full h-[280px] sm:h-[350px] md:h-[420px] lg:h-[480px]">
                     <img src="{{ asset('img/sig3.jpg') }}" alt="Signature 1"
-                        class="w-full h-full object-contain transition-transform duration-700 ease-in-out group-hover:scale-110" />
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-8 z-10">
+                        <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-1 sm:mb-2">Judul Produk 1</h3>
+                        <p class="text-xs sm:text-sm text-white/80 mb-3 sm:mb-5 font-medium">Deskripsi singkat produk 1</p>
+                        <span
+                            class="inline-block px-6 sm:px-10 py-2 sm:py-2.5 border-2 border-white text-white rounded-full text-xs sm:text-sm font-bold hover:bg-white hover:text-gray-900 transition-all transform group-hover:scale-105">
+                            Learn More
+                        </span>
+                    </div>
                 </div>
             </div>
 
             {{-- Item 2 --}}
-            <div class="relative overflow-hidden rounded-[2.5rem] group cursor-pointer aspect-square bg-[#E5E7EB] border border-gray-100 bg-white shadow-sm flex flex-col items-center pt-16 pb-0 px-8 transition-all duration-500 hover:shadow-xl"
+            <div class="signature-card relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] group cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl"
                 onclick="window.location='#'">
-                <div class="text-center mb-8 z-10">
-                    <h3 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">Judul Produk 2</h3>
-                    <p class="text-sm md:text-base text-gray-500 mb-6 font-medium">Deskripsi singkat produk 2</p>
-                    <span
-                        class="inline-block px-10 py-2.5 border-2 border-gray-900 text-gray-900 rounded-full text-sm font-bold hover:bg-gray-900 hover:text-white transition-all transform group-hover:scale-105">
-                        Learn More
-                    </span>
-                </div>
-                <div class="flex-1 w-full relative h-full flex items-end justify-center overflow-hidden">
+                <div class="relative w-full h-[280px] sm:h-[350px] md:h-[420px] lg:h-[480px]">
                     <img src="{{ asset('img/sig1.webp') }}" alt="Signature 2"
-                        class="w-full h-full object-contain transition-transform duration-700 ease-in-out group-hover:scale-110" />
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-8 z-10">
+                        <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-1 sm:mb-2">Judul Produk 2</h3>
+                        <p class="text-xs sm:text-sm text-white/80 mb-3 sm:mb-5 font-medium">Deskripsi singkat produk 2</p>
+                        <span
+                            class="inline-block px-6 sm:px-10 py-2 sm:py-2.5 border-2 border-white text-white rounded-full text-xs sm:text-sm font-bold hover:bg-white hover:text-gray-900 transition-all transform group-hover:scale-105">
+                            Learn More
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
 
-        {{-- Row 2: 3 Smaller Items (gambar manual dari folder public) --}}
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {{-- Item 3 (Dark theme) --}}
-            <div class="relative overflow-hidden rounded-[2.5rem] group cursor-pointer aspect-square bg-white border border-gray-100 shadow-sm flex flex-col items-center pt-12 pb-0 px-6 transition-all duration-500 hover:shadow-xl"
+        {{-- Row 2: 3 Smaller Items --}}
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
+            {{-- Item 3 --}}
+            <div class="signature-card relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] group cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl"
                 onclick="window.location='#'">
-                <div class="text-center mb-6 z-10">
-                    <h3 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-2">Judul Produk 3</h3>
-                    <p class="text-xs md:text-sm text-gray-400 mb-5 font-medium">Deskripsi singkat produk 3</p>
-                    <span
-                        class="inline-block px-6 py-2 border-2 border-gray-900 text-gray-900 rounded-full text-xs font-bold transition-all transform group-hover:scale-105">
-                        Learn More
-                    </span>
-                </div>
-                <div class="flex-1 w-full relative h-full flex items-end justify-center overflow-hidden">
-                    <img src="{{ asset('img/signature/signature3.png') }}" alt="Signature 3"
-                        class="w-[85%] h-auto object-contain transition-transform duration-700 ease-in-out group-hover:scale-110" />
+                <div class="relative w-full h-[250px] sm:h-[280px] md:h-[320px] lg:h-[360px]">
+                    <img src="{{ asset('img/sig6.png') }}" alt="Signature 3"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-10">
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-1 sm:mb-2">Judul Produk 3</h3>
+                        <p class="text-xs sm:text-sm text-white/80 mb-3 sm:mb-4 font-medium">Deskripsi singkat produk 3</p>
+                        <span
+                            class="inline-block px-5 sm:px-6 py-1.5 sm:py-2 border-2 border-white text-white rounded-full text-xs font-bold hover:bg-white hover:text-gray-900 transition-all transform group-hover:scale-105">
+                            Learn More
+                        </span>
+                    </div>
                 </div>
             </div>
 
             {{-- Item 4 --}}
-            <div class="relative overflow-hidden rounded-[2.5rem] group cursor-pointer aspect-square bg-white border border-gray-100 shadow-sm flex flex-col items-center pt-12 pb-0 px-6 transition-all duration-500 hover:shadow-xl"
+            <div class="signature-card relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] group cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl"
                 onclick="window.location='#'">
-                <div class="text-center mb-6 z-10">
-                    <h3 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-2">Judul Produk 4</h3>
-                    <p class="text-xs md:text-sm text-gray-500 mb-5 font-medium">Deskripsi singkat produk 4</p>
-                    <span
-                        class="inline-block px-6 py-2 border-2 border-gray-900 text-gray-900 rounded-full text-xs font-bold transition-all transform group-hover:scale-105">
-                        Learn More
-                    </span>
-                </div>
-                <div class="flex-1 w-full relative h-full flex items-end justify-center overflow-hidden">
-                    <img src="{{ asset('img/signature/signature4.png') }}" alt="Signature 4"
-                        class="w-[85%] h-auto object-contain transition-transform duration-700 ease-in-out group-hover:scale-110" />
+                <div class="relative w-full h-[250px] sm:h-[280px] md:h-[320px] lg:h-[360px]">
+                    <img src="{{ asset('img/sig5.jpeg') }}" alt="Signature 4"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-10">
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-1 sm:mb-2">Judul Produk 4</h3>
+                        <p class="text-xs sm:text-sm text-white/80 mb-3 sm:mb-4 font-medium">Deskripsi singkat produk 4</p>
+                        <span
+                            class="inline-block px-5 sm:px-6 py-1.5 sm:py-2 border-2 border-white text-white rounded-full text-xs font-bold hover:bg-white hover:text-gray-900 transition-all transform group-hover:scale-105">
+                            Learn More
+                        </span>
+                    </div>
                 </div>
             </div>
 
             {{-- Item 5 --}}
-            <div class="relative overflow-hidden rounded-[2.5rem] group cursor-pointer aspect-square bg-white border border-gray-100 shadow-sm flex flex-col items-center pt-12 pb-0 px-6 transition-all duration-500 hover:shadow-xl"
+            <div class="signature-card relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] group cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl sm:col-span-2 md:col-span-1"
                 onclick="window.location='#'">
-                <div class="text-center mb-6 z-10">
-                    <h3 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-2">Judul Produk 5</h3>
-                    <p class="text-xs md:text-sm text-gray-500 mb-5 font-medium">Deskripsi singkat produk 5</p>
-                    <span
-                        class="inline-block px-6 py-2 border-2 border-gray-900 text-gray-900 rounded-full text-xs font-bold transition-all transform group-hover:scale-105">
-                        Learn More
-                    </span>
-                </div>
-                <div class="flex-1 w-full relative h-full flex items-end justify-center overflow-hidden">
-                    <img src="{{ asset('img/signature/signature5.png') }}" alt="Signature 5"
-                        class="w-[85%] h-auto object-contain transition-transform duration-700 ease-in-out group-hover:scale-110" />
+                <div class="relative w-full h-[250px] sm:h-[280px] md:h-[320px] lg:h-[360px]">
+                    <img src="{{ asset('img/sig4.jpg') }}" alt="Signature 5"
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-10">
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-1 sm:mb-2">Judul Produk 5</h3>
+                        <p class="text-xs sm:text-sm text-white/80 mb-3 sm:mb-4 font-medium">Deskripsi singkat produk 5</p>
+                        <span
+                            class="inline-block px-5 sm:px-6 py-1.5 sm:py-2 border-2 border-white text-white rounded-full text-xs font-bold hover:bg-white hover:text-gray-900 transition-all transform group-hover:scale-105">
+                            Learn More
+                        </span>
+                    </div>
                 </div>
             </div>
         </div>
