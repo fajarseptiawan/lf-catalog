@@ -88,7 +88,7 @@
                 <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
                     onclick="window.location='{{ route('category', 'iphone13') }}'">
                     <div class="h-24 flex items-end mb-4">
-                        <img src="{{ asset('img/tes1.png') }}" alt="iphone13" class="h-full">
+                        <img src="{{ asset('img/13series.jpg') }}" alt="iphone13" class="h-full">
                     </div>
                     <span class="text-sm font-medium text-gray-900">Iphone 13 Series</span>
                     <span class="text-xs text-orange-600 mt-1">Mulai Dari Rp10 ribu</span>
@@ -97,7 +97,7 @@
                 <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
                     onclick="window.location='{{ route('category', 'iphone14') }}'">
                     <div class="h-24 flex items-end mb-4">
-                        <img src="{{ asset('img/tes1.png') }}" alt="iphone14" class="h-full">
+                        <img src="{{ asset('img/14series.jpg') }}" alt="iphone14" class="h-full">
                     </div>
                     <span class="text-sm font-medium text-gray-900">iPhone 14 Series</span>
                     <span class="text-xs text-orange-600 mt-1">Mulai Rp10 ribu</span>
@@ -106,7 +106,7 @@
                 <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
                     onclick="window.location='{{ route('category', 'iphone15') }}'">
                     <div class="h-24 flex items-end mb-4">
-                        <img src="{{ asset('img/tes1.png') }}" alt="iphone15" class="h-full">
+                        <img src="{{ asset('img/15series.jpg') }}" alt="iphone15" class="h-full">
                     </div>
                     <span class="text-sm font-medium text-gray-900">Iphone 15 Series</span>
                     <span class="text-xs text-orange-600 mt-1">Mulai Rp10 ribu</span>
@@ -115,7 +115,7 @@
                 <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
                     onclick="window.location='{{ route('category', 'iphone16') }}'">
                     <div class="h-24 flex items-end mb-4">
-                        <img src="{{ asset('img/tes1.png') }}" alt="iphone16" class="h-full">
+                        <img src="{{ asset('img/16series.png') }}" alt="iphone16" class="h-full">
                     </div>
                     <span class="text-sm font-medium text-gray-900">Iphone 16 Series</span>
                     <span class="text-xs text-orange-600 mt-1">Mulai Rp10 ribu</span>
@@ -124,7 +124,7 @@
                 <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
                     onclick="window.location='{{ route('category', 'iphone17') }}'">
                     <div class="h-24 flex items-end mb-4">
-                        <img src="{{ asset('img/tes1.png') }}" alt="iphone17" class="h-full">
+                        <img src="{{ asset('img/17series.png') }}" alt="iphone17" class="h-full">
                     </div>
                     <span class="text-sm font-medium text-gray-900">Iphone 17 Series</span>
                     <span class="text-xs text-orange-600 mt-1">Mulai Rp10 ribu</span>
@@ -133,7 +133,7 @@
                 <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
                     onclick="window.location='{{ route('category', 'g2g') }}'">
                     <div class="h-24 flex items-end mb-4">
-                        <img src="{{ asset('img/tes1.png') }}" alt="g2g" class="h-full">
+                        <img src="{{ asset('img/g2g.jpg') }}" alt="g2g" class="h-full">
                     </div>
                     <span class="text-sm font-medium text-gray-900">G2G</span>
                     <span class="text-xs text-orange-600 mt-1">Mulai Rp10 ribu</span>
@@ -142,7 +142,7 @@
                 <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
                     onclick="window.location='{{ route('category', 'softlens') }}'">
                     <div class="h-24 flex items-end mb-4">
-                        <img src="{{ asset('img/tes1.png') }}" alt="softlens" class="h-full">
+                        <img src="{{ asset('img/softlens.png') }}" alt="softlens" class="h-full">
                     </div>
                     <span class="text-sm font-medium text-gray-900">Softlens</span>
                     <span class="text-xs text-orange-600 mt-1">Mulai Rp10 ribu</span>
@@ -170,14 +170,14 @@
                         Learn More
                     </span>
                 </div>
-                <div class="flex-1 w-full relative h-full flex items-end justify-center overflow-hidden">
-                    <img src="{{ asset('img/signature/signature1.png') }}" alt="Signature 1"
-                        class="w-[90%] h-auto object-contain transition-transform duration-700 ease-in-out group-hover:scale-110" />
+                <div class="flex-1 w-full relative h-full flex items-center justify-center overflow-hidden">
+                    <img src="{{ asset('img/sig3.jpg') }}" alt="Signature 1"
+                        class="w-full h-full object-contain transition-transform duration-700 ease-in-out group-hover:scale-110" />
                 </div>
             </div>
 
             {{-- Item 2 --}}
-            <div class="relative overflow-hidden rounded-[2.5rem] group cursor-pointer aspect-square bg-[#E5E7EB] border border-gray-100 shadow-sm flex flex-col items-center pt-16 pb-0 px-8 transition-all duration-500 hover:shadow-xl"
+            <div class="relative overflow-hidden rounded-[2.5rem] group cursor-pointer aspect-square bg-[#E5E7EB] border border-gray-100 bg-white shadow-sm flex flex-col items-center pt-16 pb-0 px-8 transition-all duration-500 hover:shadow-xl"
                 onclick="window.location='#'">
                 <div class="text-center mb-8 z-10">
                     <h3 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-2">Judul Produk 2</h3>
@@ -188,8 +188,8 @@
                     </span>
                 </div>
                 <div class="flex-1 w-full relative h-full flex items-end justify-center overflow-hidden">
-                    <img src="{{ asset('img/signature/signature2.png') }}" alt="Signature 2"
-                        class="w-[90%] h-auto object-contain transition-transform duration-700 ease-in-out group-hover:scale-110" />
+                    <img src="{{ asset('img/sig1.webp') }}" alt="Signature 2"
+                        class="w-full h-full object-contain transition-transform duration-700 ease-in-out group-hover:scale-110" />
                 </div>
             </div>
         </div>
@@ -197,13 +197,13 @@
         {{-- Row 2: 3 Smaller Items (gambar manual dari folder public) --}}
         <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
             {{-- Item 3 (Dark theme) --}}
-            <div class="relative overflow-hidden rounded-[2.5rem] group cursor-pointer aspect-square bg-[#0F172A] border border-gray-100 shadow-sm flex flex-col items-center pt-12 pb-0 px-6 transition-all duration-500 hover:shadow-xl"
+            <div class="relative overflow-hidden rounded-[2.5rem] group cursor-pointer aspect-square bg-white border border-gray-100 shadow-sm flex flex-col items-center pt-12 pb-0 px-6 transition-all duration-500 hover:shadow-xl"
                 onclick="window.location='#'">
                 <div class="text-center mb-6 z-10">
-                    <h3 class="text-2xl md:text-3xl font-extrabold text-white mb-2">Judul Produk 3</h3>
+                    <h3 class="text-2xl md:text-3xl font-extrabold text-gray-900 mb-2">Judul Produk 3</h3>
                     <p class="text-xs md:text-sm text-gray-400 mb-5 font-medium">Deskripsi singkat produk 3</p>
                     <span
-                        class="inline-block px-6 py-2 border-2 border-white text-white hover:bg-white hover:text-black rounded-full text-xs font-bold transition-all transform group-hover:scale-105">
+                        class="inline-block px-6 py-2 border-2 border-gray-900 text-gray-900 rounded-full text-xs font-bold transition-all transform group-hover:scale-105">
                         Learn More
                     </span>
                 </div>
