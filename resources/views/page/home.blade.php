@@ -621,7 +621,21 @@
 
 
 
-    <style>
+
+@endsection
+
+
+@push('js')
+
+
+
+
+    @vite(['resources/js/home.js'])
+
+@endpush
+
+@push('css')
+ <style>
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
@@ -651,7 +665,4 @@
             scrollbar-width: none;
         }
     </style>
-
-
-    @vite(['resources/js/home.js'])
-@endsection
+@endpush

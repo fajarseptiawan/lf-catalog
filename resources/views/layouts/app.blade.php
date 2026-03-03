@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'LF Catalog')</title>
     @vite('resources/css/app.css')
+    @stack('js')
+    @stack('css')
 </head>
 <body class="bg-white text-gray-800">
 
