@@ -160,7 +160,7 @@
         {{-- Row 1: 2 Large Items --}}
         <div class="grid grid-cols-1 md:grid-cols-2 gap-3 sm:gap-4 mb-3 sm:mb-4">
             {{-- Item 1 --}}
-            <div class="signature-card relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] group cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl"
+            <div class="signature-card relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] group cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl reveal-left opacity-0 -translate-x-20 transition-all duration-1000 ease-out"
                 onclick="window.location='#'">
                 <div class="relative w-full h-[280px] sm:h-[350px] md:h-[420px] lg:h-[480px]">
                     <img src="{{ asset('img/sig3.jpg') }}" alt="Signature 1"
@@ -178,7 +178,7 @@
             </div>
 
             {{-- Item 2 --}}
-            <div class="signature-card relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] group cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl"
+            <div class="signature-card relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] group cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl reveal-right opacity-0 translate-x-20 transition-all duration-1000 ease-out"
                 onclick="window.location='#'">
                 <div class="relative w-full h-[280px] sm:h-[350px] md:h-[420px] lg:h-[480px]">
                     <img src="{{ asset('img/sig1.webp') }}" alt="Signature 2"
@@ -199,7 +199,7 @@
         {{-- Row 2: 3 Smaller Items --}}
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
             {{-- Item 3 --}}
-            <div class="signature-card relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] group cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl"
+            <div class="signature-card relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] group cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl reveal-left opacity-0 -translate-x-20 transition-all duration-1000 ease-out"
                 onclick="window.location='#'">
                 <div class="relative w-full h-[250px] sm:h-[280px] md:h-[320px] lg:h-[360px]">
                     <img src="{{ asset('img/sig6.png') }}" alt="Signature 3"
@@ -217,7 +217,7 @@
             </div>
 
             {{-- Item 4 --}}
-            <div class="signature-card relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] group cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl"
+            <div class="signature-card relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] group cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl reveal-right opacity-0 translate-y-20 transition-all duration-1000 ease-out"
                 onclick="window.location='#'">
                 <div class="relative w-full h-[250px] sm:h-[280px] md:h-[320px] lg:h-[360px]">
                     <img src="{{ asset('img/sig5.jpeg') }}" alt="Signature 4"
@@ -235,7 +235,7 @@
             </div>
 
             {{-- Item 5 --}}
-            <div class="signature-card relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] group cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl sm:col-span-2 md:col-span-1"
+            <div class="signature-card relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] group cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl sm:col-span-2 md:col-span-1 reveal-left opacity-0 translate-x-20 transition-all duration-1000 ease-out"
                 onclick="window.location='#'">
                 <div class="relative w-full h-[250px] sm:h-[280px] md:h-[320px] lg:h-[360px]">
                     <img src="{{ asset('img/sig4.jpg') }}" alt="Signature 5"
