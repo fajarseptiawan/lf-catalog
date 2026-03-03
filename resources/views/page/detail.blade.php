@@ -62,7 +62,7 @@
     @if(count($allImages) > 1)
     <div class="flex gap-3 mb-8 overflow-x-auto pb-2">
         @foreach($allImages as $idx => $img)
-        <button onclick="goToSlide({{ $idx }})" class="thumb-btn flex-shrink-0 w-16 h-16 rounded-xl border-2 overflow-hidden transition {{ $idx === 0 ? 'border-gray-900' : 'border-gray-200 hover:border-gray-400' }}" data-index="{{ $idx }}">
+        <button onclick="goToSlide({{ $idx }})" class="thumb-btn shrink-0 w-16 h-16 rounded-xl border-2 overflow-hidden transition {{ $idx === 0 ? 'border-gray-900' : 'border-gray-200 hover:border-gray-400' }}" data-index="{{ $idx }}">
             <img src="{{ asset($img) }}" alt="" class="w-full h-full object-contain p-1">
         </button>
         @endforeach
@@ -119,7 +119,7 @@
         <ul class="space-y-2">
             @foreach($product->features as $feature)
             <li class="flex items-start">
-                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 text-green-500 mr-2 mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
                 </svg>
                 <span class="text-gray-600">{{ $feature }}</span>

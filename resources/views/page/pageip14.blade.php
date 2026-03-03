@@ -47,41 +47,43 @@
     </section>
 
 
-    @foreach($products as $product)
-    <section class="py-20 bg-white border-b border-gray-300 cursor-pointer" onclick="window.location='{{ route('product.detail', $product->slug) }}'">
-        <div class="max-w-7xl px-4 mx-auto">
-            <div class="grid gap-8 md:grid-cols-2 items-center">
+    @foreach ($products as $product)
+        <section class="py-20 bg-white border-b border-gray-300 cursor-pointer"
+            onclick="window.location='{{ route('product.detail', $product->slug) }}'">
+            <div class="max-w-7xl px-4 mx-auto">
+                <div class="grid gap-8 md:grid-cols-2 items-center">
 
-                <!-- Bagian Tulisan (Kiri) -->
-                <div
-                    class="order-2 md:order-1 text-center md:text-left reveal-left opacity-0 -translate-x-20 transition-all duration-1000 ease-out">
-                    <h3 class="text-3xl font-bold text-gray-900">{{ $product->name }}</h3>
-                    <p class="mt-2 text-gray-600">{{ $product->description }}</p>
-                    <p class="mt-1 text-sm text-gray-500">Mulai dari Rp {{ number_format($product->price, 0, ',', '.') }}</p>
-                    <div class="mt-6">
-                        <span class="px-6 py-2 text-sm font-medium text-blue-600 border border-blue-600 rounded-full hover:bg-blue-50 transition">
-                            Lihat Detail
-                        </span>
+                    <!-- Bagian Tulisan (Kiri) -->
+                    <div
+                        class="order-2 md:order-1 text-center md:text-left reveal-left opacity-0 -translate-x-20 transition-all duration-1000 ease-out">
+                        <h3 class="text-3xl font-bold text-gray-900">{{ $product->name }}</h3>
+                        <p class="mt-2 text-gray-600">{{ $product->description }}</p>
+                        <p class="mt-1 text-sm text-gray-500">Mulai dari Rp
+                            {{ number_format($product->price, 0, ',', '.') }}</p>
+                        <div class="mt-6">
+                            <span
+                                class="px-6 py-2 text-sm font-medium text-blue-600 border border-blue-600 rounded-full hover:bg-blue-50 transition">
+                                Lihat Detail
+                            </span>
+                        </div>
                     </div>
-                </div>
 
-                <!-- Bagian Gambar (Kanan) -->
-                <div
-                    class="order-1 md:order-2 flex justify-center reveal-left opacity-0 translate-x-20 transition-all duration-1000 ease-out">
-                    <img src="{{ asset($product->image) }}" class="h-40 md:h-48 lg:h-56 object-contain" alt="{{ $product->name }}">
-                </div>
+                    <!-- Bagian Gambar (Kanan) -->
+                    <div
+                        class="order-1 md:order-2 flex justify-center reveal-left opacity-0 translate-x-20 transition-all duration-1000 ease-out">
+                        <img src="{{ asset($product->image) }}" class="h-40 md:h-48 lg:h-56 object-contain"
+                            alt="{{ $product->name }}">
+                    </div>
 
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
     @endforeach
 
 
 
 
-
-
-
-
-    @vite(['resources/js/pageip14.js'])
+    @push()
+        <script src="{{ asset('assets/pageip14.js') }}"></script>
+    @endpush
 @endsection
