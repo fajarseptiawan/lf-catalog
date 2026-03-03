@@ -83,7 +83,7 @@
 
 
 
-    @push()
+    @push('js')
         <script src="{{ asset('assets/pageip14.js') }}"></script>
     @endpush
 @endsection
