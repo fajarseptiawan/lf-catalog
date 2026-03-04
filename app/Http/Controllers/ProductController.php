@@ -16,7 +16,13 @@ class ProductController extends Controller
 
     public function category($category)
     {
-        $products = Product::where('category', $category)->get();
+        $iphoneCategories = ['iphone13', 'iphone14', 'iphone15', 'iphone16', 'iphone17'];
+        if (in_array($category, $iphoneCategories)) {
+            $products = Product::whereIn('category', [$category, 'aksesoris'])->get();
+        }
+        else {
+            $products = Product::where('category', $category)->get();
+        }
 
         $viewMap = [
             'iphone13' => 'page.pageip13',

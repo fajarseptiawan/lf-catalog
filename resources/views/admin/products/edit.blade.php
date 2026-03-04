@@ -43,8 +43,9 @@
                         <option value="iphone15" {{ old('category', $product->category) == 'iphone15' ? 'selected' : '' }}>iPhone 15 Series</option>
                         <option value="iphone14" {{ old('category', $product->category) == 'iphone14' ? 'selected' : '' }}>iPhone 14 Series</option>
                         <option value="iphone13" {{ old('category', $product->category) == 'iphone13' ? 'selected' : '' }}>iPhone 13 Series</option>
-                        <option value="g2g" {{ old('category', $product->category) == 'g2g' ? 'selected' : '' }}>G2G Screen Protector</option>
+                        <option value="g2g" {{ old('category', $product->category) == 'g2g' ? 'selected' : '' }}>G2G</option>
                         <option value="softlens" {{ old('category', $product->category) == 'softlens' ? 'selected' : '' }}>Softlens</option>
+                        <option value="aksesoris" {{ old('category', $product->category) == 'aksesoris' ? 'selected' : '' }}>Aksesoris HP (Universal)</option>
                     </select>
                     @error('category')<p class="text-red-500 text-xs mt-1">{{ $message }}</p>@enderror
                 </div>

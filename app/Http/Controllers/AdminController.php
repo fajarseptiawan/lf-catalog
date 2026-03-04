@@ -14,7 +14,7 @@ class AdminController extends Controller
     public function dashboard()
     {
         $productsCount = Product::count();
-        $ordersCount = Order::count();
+        $ordersCount = Order::where('status', 'paid')->count();
         $pendingOrders = Order::where('status', 'pending')->count();
 
         // Income statistics

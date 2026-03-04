@@ -30,7 +30,7 @@
                 </svg>
             </div>
         </div>
-        <p class="text-gray-500 text-sm font-medium uppercase tracking-wider mb-1">Total Pesanan</p>
+        <p class="text-gray-500 text-sm font-medium uppercase tracking-wider mb-1">Total Pesanan Terverifikasi</p>
         <p class="text-3xl font-bold text-gray-900">{{ $ordersCount }}</p>
     </div>
 
