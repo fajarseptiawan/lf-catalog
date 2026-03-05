@@ -2,9 +2,11 @@
     <div class="mx-auto w-full max-w-7xl p-4 py-6 lg:py-8">
         <div class="md:flex md:justify-between">
             <div class="mb-6 md:mb-0">
-                <a href="https://lfcatalog.jrsept.com" class="flex items-center">
-                    <img src="{{ asset('img/lfcatalog.png') }}" class="h-12y me-3" alt="LF_Catalog Logo" />
-                    <span class="text-heading self-center text-2xl font-semibold whitespace-nowrap">LF Catalog</span>
+                <a href="https://lfcatalog.jrsept.com" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <img src="{{ asset('img/logo_lfc.png') }}" class="h-16 object-contain" alt="LF_Catalog Logo" />
+                    <span class="self-center text-xl font-semibold whitespace-nowrap text-heading"><img
+                            src="{{ asset('img/logo_lfc3.png') }}" class="h-6 object-contain"
+                            alt="LF_Catalog Logo" /></span>
                 </a>
             </div>
             <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
