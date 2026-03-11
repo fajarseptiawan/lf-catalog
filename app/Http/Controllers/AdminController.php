@@ -229,6 +229,34 @@ class AdminController extends Controller
         return back()->with('success', 'Produk berhasil dihapus.');
     }
 
+    public function deleteProductImage(Request $request, $id)
+    {
+        $product = Product::findOrFail($id);
+        $imagePath = $request->input('image_path');
+        $type = $request->input('type'); // 'main' or 'slider'
+
+        if ($type === 'main') {
+            // Delete old main image file (if not default)
+            if ($product->image && $product->image !== 'img/tes.png' && file_exists(public_path($product->image))) {
+                unlink(public_path($product->image));
+            }
+            $product->update(['image' => 'img/tes.png']);
+        }
+        else {
+            // Delete slider image
+            $images = $product->images ?? [];
+            $images = array_values(array_filter($images, fn($img) => $img !== $imagePath));
+
+            if ($imagePath && file_exists(public_path($imagePath))) {
+                unlink(public_path($imagePath));
+            }
+
+            $product->update(['images' => $images]);
+        }
+
+        return back()->with('success', 'Gambar berhasil dihapus.');
+    }
+
     public function orders()
     {
         $orders = Order::with('product')->latest()->get();

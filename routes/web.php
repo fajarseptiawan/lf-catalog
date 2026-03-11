@@ -27,6 +27,7 @@ Route::middleware([\App\Http\Middleware\AdminMiddleware::class])->prefix('admin'
     Route::post('/products/{id}/restock', [AdminController::class , 'restockProduct'])->name('products.restock');
     Route::post('/stock-history/{id}/delete', [AdminController::class , 'deleteStockHistory'])->name('stock-history.delete');
     Route::post('/products/{id}/delete', [AdminController::class , 'deleteProduct'])->name('products.delete');
+    Route::post('/products/{id}/delete-image', [AdminController::class , 'deleteProductImage'])->name('products.delete-image');
 
     Route::get('/orders', [AdminController::class , 'orders'])->name('orders');
     Route::post('/orders/{id}/verify', [AdminController::class , 'verifyOrder'])->name('orders.verify');

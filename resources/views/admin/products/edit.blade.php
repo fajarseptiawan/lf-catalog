@@ -73,28 +73,50 @@
             </div>
 
             <div class="mb-8">
-                <label class="block text-sm font-semibold text-gray-700 mb-2">Gambar Utama (Biarkan kosong jika tidak ingin mengubah)</label>
-                <div class="flex items-center mb-4">
-                    <img src="{{ asset($product->image) }}" alt="" class="h-20 w-20 object-contain bg-gray-50 rounded-lg p-1 mr-4 border border-gray-100">
-                    <span class="text-xs text-gray-500 italic">Gambar utama saat ini</span>
+                <label class="block text-sm font-semibold text-gray-700 mb-2">Gambar Utama</label>
+                <div class="flex items-center mb-4 gap-4">
+                    <img src="{{ asset($product->image) }}" alt="" class="h-20 w-20 object-contain bg-gray-50 rounded-lg p-1 border border-gray-100">
+                    <div class="flex flex-col gap-2">
+                        <span class="text-xs text-gray-500 italic">Gambar utama saat ini</span>
+                        @if($product->image && $product->image !== 'img/tes.png')
+                        <form action="{{ route('admin.products.delete-image', $product->id) }}" method="POST" onsubmit="return confirm('Hapus gambar utama? Akan diganti dengan gambar default.')">
+                            @csrf
+                            <input type="hidden" name="image_path" value="{{ $product->image }}">
+                            <input type="hidden" name="type" value="main">
+                            <button type="submit" class="inline-flex items-center gap-1 text-xs text-red-600 hover:text-red-800 font-medium transition">
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                                Hapus
+                            </button>
+                        </form>
+                        @endif
+                    </div>
                 </div>
                 <input type="file" name="image" accept="image/jpeg,image/png,image/jpg,image/gif,image/svg+xml" class="w-full px-4 py-3 rounded-xl border border-gray-200 file:mr-4 file:py-2 file:px-4 file:border-0 file:text-sm file:font-semibold file:bg-orange-50 file:text-orange-700 hover:file:bg-orange-100 transition">
-                <p class="text-xs text-gray-500 mt-2">Format: JPG, PNG, GIF, SVG. Maks. 2MB.</p>
+                <p class="text-xs text-gray-500 mt-2">Upload gambar baru untuk mengganti gambar utama. Format: JPG, PNG, GIF, SVG. Maks. 2MB.</p>
                 @error('image')<p class="text-red-500 text-xs mt-1">{{ $message }}</p>@enderror
             </div>
 
             <div class="mb-10">
                 <label class="block text-sm font-semibold text-gray-700 mb-2">Gambar Tambahan (Slider)</label>
                 @if($product->images && count($product->images) > 0)
-                <div class="flex gap-3 mb-4 flex-wrap">
-                    @foreach($product->images as $img)
-                    <img src="{{ asset($img) }}" alt="" class="h-16 w-16 object-contain bg-gray-50 rounded-lg p-1 border border-gray-100">
+                <div class="flex gap-4 mb-4 flex-wrap">
+                    @foreach($product->images as $idx => $img)
+                    <div class="relative group">
+                        <img src="{{ asset($img) }}" alt="" class="h-20 w-20 object-contain bg-gray-50 rounded-lg p-1 border border-gray-100">
+                        <form action="{{ route('admin.products.delete-image', $product->id) }}" method="POST" onsubmit="return confirm('Hapus gambar ini?')" class="absolute -top-2 -right-2">
+                            @csrf
+                            <input type="hidden" name="image_path" value="{{ $img }}">
+                            <input type="hidden" name="type" value="slider">
+                            <button type="submit" class="bg-red-500 hover:bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center shadow-md transition opacity-0 group-hover:opacity-100" title="Hapus gambar">
+                                <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                            </button>
+                        </form>
+                    </div>
                     @endforeach
                 </div>
-                <p class="text-xs text-gray-500 mb-3 italic">Gambar slider saat ini. Upload baru akan menambahkan ke yang ada.</p>
                 @endif
                 <input type="file" name="images[]" multiple accept="image/jpeg,image/png,image/jpg,image/gif,image/svg+xml" class="w-full px-4 py-3 rounded-xl border border-gray-200 file:mr-4 file:py-2 file:px-4 file:border-0 file:text-sm file:font-semibold file:bg-blue-50 file:text-blue-700 hover:file:bg-blue-100 transition">
-                <p class="text-xs text-gray-500 mt-2">Pilih beberapa gambar sekaligus. Format: JPG, PNG, GIF, SVG. Maks. 2MB per gambar.</p>
+                <p class="text-xs text-gray-500 mt-2">Upload gambar baru untuk menambah slider. Format: JPG, PNG, GIF, SVG. Maks. 2MB per gambar.</p>
                 @error('images.*')<p class="text-red-500 text-xs mt-1">{{ $message }}</p>@enderror
             </div>
 
