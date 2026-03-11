@@ -182,6 +182,17 @@ class AdminController extends Controller
 
         $product->update($data);
 
+        // Update stock history if purchase_price changed
+        if ($product->wasChanged('purchase_price')) {
+            $newPrice = $product->purchase_price;
+            StockHistory::where('product_id', $product->id)->each(function ($history) use ($newPrice) {
+                $history->update([
+                    'purchase_price' => $newPrice,
+                    'total_cost' => $newPrice * $history->quantity,
+                ]);
+            });
+        }
+
         return redirect()->route('admin.products')->with('success', 'Produk berhasil diperbarui.');
     }
 
