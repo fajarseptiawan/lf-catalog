@@ -55,16 +55,17 @@
         @if($product->images && count($product->images) > 0)
         <div>
             <label class="block text-sm font-semibold text-gray-700 mb-2">Gambar Slider</label>
-            <div class="flex gap-4 flex-wrap">
+            <div class="flex gap-6 flex-wrap">
                 @foreach($product->images as $idx => $img)
-                <div class="relative group">
+                <div class="flex flex-col items-center gap-2">
                     <img src="{{ asset($img) }}" alt="" class="h-20 w-20 object-contain bg-gray-50 rounded-lg p-1 border border-gray-100">
-                    <form action="{{ route('admin.products.delete-image', $product->id) }}" method="POST" onsubmit="return confirm('Hapus gambar ini?')" class="absolute -top-2 -right-2">
+                    <form action="{{ route('admin.products.delete-image', $product->id) }}" method="POST" onsubmit="return confirm('Hapus gambar ini?')">
                         @csrf
                         <input type="hidden" name="image_path" value="{{ $img }}">
                         <input type="hidden" name="type" value="slider">
-                        <button type="submit" class="bg-red-500 hover:bg-red-600 text-white rounded-full w-6 h-6 flex items-center justify-center shadow-md transition" title="Hapus gambar">
-                            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        <button type="submit" class="inline-flex items-center gap-1 text-xs text-red-600 hover:text-red-800 font-medium transition">
+                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path></svg>
+                            Hapus
                         </button>
                     </form>
                 </div>
