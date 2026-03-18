@@ -32,4 +32,11 @@ Route::middleware([\App\Http\Middleware\AdminMiddleware::class])->prefix('admin'
     Route::get('/orders', [AdminController::class , 'orders'])->name('orders');
     Route::post('/orders/{id}/verify', [AdminController::class , 'verifyOrder'])->name('orders.verify');
     Route::post('/orders/{id}/cancel', [AdminController::class , 'cancelOrder'])->name('orders.cancel');
+
+    // Settings
+    Route::get('/settings', [AdminController::class , 'settings'])->name('settings');
+    Route::post('/settings/change-password', [AdminController::class , 'changePassword'])->name('settings.change-password');
+    Route::post('/settings/add-admin', [AdminController::class , 'addAdmin'])->name('settings.add-admin');
+    Route::post('/settings/update-admin/{id}', [AdminController::class , 'updateAdmin'])->name('settings.update-admin');
+    Route::post('/settings/delete-admin/{id}', [AdminController::class , 'deleteAdmin'])->name('settings.delete-admin');
 });

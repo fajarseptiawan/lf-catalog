@@ -8,6 +8,9 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Product;
 use App\Models\Order;
 use App\Models\StockHistory;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
@@ -304,5 +307,96 @@ class AdminController extends Controller
         }
 
         return back()->with('info', 'Hanya pesanan pending yang bisa dibatalkan.');
+    }
+
+    public function settings()
+    {
+        $admins = User::where('is_admin', true)->get();
+        return view('admin.settings', compact('admins'));
+    }
+
+    public function changePassword(Request $request)
+    {
+        $request->validate([
+            'current_password' => 'required',
+            'new_password' => 'required|min:6|confirmed',
+        ]);
+
+        $user = Auth::user();
+
+        if (!Hash::check($request->current_password, $user->password)) {
+            return back()->withErrors(['current_password' => 'Password lama tidak sesuai.']);
+        }
+
+        $user->update(['password' => $request->new_password]);
+
+        return back()->with('success', 'Password berhasil diubah.');
+    }
+
+    public function addAdmin(Request $request)
+    {
+        // Check if email exists as a non-admin user, if so update to admin
+        $existingUser = User::where('email', $request->email)->where('is_admin', false)->first();
+        if ($existingUser) {
+            $existingUser->update(['is_admin' => true]);
+            return back()->with('success', 'User yang sudah ada berhasil dijadikan admin.');
+        }
+
+        $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:6|confirmed',
+        ], [
+            'name.required' => 'Nama wajib diisi.',
+            'email.required' => 'Email wajib diisi.',
+            'email.email' => 'Format email tidak valid.',
+            'email.unique' => 'Email ini sudah terdaftar.',
+            'password.required' => 'Password wajib diisi.',
+            'password.min' => 'Password minimal 6 karakter.',
+            'password.confirmed' => 'Konfirmasi password tidak cocok.',
+        ]);
+
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password,
+            'is_admin' => true,
+        ]);
+
+        return back()->with('success', 'Admin baru berhasil ditambahkan.');
+    }
+
+    public function updateAdmin(Request $request, $id)
+    {
+        $admin = User::findOrFail($id);
+
+        $request->validate([
+            'name' => 'required|max:255',
+            'email' => 'required|email|unique:users,email,' . $admin->id,
+            'password' => 'nullable|min:6|confirmed',
+        ]);
+
+        $admin->name = $request->name;
+        $admin->email = $request->email;
+
+        if ($request->filled('password')) {
+            $admin->password = $request->password;
+        }
+
+        $admin->save();
+
+        return back()->with('success', 'Data admin berhasil diperbarui.');
+    }
+
+    public function deleteAdmin($id)
+    {
+        $admin = User::findOrFail($id);
+
+        if ($admin->id === Auth::id()) {
+            return back()->with('error', 'Anda tidak bisa menghapus akun Anda sendiri.');
+        }
+
+        $admin->delete();
+        return back()->with('success', 'Admin berhasil dihapus.');
     }
 }
