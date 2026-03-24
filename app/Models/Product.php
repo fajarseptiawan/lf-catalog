@@ -22,12 +22,14 @@ class Product extends Model
         'image',
         'images',
         'is_featured',
+        'is_temperedglass',
     ];
 
     protected $casts = [
         'features' => 'array',
         'images' => 'array',
         'is_featured' => 'boolean',
+        'is_temperedglass' => 'boolean',
     ];
 
     public function orders()

@@ -17,8 +17,12 @@ class ProductController extends Controller
     public function category($category)
     {
         $iphoneCategories = ['iphone13', 'iphone14', 'iphone15', 'iphone16', 'iphone17'];
-        if (in_array($category, $iphoneCategories)) {
-            $products = Product::whereIn('category', [$category, 'aksesoris'])->get();
+        if ($category === 'temperedglass') {
+            // Tempered Glass page shows all products flagged as temperedglass from any category
+            $products = Product::where('is_temperedglass', true)->get();
+        }
+        elseif (in_array($category, $iphoneCategories)) {
+            $products = Product::whereIn('category', [$category, 'aksesoris', 'charger'])->get();
         }
         else {
             $products = Product::where('category', $category)->get();
@@ -32,6 +36,8 @@ class ProductController extends Controller
             'iphone17' => 'page.pageip17',
             'g2g' => 'page.pageg2g',
             'softlens' => 'page.pagesoftlens',
+            'charger' => 'page.pagecharger',
+            'temperedglass' => 'page.pagetemperedglass',
         ];
 
         $view = $viewMap[$category] ?? 'page.category';

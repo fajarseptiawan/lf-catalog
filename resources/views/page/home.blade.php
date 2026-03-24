@@ -264,16 +264,16 @@
                 <!-- Container harus overflow-x-auto dan scroll-smooth -->
                 <div class="flex overflow-x-auto scroll-smooth no-scrollbar" data-carousel-items-container>
                     <!-- Items dengan flex: 0 0 20% agar 5 item muncul, tambahkan min-w untuk konsistensi di HP -->
-                    <a href="/power-banks" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'charger') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Power Banks"
+                            <img src="{{ asset('img/charger.png') }}" alt="Power Banks"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Charger Iphone</span>
                         </div>
                     </a>
-                    <a href="/chargers" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'temperedglass') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Chargers"
+                            <img src="{{ asset('img/temperedglass.png') }}" alt="Chargers"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Tempered Glass</span>
                         </div>
@@ -281,7 +281,7 @@
                     <a href="{{ route('category', 'iphone13') }}"
                         class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Wireless Chargers"
+                            <img src="{{ asset('img/13series.jpg') }}" alt="Wireless Chargers"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Iphone 13 Series</span>
                         </div>
@@ -289,7 +289,7 @@
                     <a href="{{ route('category', 'iphone14') }}"
                         class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Car Chargers"
+                            <img src="{{ asset('img/14series.jpg') }}" alt="Car Chargers"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Iphone 14 Series</span>
                         </div>
@@ -297,7 +297,7 @@
                     <a href="{{ route('category', 'iphone15') }}"
                         class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Power Strip"
+                            <img src="{{ asset('img/15series.jpg') }}" alt="Power Strip"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Iphone 15 Series</span>
                         </div>
@@ -306,7 +306,7 @@
                     <a href="{{ route('category', 'iphone16') }}"
                         class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Item 6"
+                            <img src="{{ asset('img/16series.png') }}" alt="Item 6"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Iphone 16 Series</span>
                         </div>
@@ -315,7 +315,7 @@
                     <a href="{{ route('category', 'iphone17') }}"
                         class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Item 7"
+                            <img src="{{ asset('img/17series.png') }}" alt="Item 7"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Iphone 17 Series</span>
                         </div>
@@ -360,7 +360,7 @@
                     <a href="{{ route('category', 'softlens') }}"
                         class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Power Banks"
+                            <img src="{{ asset('img/softlens.png') }}" alt="Power Banks"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Softlens</span>
                         </div>
@@ -368,7 +368,7 @@
                     <a href="{{ route('category', 'g2g') }}"
                         class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Chargers"
+                            <img src="{{ asset('img/g2g.jpg') }}" alt="Chargers"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">G2G</span>
                         </div>

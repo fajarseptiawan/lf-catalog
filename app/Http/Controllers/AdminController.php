@@ -91,6 +91,7 @@ class AdminController extends Controller
 
         try {
             $data = $request->only(['name', 'category', 'price', 'purchase_price', 'stock', 'description']);
+            $data['is_temperedglass'] = $request->has('is_temperedglass');
 
             $data['slug'] = \Illuminate\Support\Str::slug($request->name);
 
@@ -165,6 +166,7 @@ class AdminController extends Controller
         ]);
 
         $data = $request->only(['name', 'category', 'price', 'purchase_price', 'stock', 'description']);
+        $data['is_temperedglass'] = $request->has('is_temperedglass');
         $data['slug'] = \Illuminate\Support\Str::slug($request->name);
 
         // Pastikan slug unik (kecuali milik produk ini sendiri)

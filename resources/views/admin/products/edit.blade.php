@@ -96,9 +96,14 @@
                         <option value="iphone13" {{ old('category', $product->category) == 'iphone13' ? 'selected' : '' }}>iPhone 13 Series</option>
                         <option value="g2g" {{ old('category', $product->category) == 'g2g' ? 'selected' : '' }}>G2G</option>
                         <option value="softlens" {{ old('category', $product->category) == 'softlens' ? 'selected' : '' }}>Softlens</option>
+                        <option value="charger" {{ old('category', $product->category) == 'charger' ? 'selected' : '' }}>Charger iPhone</option>
                         <option value="aksesoris" {{ old('category', $product->category) == 'aksesoris' ? 'selected' : '' }}>Aksesoris HP (Universal)</option>
                     </select>
                     @error('category')<p class="text-red-500 text-xs mt-1">{{ $message }}</p>@enderror
+                    <label class="flex items-center gap-2 mt-3 cursor-pointer">
+                        <input type="checkbox" name="is_temperedglass" value="1" {{ old('is_temperedglass', $product->is_temperedglass) ? 'checked' : '' }} class="w-4 h-4 rounded border-gray-300 text-orange-500 focus:ring-orange-200">
+                        <span class="text-sm text-gray-600">Produk Antigores / Tempered Glass</span>
+                    </label>
                 </div>
                 <div>
                     <label class="block text-sm font-semibold text-gray-700 mb-2">Harga Jual (Rp) <span class="text-red-500">*</span></label>
