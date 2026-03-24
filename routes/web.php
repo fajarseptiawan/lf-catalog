@@ -35,7 +35,6 @@ Route::middleware([\App\Http\Middleware\AdminMiddleware::class])->prefix('admin'
 
     // Settings
     Route::get('/settings', [AdminController::class , 'settings'])->name('settings');
-    Route::post('/settings/change-password', [AdminController::class , 'changePassword'])->name('settings.change-password');
     Route::post('/settings/add-admin', [AdminController::class , 'addAdmin'])->name('settings.add-admin');
     Route::post('/settings/update-admin/{id}', [AdminController::class , 'updateAdmin'])->name('settings.update-admin');
     Route::post('/settings/delete-admin/{id}', [AdminController::class , 'deleteAdmin'])->name('settings.delete-admin');

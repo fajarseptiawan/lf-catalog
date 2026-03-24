@@ -160,11 +160,20 @@ class AdminController extends Controller
             'purchase_price' => 'required|numeric',
             'stock' => 'required|integer',
             'description' => 'required',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'images.*' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $data = $request->only(['name', 'category', 'price', 'purchase_price', 'stock', 'description']);
         $data['slug'] = \Illuminate\Support\Str::slug($request->name);
+
+        // Pastikan slug unik (kecuali milik produk ini sendiri)
+        $originalSlug = $data['slug'];
+        $counter = 2;
+        while (Product::where('slug', $data['slug'])->where('id', '!=', $product->id)->exists()) {
+            $data['slug'] = $originalSlug . '-' . $counter;
+            $counter++;
+        }
 
         if ($request->hasFile('image')) {
             $imageName = time() . '.' . $request->image->extension();
@@ -315,23 +324,7 @@ class AdminController extends Controller
         return view('admin.settings', compact('admins'));
     }
 
-    public function changePassword(Request $request)
-    {
-        $request->validate([
-            'current_password' => 'required',
-            'new_password' => 'required|min:6|confirmed',
-        ]);
 
-        $user = Auth::user();
-
-        if (!Hash::check($request->current_password, $user->password)) {
-            return back()->withErrors(['current_password' => 'Password lama tidak sesuai.']);
-        }
-
-        $user->update(['password' => $request->new_password]);
-
-        return back()->with('success', 'Password berhasil diubah.');
-    }
 
     public function addAdmin(Request $request)
     {
@@ -374,6 +367,13 @@ class AdminController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email|unique:users,email,' . $admin->id,
             'password' => 'nullable|min:6|confirmed',
+        ], [
+            'name.required' => 'Nama wajib diisi.',
+            'email.required' => 'Email wajib diisi.',
+            'email.email' => 'Format email tidak valid.',
+            'email.unique' => 'Email ini sudah digunakan admin lain.',
+            'password.min' => 'Password minimal 6 karakter.',
+            'password.confirmed' => 'Konfirmasi password tidak cocok.',
         ]);
 
         $admin->name = $request->name;
