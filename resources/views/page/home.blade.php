@@ -521,7 +521,7 @@
                 <!-- Overlay -->
                 <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
 
-                <!-- Play Button -->
+                <!-- Play Buttonnn -->
                 <div class="absolute inset-0 flex items-center justify-center">
                     <div class="bg-white/80 p-4 rounded-full group-hover:scale-110 transition">
                         ▶
