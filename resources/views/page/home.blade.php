@@ -264,26 +264,26 @@
                 <!-- Container harus overflow-x-auto dan scroll-smooth -->
                 <div class="flex overflow-x-auto scroll-smooth no-scrollbar" data-carousel-items-container>
                     <!-- Items dengan flex: 0 0 20% agar 5 item muncul, tambahkan min-w untuk konsistensi di HP -->
-                    <a href="{{ route('category', 'charger') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'kaoskakibs') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/charger.png') }}" alt="Power Banks"
+                            <img src="{{ asset('img/tes.png') }}" alt="Power Banks"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
-                            <span class="mt-3 font-semibold text-center text-gray-900">Charger Iphone</span>
+                            <span class="mt-3 font-semibold text-center text-gray-900">Kaos Kaki</span>
                         </div>
                     </a>
-                    <a href="{{ route('category', 'temperedglass') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'sepatubs') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/temperedglass.png') }}" alt="Chargers"
+                            <img src="{{ asset('img/tes.png') }}" alt="Chargers"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
-                            <span class="mt-3 font-semibold text-center text-gray-900">Tempered Glass</span>
+                            <span class="mt-3 font-semibold text-center text-gray-900">Sepatu</span>
                         </div>
                     </a>
-                    <a href="{{ route('category', 'iphone13') }}"
+                    <a href="{{ route('category', 'bajubs') }}"
                         class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/13series.jpg') }}" alt="Wireless Chargers"
+                            <img src="{{ asset('img/tes.png') }}" alt="Wireless Chargers"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
-                            <span class="mt-3 font-semibold text-center text-gray-900">Iphone 13 Series</span>
+                            <span class="mt-3 font-semibold text-center text-gray-900">Baju</span>
                         </div>
                     </a>
                     <a href="{{ route('category', 'iphone14') }}"

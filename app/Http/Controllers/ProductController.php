@@ -38,6 +38,9 @@ class ProductController extends Controller
             'softlens' => 'page.pagesoftlens',
             'charger' => 'page.pagecharger',
             'temperedglass' => 'page.pagetemperedglass',
+            'sepatubs' => 'page.sepatubs',
+            'kaoskakibs' => 'page.kaoskakibs',
+            'bajubs' => 'page.bajubs',
         ];
 
         $view = $viewMap[$category] ?? 'page.category';
