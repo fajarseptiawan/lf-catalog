@@ -47,8 +47,8 @@
         </div>
         <hr class="my-6 border-default sm:mx-auto lg:my-8" />
         <div class="sm:flex sm:items-center sm:justify-between">
-            <span class="text-sm text-body sm:text-center">© 2023 <a href="https://flowbite.com/"
-                    class="hover:underline">Flowbite™</a>. All Rights Reserved.
+            <span class="text-sm text-body sm:text-center">© 2026 <a href="https://flowbite.com/"
+                    class="hover:underline">LF Catalog™</a>. All Rights Reserved.
             </span>
             <div class="flex mt-4 sm:justify-center sm:mt-0">
                 <a href="#" class="text-body hover:text-heading">
