@@ -43,7 +43,7 @@ class OrderController extends Controller
             "*Alamat:* " . $request->address . PHP_EOL . PHP_EOL .
             "Link produk: " . route('product.detail', $product->slug);
 
-        $waUrl = "https://wa.me/6285231445771?text=" . urlencode($waMessage);
+        $waUrl = "https://wa.me/6281341912544?text=" . urlencode($waMessage);
 
         return redirect()->away($waUrl);
     }

@@ -256,7 +256,7 @@
 
     <section
         class="max-w-7xl mx-auto px-6 py-10 reveal-left opacity-0 translate-y-20 transition-all duration-1000 ease-out">
-        <h2 class="text-center text-xl font-semibold mb-8">Jelajahi Aksesoris Iphone</h2>
+        <h2 class="text-center text-xl font-semibold mb-8">Jelajahi Produk Sport Basket</h2>
 
         <div id="carousel-multi" class="relative" data-carousel="static">
             <!-- Carousel wrapper -->
@@ -349,7 +349,7 @@
 
     <section
         class="max-w-7xl mx-auto px-6 py-10 reveal-left opacity-0 translate-y-20 transition-all duration-1000 ease-out">
-        <h2 class="text-center text-xl font-semibold mb-8">Jelajahi Produk Kosmetik</h2>
+        <h2 class="text-center text-xl font-semibold mb-8">Jelajahi Sport Futsal</h2>
 
         <div id="carousel-multi-2" class="relative" data-carousel="static">
             <!-- Carousel wrapper -->
