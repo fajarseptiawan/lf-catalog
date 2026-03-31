@@ -27,6 +27,19 @@ class AuthController extends Controller
                 return redirect()->intended('admin/dashboard');
             }
 
+            if (Auth::user()->is_mitra) {
+                $mitra = Auth::user()->mitra;
+                if (!$mitra || !$mitra->is_active) {
+                    Auth::logout();
+                    $request->session()->invalidate();
+                    $request->session()->regenerateToken();
+                    return back()->withErrors([
+                        'email' => 'Akun mitra Anda tidak aktif. Hubungi admin.',
+                    ])->onlyInput('email');
+                }
+                return redirect()->intended('mitra/dashboard');
+            }
+
             return redirect()->intended('/');
         }
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Models\Order;
 use App\Models\Product;
+use App\Services\TelegramService;
 
 class OrderController extends Controller
 {
@@ -31,6 +32,10 @@ class OrderController extends Controller
             'status' => 'pending',
         ]);
 
+        // Dispatch Telegram notification to mitra via queue
+        $order->load('product.mitra');
+        TelegramService::dispatchMitraNotifications($order);
+
         $waMessage = "Halo LF Catalog, saya ingin memesan produk:" . PHP_EOL . PHP_EOL .
             "*Produk:* " . $product->name . PHP_EOL .
             "*Harga:* Rp " . number_format($product->price, 0, ',', '.') . PHP_EOL .
@@ -43,8 +48,9 @@ class OrderController extends Controller
             "*Alamat:* " . $request->address . PHP_EOL . PHP_EOL .
             "Link produk: " . route('product.detail', $product->slug);
 
-        $waUrl = "https://wa.me/6281341912544?text=" . urlencode($waMessage);
+        $waUrl = "https://wa.me/6285231445771?text=" . urlencode($waMessage);
 
         return redirect()->away($waUrl);
     }
 }
+

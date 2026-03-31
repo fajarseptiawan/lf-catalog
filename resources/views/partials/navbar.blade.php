@@ -4,15 +4,23 @@
             <img src="{{ asset('img/logo_lfc.png') }}" class="h-16 max-h-10 object-contain" alt="LF_Catalog Logo" />
             <span class="self-center text-xl font-semibold whitespace-nowrap text-heading"><img src="{{ asset('img/logo_lfc3.png') }}" class="h-6 object-contain" alt="LF_Catalog Logo" /></span>
         </a>
-        <button data-collapse-toggle="mega-menu-full-image" type="button"
-            class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-lg md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-default"
-            aria-controls="mega-menu-full-image" aria-expanded="false">
+        <div class="flex items-center gap-2 md:order-2">
+            <a href="/cart" class="relative p-2 text-gray-600 hover:text-gray-900 transition" title="Keranjang">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 100 4 2 2 0 000-4z"></path>
+                </svg>
+                <span id="cart-badge" class="hidden absolute -top-0.5 -right-0.5 bg-red-600 text-white text-[10px] font-bold w-5 h-5 rounded-full flex items-center justify-center">0</span>
+            </a>
+            <button data-collapse-toggle="mega-menu-full-image" type="button"
+                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-body rounded-lg md:hidden hover:bg-neutral-secondary-soft hover:text-heading focus:outline-none focus:ring-2 focus:ring-default"
+                aria-controls="mega-menu-full-image" aria-expanded="false">
             <span class="sr-only">Open main menu</span>
             <svg class="w-6 h-6" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
                 fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14" />
             </svg>
         </button>
+        </div>
         <div id="mega-menu-full-image" class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1">
             <ul class="flex flex-col mt-4 font-medium md:flex-row md:mt-0 md:space-x-8 rtl:space-x-reverse">
                 <li>

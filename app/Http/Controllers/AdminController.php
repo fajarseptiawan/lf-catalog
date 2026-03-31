@@ -9,6 +9,7 @@ use App\Models\Product;
 use App\Models\Order;
 use App\Models\StockHistory;
 use App\Models\User;
+use App\Models\Mitra;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -20,33 +21,54 @@ class AdminController extends Controller
         $ordersCount = Order::where('status', 'paid')->count();
         $pendingOrders = Order::where('status', 'pending')->count();
 
-        // Income statistics
-        $incomeToday = Order::where('orders.status', 'paid')
+        // Income statistics — combine legacy orders (product_id) + multi-item orders (order_items)
+        $legacyIncomeToday = Order::where('orders.status', 'paid')
+            ->whereNotNull('orders.product_id')
             ->whereDate('orders.created_at', now()->today())
             ->join('products', 'orders.product_id', '=', 'products.id')
             ->sum(DB::raw('products.price * orders.quantity'));
+        $multiIncomeToday = DB::table('order_items')
+            ->join('orders', 'order_items.order_id', '=', 'orders.id')
+            ->where('orders.status', 'paid')
+            ->whereDate('orders.created_at', now()->today())
+            ->sum(DB::raw('order_items.price * order_items.quantity'));
+        $incomeToday = $legacyIncomeToday + $multiIncomeToday;
 
-        $incomeMonth = Order::where('orders.status', 'paid')
+        $legacyIncomeMonth = Order::where('orders.status', 'paid')
+            ->whereNotNull('orders.product_id')
             ->whereMonth('orders.created_at', now()->month)
             ->whereYear('orders.created_at', now()->year)
             ->join('products', 'orders.product_id', '=', 'products.id')
             ->sum(DB::raw('products.price * orders.quantity'));
+        $multiIncomeMonth = DB::table('order_items')
+            ->join('orders', 'order_items.order_id', '=', 'orders.id')
+            ->where('orders.status', 'paid')
+            ->whereMonth('orders.created_at', now()->month)
+            ->whereYear('orders.created_at', now()->year)
+            ->sum(DB::raw('order_items.price * order_items.quantity'));
+        $incomeMonth = $legacyIncomeMonth + $multiIncomeMonth;
 
-        $incomeTotal = Order::where('orders.status', 'paid')
+        $legacyIncomeTotal = Order::where('orders.status', 'paid')
+            ->whereNotNull('orders.product_id')
             ->join('products', 'orders.product_id', '=', 'products.id')
             ->sum(DB::raw('products.price * orders.quantity'));
+        $multiIncomeTotal = DB::table('order_items')
+            ->join('orders', 'order_items.order_id', '=', 'orders.id')
+            ->where('orders.status', 'paid')
+            ->sum(DB::raw('order_items.price * order_items.quantity'));
+        $incomeTotal = $legacyIncomeTotal + $multiIncomeTotal;
 
         // Total pengeluaran belanja = akumulasi semua pembelian stok (kumulatif)
         $totalExpenditure = StockHistory::sum('total_cost');
 
         // Pesanan yang belum terverifikasi (pending)
-        $pendingOrdersList = Order::with('product')
+        $pendingOrdersList = Order::with(['product', 'items.product'])
             ->where('status', 'pending')
             ->latest()
             ->get();
 
         // Pesanan yang sudah terverifikasi (paid)
-        $verifiedOrdersList = Order::with('product')
+        $verifiedOrdersList = Order::with(['product', 'items.product'])
             ->where('status', 'paid')
             ->latest()
             ->get();
@@ -66,14 +88,15 @@ class AdminController extends Controller
 
     public function products()
     {
-        $products = Product::latest()->get();
+        $products = Product::with('mitra')->latest()->get();
         $stockHistories = StockHistory::with('product')->latest()->get();
         return view('admin.products.index', compact('products', 'stockHistories'));
     }
 
     public function createProduct()
     {
-        return view('admin.products.create');
+        $mitras = Mitra::orderBy('store_name')->get();
+        return view('admin.products.create', compact('mitras'));
     }
 
     public function storeProduct(Request $request)
@@ -92,6 +115,7 @@ class AdminController extends Controller
         try {
             $data = $request->only(['name', 'category', 'price', 'purchase_price', 'stock', 'description']);
             $data['is_temperedglass'] = $request->has('is_temperedglass');
+            $data['mitra_id'] = $request->mitra_id ?: null;
 
             $data['slug'] = \Illuminate\Support\Str::slug($request->name);
 
@@ -147,7 +171,8 @@ class AdminController extends Controller
     public function editProduct($id)
     {
         $product = Product::findOrFail($id);
-        return view('admin.products.edit', compact('product'));
+        $mitras = Mitra::orderBy('store_name')->get();
+        return view('admin.products.edit', compact('product', 'mitras'));
     }
 
     public function updateProduct(Request $request, $id)
@@ -167,6 +192,7 @@ class AdminController extends Controller
 
         $data = $request->only(['name', 'category', 'price', 'purchase_price', 'stock', 'description']);
         $data['is_temperedglass'] = $request->has('is_temperedglass');
+        $data['mitra_id'] = $request->mitra_id ?: null;
         $data['slug'] = \Illuminate\Support\Str::slug($request->name);
 
         // Pastikan slug unik (kecuali milik produk ini sendiri)
@@ -284,16 +310,37 @@ class AdminController extends Controller
 
     public function orders()
     {
-        $orders = Order::with('product')->latest()->get();
+        $orders = Order::with(['product', 'items.product'])->latest()->get();
         return view('admin.orders.index', compact('orders'));
     }
 
     public function verifyOrder($id)
     {
-        $order = Order::findOrFail($id);
+        $order = Order::with('items.product')->findOrFail($id);
 
         if ($order->status === 'pending') {
+            // Multi-item order
+            if ($order->items->count() > 0) {
+                // Check stock for all items first
+                foreach ($order->items as $item) {
+                    if (!$item->product || $item->product->stock < $item->quantity) {
+                        $productName = $item->product?->name ?? 'Produk dihapus';
+                        return back()->with('error', "Stok \"{$productName}\" tidak mencukupi.");
+                    }
+                }
+                // Decrement stock for all items
+                foreach ($order->items as $item) {
+                    $item->product->decrement('stock', $item->quantity);
+                }
+                $order->update(['status' => 'paid']);
+                return back()->with('success', 'Pesanan berhasil diverifikasi.');
+            }
+
+            // Legacy single-product order
             $product = $order->product;
+            if (!$product) {
+                return back()->with('error', 'Produk tidak ditemukan.');
+            }
             $quantity = $order->quantity ?? 1;
 
             if ($product->stock >= $quantity) {
@@ -400,5 +447,141 @@ class AdminController extends Controller
 
         $admin->delete();
         return back()->with('success', 'Admin berhasil dihapus.');
+    }
+
+    // ===== Mitra Management =====
+
+    public function mitras()
+    {
+        $mitras = Mitra::with('user')->latest()->get();
+        return view('admin.mitras.index', compact('mitras'));
+    }
+
+    public function storeMitra(Request $request)
+    {
+        $request->validate([
+            'store_name' => 'required|max:255',
+            'phone' => 'nullable|max:20',
+            'address' => 'nullable|max:500',
+            'telegram_chat_id' => 'nullable|max:50',
+            'name' => 'required|max:255',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required|min:6|confirmed',
+        ], [
+            'store_name.required' => 'Nama toko wajib diisi.',
+            'name.required' => 'Nama mitra wajib diisi.',
+            'email.required' => 'Email wajib diisi.',
+            'email.email' => 'Format email tidak valid.',
+            'email.unique' => 'Email ini sudah terdaftar.',
+            'password.required' => 'Password wajib diisi.',
+            'password.min' => 'Password minimal 6 karakter.',
+            'password.confirmed' => 'Konfirmasi password tidak cocok.',
+        ]);
+
+        $user = User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => $request->password,
+            'is_mitra' => true,
+        ]);
+
+        Mitra::create([
+            'user_id' => $user->id,
+            'store_name' => $request->store_name,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'telegram_chat_id' => $request->telegram_chat_id,
+        ]);
+
+        return back()->with('success', 'Mitra baru berhasil ditambahkan.');
+    }
+
+    public function updateMitra(Request $request, $id)
+    {
+        $mitra = Mitra::findOrFail($id);
+
+        $request->validate([
+            'store_name' => 'required|max:255',
+            'phone' => 'nullable|max:20',
+            'address' => 'nullable|max:500',
+            'telegram_chat_id' => 'nullable|max:50',
+            'name' => 'required|max:255',
+            'email' => 'required|email|unique:users,email,' . $mitra->user_id,
+            'password' => 'nullable|min:6|confirmed',
+        ], [
+            'store_name.required' => 'Nama toko wajib diisi.',
+            'name.required' => 'Nama mitra wajib diisi.',
+            'email.required' => 'Email wajib diisi.',
+            'email.email' => 'Format email tidak valid.',
+            'email.unique' => 'Email ini sudah digunakan.',
+            'password.min' => 'Password minimal 6 karakter.',
+            'password.confirmed' => 'Konfirmasi password tidak cocok.',
+        ]);
+
+        $mitra->update([
+            'store_name' => $request->store_name,
+            'phone' => $request->phone,
+            'address' => $request->address,
+            'telegram_chat_id' => $request->telegram_chat_id,
+        ]);
+
+        $user = $mitra->user;
+        $user->name = $request->name;
+        $user->email = $request->email;
+        if ($request->filled('password')) {
+            $user->password = $request->password;
+        }
+        $user->save();
+
+        return back()->with('success', 'Data mitra berhasil diperbarui.');
+    }
+
+    public function deleteMitra($id)
+    {
+        $mitra = Mitra::findOrFail($id);
+        $user = $mitra->user;
+
+        // Nullify mitra_id on products so they remain
+        Product::where('mitra_id', $mitra->id)->update(['mitra_id' => null]);
+
+        $mitra->delete();
+        $user->delete();
+
+        return back()->with('success', 'Mitra berhasil dihapus.');
+    }
+
+    public function toggleMitraStatus($id)
+    {
+        $mitra = Mitra::findOrFail($id);
+        $mitra->update(['is_active' => !$mitra->is_active]);
+
+        $status = $mitra->is_active ? 'diaktifkan' : 'dinonaktifkan';
+        return back()->with('success', "Mitra {$mitra->store_name} berhasil {$status}.");
+    }
+
+    // ===== Telegram Sync =====
+
+    public function syncTelegram()
+    {
+        $telegram = new \App\Services\TelegramService();
+        $linked = $telegram->syncMitraChatIds();
+
+        if (count($linked) > 0) {
+            $names = collect($linked)->pluck('mitra')->join(', ');
+            return back()->with('success', "Berhasil menghubungkan Telegram untuk: {$names}");
+        }
+
+        return back()->with('info', 'Tidak ada mitra baru yang terhubung. Pastikan mitra sudah mengirim /start KODE ke bot.');
+    }
+
+    public function regenerateLinkCode($id)
+    {
+        $mitra = Mitra::findOrFail($id);
+        $mitra->update([
+            'telegram_link_code' => Mitra::generateLinkCode(),
+            'telegram_chat_id'   => null,
+        ]);
+
+        return back()->with('success', "Kode link Telegram untuk {$mitra->store_name} berhasil di-reset.");
     }
 }

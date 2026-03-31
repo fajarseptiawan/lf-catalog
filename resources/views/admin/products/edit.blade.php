@@ -120,6 +120,16 @@
                     <input type="number" name="stock" value="{{ old('stock', $product->stock) }}" min="0" step="1" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition outline-none @error('stock') border-red-400 @enderror" required>
                     @error('stock')<p class="text-red-500 text-xs mt-1">{{ $message }}</p>@enderror
                 </div>
+                <div>
+                    <label class="block text-sm font-semibold text-gray-700 mb-2">Mitra Pemilik Produk</label>
+                    <select name="mitra_id" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition outline-none">
+                        <option value="">-- Tanpa Mitra (Milik Admin) --</option>
+                        @foreach($mitras as $mitra)
+                            <option value="{{ $mitra->id }}" {{ old('mitra_id', $product->mitra_id) == $mitra->id ? 'selected' : '' }}>{{ $mitra->store_name }}</option>
+                        @endforeach
+                    </select>
+                    <p class="text-xs text-gray-500 mt-1">Opsional — pilih mitra jika produk ini milik mitra tertentu.</p>
+                </div>
             </div>
 
             <div class="mb-8">

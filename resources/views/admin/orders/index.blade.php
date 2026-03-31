@@ -96,35 +96,54 @@
                 </thead>
                 <tbody class="divide-y divide-gray-100" id="orderTableBody">
                     @forelse($orders as $index => $order)
+                    @php
+                        $isMulti = $order->items->count() > 0;
+                        $firstProduct = $isMulti ? $order->items->first()->product : $order->product;
+                        $displayPrice = $isMulti ? $order->items->first()->price : ($order->product->price ?? 0);
+                        $displayQty = $isMulti ? $order->items->sum('quantity') : ($order->quantity ?? 1);
+                        $displayTotal = $isMulti ? $order->items->sum(fn($i) => $i->price * $i->quantity) : (($order->product->price ?? 0) * ($order->quantity ?? 1));
+                    @endphp
                     <tr class="hover:bg-gray-50 transition order-row"
-                        data-search="{{ strtolower($order->customer_name . ' ' . $order->customer_phone . ' ' . $order->product->name . ' ' . $order->address) }}"
+                        data-search="{{ strtolower($order->customer_name . ' ' . $order->customer_phone . ' ' . ($firstProduct->name ?? '') . ' ' . $order->address . ' ' . $order->invoice_code) }}"
                         data-date="{{ $order->created_at->format('Y-m-d') }}"
                         data-status="{{ $order->status }}"
-                        data-product-name="{{ $order->product->name }}"
+                        data-product-name="{{ $firstProduct->name ?? '-' }}"
                         data-customer-name="{{ $order->customer_name }}"
                         data-customer-phone="{{ $order->customer_phone }}"
-                        data-price="{{ $order->product->price }}"
-                        data-quantity="{{ $order->quantity ?? 1 }}"
-                        data-total="{{ $order->product->price * ($order->quantity ?? 1) }}"
+                        data-price="{{ $displayPrice }}"
+                        data-quantity="{{ $displayQty }}"
+                        data-total="{{ $displayTotal }}"
                         data-order-date="{{ $order->created_at->format('d/m/Y H:i') }}">
                         <td class="px-6 py-4 text-sm text-gray-500 order-row-number">{{ $index + 1 }}</td>
                         <td class="px-6 py-4 font-mono text-sm text-gray-500">
-                            #{{ str_pad($order->id, 5, '0', STR_PAD_LEFT) }}
+                            {{ $order->invoice_code ? $order->invoice_code : '#' . str_pad($order->id, 5, '0', STR_PAD_LEFT) }}
                         </td>
                         <td class="px-6 py-4">
-                            <div class="flex items-center gap-3">
-                                <img src="{{ asset($order->product->image) }}" alt="" class="w-10 h-10 object-contain bg-gray-50 rounded-lg border border-gray-100 p-1">
-                                <div class="font-semibold text-gray-900 text-sm">{{ $order->product->name }}</div>
-                            </div>
+                            @if($isMulti)
+                                <div class="flex items-center gap-3">
+                                    <img src="{{ asset($firstProduct->image ?? 'img/tes.png') }}" alt="" class="w-10 h-10 object-contain bg-gray-50 rounded-lg border border-gray-100 p-1">
+                                    <div>
+                                        <div class="font-semibold text-gray-900 text-sm">{{ $firstProduct->name ?? '-' }}</div>
+                                        @if($order->items->count() > 1)
+                                            <div class="text-xs text-blue-500 font-medium">+{{ $order->items->count() - 1 }} produk lain</div>
+                                        @endif
+                                    </div>
+                                </div>
+                            @else
+                                <div class="flex items-center gap-3">
+                                    <img src="{{ asset($order->product->image ?? 'img/tes.png') }}" alt="" class="w-10 h-10 object-contain bg-gray-50 rounded-lg border border-gray-100 p-1">
+                                    <div class="font-semibold text-gray-900 text-sm">{{ $order->product->name ?? '-' }}</div>
+                                </div>
+                            @endif
                         </td>
                         <td class="px-6 py-4 text-sm font-medium text-gray-900">
-                            Rp {{ number_format($order->product->price, 0, ',', '.') }}
+                            Rp {{ number_format($displayPrice, 0, ',', '.') }}
                         </td>
                         <td class="px-6 py-4 text-sm font-semibold text-gray-900 text-center">
-                            {{ $order->quantity ?? 1 }}
+                            {{ $displayQty }}
                         </td>
                         <td class="px-6 py-4 text-sm font-bold text-gray-900">
-                            Rp {{ number_format($order->product->price * ($order->quantity ?? 1), 0, ',', '.') }}
+                            Rp {{ number_format($displayTotal, 0, ',', '.') }}
                         </td>
                         <td class="px-6 py-4">
                             <div class="text-sm font-medium text-gray-900">{{ $order->customer_name }}</div>

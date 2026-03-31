@@ -122,24 +122,47 @@
             </thead>
             <tbody class="divide-y divide-gray-100">
                 @forelse($pendingOrdersList as $order)
+                @php
+                    $isMulti = $order->items->count() > 0;
+                    if ($isMulti) {
+                        $orderItems = $order->items->filter(fn($i) => $i->product);
+                        $firstProduct = $orderItems->first()?->product;
+                        $totalQty = $orderItems->sum('quantity');
+                        $totalPrice = $orderItems->sum(fn($i) => $i->price * $i->quantity);
+                        $productNames = $orderItems->map(fn($i) => $i->product->name)->join(', ');
+                    } else {
+                        $firstProduct = $order->product;
+                        $totalQty = $order->quantity ?? 1;
+                        $totalPrice = $firstProduct ? ($firstProduct->price * $totalQty) : 0;
+                        $productNames = $firstProduct?->name ?? 'Produk dihapus';
+                    }
+                @endphp
+                @if($isMulti || $firstProduct)
                 <tr class="hover:bg-gray-50 transition">
                     <td class="px-6 py-4 font-mono text-sm text-gray-500">
                         #{{ str_pad($order->id, 5, '0', STR_PAD_LEFT) }}
                     </td>
                     <td class="px-6 py-4">
                         <div class="flex items-center gap-3">
-                            <img src="{{ asset($order->product->image) }}" alt="{{ $order->product->name }}" class="w-10 h-10 object-contain bg-gray-50 rounded-lg border border-gray-100 p-1">
-                            <div class="font-semibold text-gray-900 text-sm">{{ $order->product->name }}</div>
+                            @if($firstProduct)
+                            <img src="{{ asset($firstProduct->image) }}" alt="{{ $firstProduct->name }}" class="w-10 h-10 object-contain bg-gray-50 rounded-lg border border-gray-100 p-1">
+                            @endif
+                            <div>
+                                <div class="font-semibold text-gray-900 text-sm">{{ $productNames }}</div>
+                                @if($isMulti && $orderItems->count() > 1)
+                                <div class="text-xs text-gray-400">{{ $orderItems->count() }} produk</div>
+                                @endif
+                            </div>
                         </div>
                     </td>
                     <td class="px-6 py-4 text-sm font-medium text-gray-900">
-                        Rp {{ number_format($order->product->price, 0, ',', '.') }}
+                        Rp {{ number_format($totalPrice / max($totalQty, 1), 0, ',', '.') }}
                     </td>
                     <td class="px-6 py-4 text-sm font-semibold text-gray-900 text-center">
-                        {{ $order->quantity ?? 1 }}
+                        {{ $totalQty }}
                     </td>
                     <td class="px-6 py-4 text-sm font-bold text-gray-900">
-                        Rp {{ number_format($order->product->price * ($order->quantity ?? 1), 0, ',', '.') }}
+                        Rp {{ number_format($totalPrice, 0, ',', '.') }}
                     </td>
                     <td class="px-6 py-4">
                         <div class="text-sm font-medium text-gray-900">{{ $order->customer_name }}</div>
@@ -168,6 +191,7 @@
                         </div>
                     </td>
                 </tr>
+                @endif
                 @empty
                 <tr>
                     <td colspan="9" class="px-6 py-12 text-center text-gray-400 italic">
@@ -243,13 +267,29 @@
             </thead>
             <tbody class="divide-y divide-gray-100" id="verifiedTableBody">
                 @forelse($verifiedOrdersList as $index => $order)
+                @php
+                    $isMultiV = $order->items->count() > 0;
+                    if ($isMultiV) {
+                        $vItems = $order->items->filter(fn($i) => $i->product);
+                        $vFirstProduct = $vItems->first()?->product;
+                        $vTotalQty = $vItems->sum('quantity');
+                        $vTotalPrice = $vItems->sum(fn($i) => $i->price * $i->quantity);
+                        $vProductNames = $vItems->map(fn($i) => $i->product->name)->join(', ');
+                    } else {
+                        $vFirstProduct = $order->product;
+                        $vTotalQty = $order->quantity ?? 1;
+                        $vTotalPrice = $vFirstProduct ? ($vFirstProduct->price * $vTotalQty) : 0;
+                        $vProductNames = $vFirstProduct?->name ?? 'Produk dihapus';
+                    }
+                @endphp
+                @if($isMultiV && $vItems->count() > 0 || !$isMultiV && $vFirstProduct)
                 <tr class="hover:bg-gray-50 transition verified-row"
-                    data-search="{{ strtolower($order->customer_name . ' ' . $order->customer_phone . ' ' . $order->product->name . ' ' . $order->address) }}"
+                    data-search="{{ strtolower($order->customer_name . ' ' . $order->customer_phone . ' ' . $vProductNames . ' ' . $order->address) }}"
                     data-date="{{ $order->created_at->format('Y-m-d') }}"
-                    data-price-raw="{{ $order->product->price }}"
-                    data-quantity="{{ $order->quantity ?? 1 }}"
-                    data-total="{{ $order->product->price * ($order->quantity ?? 1) }}"
-                    data-product-name="{{ $order->product->name }}"
+                    data-price-raw="{{ $vTotalPrice }}"
+                    data-quantity="{{ $vTotalQty }}"
+                    data-total="{{ $vTotalPrice }}"
+                    data-product-name="{{ $vProductNames }}"
                     data-customer-name="{{ $order->customer_name }}"
                     data-customer-phone="{{ $order->customer_phone }}"
                     data-order-date="{{ $order->created_at->format('d/m/Y H:i') }}">
@@ -259,18 +299,25 @@
                     </td>
                     <td class="px-6 py-4">
                         <div class="flex items-center gap-3">
-                            <img src="{{ asset($order->product->image) }}" alt="{{ $order->product->name }}" class="w-10 h-10 object-contain bg-gray-50 rounded-lg border border-gray-100 p-1">
-                            <div class="font-semibold text-gray-900 text-sm">{{ $order->product->name }}</div>
+                            @if($vFirstProduct)
+                            <img src="{{ asset($vFirstProduct->image) }}" alt="{{ $vFirstProduct->name }}" class="w-10 h-10 object-contain bg-gray-50 rounded-lg border border-gray-100 p-1">
+                            @endif
+                            <div>
+                                <div class="font-semibold text-gray-900 text-sm">{{ $vProductNames }}</div>
+                                @if($isMultiV && $vItems->count() > 1)
+                                <div class="text-xs text-gray-400">{{ $vItems->count() }} produk</div>
+                                @endif
+                            </div>
                         </div>
                     </td>
                     <td class="px-6 py-4 text-sm font-medium text-gray-900">
-                        Rp {{ number_format($order->product->price, 0, ',', '.') }}
+                        Rp {{ number_format($vTotalPrice / max($vTotalQty, 1), 0, ',', '.') }}
                     </td>
                     <td class="px-6 py-4 text-sm font-semibold text-gray-900 text-center">
-                        {{ $order->quantity ?? 1 }}
+                        {{ $vTotalQty }}
                     </td>
                     <td class="px-6 py-4 text-sm font-bold text-gray-900">
-                        Rp {{ number_format($order->product->price * ($order->quantity ?? 1), 0, ',', '.') }}
+                        Rp {{ number_format($vTotalPrice, 0, ',', '.') }}
                     </td>
                     <td class="px-6 py-4">
                         <div class="text-sm font-medium text-gray-900">{{ $order->customer_name }}</div>
@@ -291,10 +338,10 @@
                             data-name="{{ $order->customer_name }}"
                             data-phone="{{ $order->customer_phone }}"
                             data-address="{{ $order->address }}"
-                            data-product="{{ $order->product->name }}"
-                            data-price="Rp {{ number_format($order->product->price, 0, ',', '.') }}"
-                            data-quantity="{{ $order->quantity ?? 1 }}"
-                            data-total="Rp {{ number_format($order->product->price * ($order->quantity ?? 1), 0, ',', '.') }}"
+                            data-product="{{ $vProductNames }}"
+                            data-price="Rp {{ number_format($vTotalPrice / max($vTotalQty, 1), 0, ',', '.') }}"
+                            data-quantity="{{ $vTotalQty }}"
+                            data-total="Rp {{ number_format($vTotalPrice, 0, ',', '.') }}"
                             data-date="{{ $order->created_at->format('d/m/Y H:i') }}"
                             class="inline-flex items-center gap-1.5 px-3 py-2 bg-gray-900 hover:bg-black text-white rounded-lg text-xs font-semibold transition">
                             <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -304,6 +351,7 @@
                         </button>
                     </td>
                 </tr>
+                @endif
                 @empty
                 <tr id="emptyVerifiedRow">
                     <td colspan="11" class="px-6 py-12 text-center text-gray-400 italic">

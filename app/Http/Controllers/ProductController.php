@@ -53,4 +53,9 @@ class ProductController extends Controller
         $product = Product::where('slug', $slug)->firstOrFail();
         return view('page.detail', compact('product'));
     }
+
+    public function cart()
+    {
+        return view('page.cart');
+    }
 }

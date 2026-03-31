@@ -43,6 +43,7 @@
                         <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">No</th>
                         <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Produk</th>
                         <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Kategori</th>
+                        <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Mitra</th>
                         <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Harga Beli</th>
                         <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Harga Jual</th>
                         <th class="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Stok</th>
@@ -52,7 +53,7 @@
                 <tbody class="divide-y divide-gray-100" id="productTableBody">
                     @forelse($products as $index => $product)
                     <tr class="hover:bg-gray-50 transition product-row"
-                        data-search="{{ strtolower($product->name . ' ' . $product->category) }}"
+                        data-search="{{ strtolower($product->name . ' ' . $product->category . ' ' . ($product->mitra->store_name ?? '')) }}"
                         data-name="{{ $product->name }}"
                         data-category="{{ $product->category }}"
                         data-purchase-price="{{ $product->purchase_price }}"
@@ -69,6 +70,13 @@
                         </td>
                         <td class="px-6 py-4">
                             <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-xs font-medium">{{ ucfirst($product->category) }}</span>
+                        </td>
+                        <td class="px-6 py-4">
+                            @if($product->mitra)
+                                <span class="px-3 py-1 bg-indigo-50 text-indigo-700 rounded-full text-xs font-medium">{{ $product->mitra->store_name }}</span>
+                            @else
+                                <span class="text-gray-400 text-xs">—</span>
+                            @endif
                         </td>
                         <td class="px-6 py-4 font-medium text-gray-500">
                             Rp {{ number_format($product->purchase_price, 0, ',', '.') }}
@@ -94,7 +102,7 @@
                     </tr>
                     @empty
                     <tr>
-                        <td colspan="7" class="px-6 py-12 text-center text-gray-400 italic">
+                        <td colspan="8" class="px-6 py-12 text-center text-gray-400 italic">
                             Belum ada produk.
                         </td>
                     </tr>
