@@ -11,27 +11,32 @@
             <!-- Item 1 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src="{{ asset('img/sl1new.png') }}"
-                    class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                    alt="...">
             </div>
             <!-- Item 2 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src="{{ asset('img/sl2.jpg') }}"
-                    class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                    alt="...">
             </div>
             <!-- Item 3 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src="{{ asset('img/sl3.jpg') }}"
-                    class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                    alt="...">
             </div>
             <!-- Item 4 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src="{{ asset('img/sl4.jpg') }}"
-                    class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                    alt="...">
             </div>
             <!-- Item 5 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
                 <img src="{{ asset('img/sl2.jpg') }}"
-                    class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                    class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                    alt="...">
             </div>
         </div>
         <!-- Slider indicators -->
@@ -144,7 +149,8 @@
                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-8 z-10">
-                        <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-1 sm:mb-2">Judul Produk 1</h3>
+                        <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-1 sm:mb-2">Judul Produk 1
+                        </h3>
                         <p class="text-xs sm:text-sm text-white/80 mb-3 sm:mb-5 font-medium">Deskripsi singkat produk 1</p>
                         <span
                             class="inline-block px-6 sm:px-10 py-2 sm:py-2.5 border-2 border-white text-white rounded-full text-xs sm:text-sm font-bold hover:bg-white hover:text-gray-900 transition-all transform group-hover:scale-105">
@@ -162,7 +168,8 @@
                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-8 z-10">
-                        <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-1 sm:mb-2">Judul Produk 2</h3>
+                        <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-1 sm:mb-2">Judul Produk 2
+                        </h3>
                         <p class="text-xs sm:text-sm text-white/80 mb-3 sm:mb-5 font-medium">Deskripsi singkat produk 2</p>
                         <span
                             class="inline-block px-6 sm:px-10 py-2 sm:py-2.5 border-2 border-white text-white rounded-full text-xs sm:text-sm font-bold hover:bg-white hover:text-gray-900 transition-all transform group-hover:scale-105">
@@ -183,7 +190,8 @@
                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-10">
-                        <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-1 sm:mb-2">Judul Produk 3</h3>
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-1 sm:mb-2">Judul Produk 3
+                        </h3>
                         <p class="text-xs sm:text-sm text-white/80 mb-3 sm:mb-4 font-medium">Deskripsi singkat produk 3</p>
                         <span
                             class="inline-block px-5 sm:px-6 py-1.5 sm:py-2 border-2 border-white text-white rounded-full text-xs font-bold hover:bg-white hover:text-gray-900 transition-all transform group-hover:scale-105">
@@ -201,7 +209,8 @@
                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-10">
-                        <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-1 sm:mb-2">Judul Produk 4</h3>
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-1 sm:mb-2">Judul Produk 4
+                        </h3>
                         <p class="text-xs sm:text-sm text-white/80 mb-3 sm:mb-4 font-medium">Deskripsi singkat produk 4</p>
                         <span
                             class="inline-block px-5 sm:px-6 py-1.5 sm:py-2 border-2 border-white text-white rounded-full text-xs font-bold hover:bg-white hover:text-gray-900 transition-all transform group-hover:scale-105">
@@ -219,7 +228,8 @@
                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-10">
-                        <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-1 sm:mb-2">Judul Produk 5</h3>
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-1 sm:mb-2">Judul Produk 5
+                        </h3>
                         <p class="text-xs sm:text-sm text-white/80 mb-3 sm:mb-4 font-medium">Deskripsi singkat produk 5</p>
                         <span
                             class="inline-block px-5 sm:px-6 py-1.5 sm:py-2 border-2 border-white text-white rounded-full text-xs font-bold hover:bg-white hover:text-gray-900 transition-all transform group-hover:scale-105">
@@ -241,7 +251,8 @@
                 <!-- Container overflow-x-auto dan scroll-smooth -->
                 <div class="flex overflow-x-auto scroll-smooth no-scrollbar" data-carousel-items-container>
                     <!-- iPhone 13 Series -->
-                    <a href="{{ route('category', 'iphone13') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'iphone13') }}"
+                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/13series.jpg') }}" alt="iPhone 13 Series"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -249,7 +260,8 @@
                         </div>
                     </a>
                     <!-- iPhone 14 Series -->
-                    <a href="{{ route('category', 'iphone14') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'iphone14') }}"
+                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/14series.jpg') }}" alt="iPhone 14 Series"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -257,7 +269,8 @@
                         </div>
                     </a>
                     <!-- iPhone 15 Series -->
-                    <a href="{{ route('category', 'iphone15') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'iphone15') }}"
+                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/15series.jpg') }}" alt="iPhone 15 Series"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -265,7 +278,8 @@
                         </div>
                     </a>
                     <!-- iPhone 16 Series -->
-                    <a href="{{ route('category', 'iphone16') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'iphone16') }}"
+                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/16series.png') }}" alt="iPhone 16 Series"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -273,7 +287,8 @@
                         </div>
                     </a>
                     <!-- iPhone 17 Series -->
-                    <a href="{{ route('category', 'iphone17') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'iphone17') }}"
+                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/17series.png') }}" alt="iPhone 17 Series"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -281,7 +296,8 @@
                         </div>
                     </a>
                     <!-- Charger -->
-                    <a href="{{ route('category', 'charger') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'charger') }}"
+                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/charger.png') }}" alt="Charger iPhone"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -289,7 +305,8 @@
                         </div>
                     </a>
                     <!-- Tempered Glass -->
-                    <a href="{{ route('category', 'temperedglass') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'temperedglass') }}"
+                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/temperedglass.png') }}" alt="Tempered Glass"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -332,7 +349,8 @@
                 <!-- Container harus overflow-x-auto dan scroll-smooth -->
                 <div class="flex overflow-x-auto scroll-smooth no-scrollbar" data-carousel-items-container>
                     <!-- Kaos Kaki Basket -->
-                    <a href="{{ route('category', 'kaoskakibs') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'kaoskakibs') }}"
+                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/tes.png') }}" alt="Kaos Kaki Basket"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -340,7 +358,8 @@
                         </div>
                     </a>
                     <!-- Sepatu Basket -->
-                    <a href="{{ route('category', 'sepatubs') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'sepatubs') }}"
+                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/tes.png') }}" alt="Sepatu Basket"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -348,7 +367,8 @@
                         </div>
                     </a>
                     <!-- Baju Basket -->
-                    <a href="{{ route('category', 'bajubs') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'bajubs') }}"
+                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/tes.png') }}" alt="Baju Basket"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -602,8 +622,10 @@
                 </span>
 
                 <p class="mb-8 text-lg font-normal text-gray-600 lg:text-xl px-4">
-                    From kitchen counter to bedside table, UGREEN gives every corner of your home the power and order it
-                    needs, so you can focus on what matters most.
+                    LF Catalog is your practical solution for a wide range of lifestyle needs—from men’s fashion and
+                    cosmetics to sports accessories and the latest iPhone gear.
+                    We offer quality products at competitive prices, so you can stay confident without the hassle of
+                    shopping in multiple places.
                 </p>
 
                 <button type="button"
@@ -626,23 +648,23 @@
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
                 <div
                     class="reveal-up p-8 bg-white shadow-sm reveal-left opacity-0 translate-y-10 transition-all duration-700 delay-100">
-                    <p class="text-4xl font-extrabold text-gray-900">1950+</p>
-                    <p class="text-sm text-gray-500 uppercase mt-2">Patents</p>
+                    <p class="text-4xl font-extrabold text-gray-900">100+</p>
+                    <p class="text-sm text-gray-500 uppercase mt-2">orders</p>
                 </div>
                 <div
                     class="reveal-up p-8 bg-white shadow-sm reveal-left opacity-0 translate-y-10 transition-all duration-700 delay-200">
-                    <p class="text-4xl font-extrabold text-gray-900">180+</p>
-                    <p class="text-sm text-gray-500 uppercase mt-2">Countries</p>
+                    <p class="text-4xl font-extrabold text-gray-900">10+</p>
+                    <p class="text-sm text-gray-500 uppercase mt-2">Catalog</p>
                 </div>
                 <div
                     class="reveal-up p-8 bg-white shadow-sm reveal-left opacity-0 translate-y-10 transition-all duration-700 delay-300">
                     <p class="text-4xl font-extrabold text-gray-900">50+</p>
-                    <p class="text-sm text-gray-500 uppercase mt-2">Product Design Awards</p>
+                    <p class="text-sm text-gray-500 uppercase mt-2">Product</p>
                 </div>
                 <div
                     class="reveal-up p-8 bg-white shadow-sm reveal-left opacity-0 translate-y-10 transition-all duration-700 delay-400">
-                    <p class="text-4xl font-extrabold text-gray-900">200M+</p>
-                    <p class="text-sm text-gray-500 uppercase mt-2">Global Users</p>
+                    <p class="text-4xl font-extrabold text-gray-900">100+</p>
+                    <p class="text-sm text-gray-500 uppercase mt-2">Costumers</p>
                 </div>
             </div>
         </div>
@@ -660,8 +682,7 @@
             <!-- Video Item 1 -->
             <div class="relative group cursor-pointer video-card w-80 shrink-0 lg:w-full" data-video-id="X0porxgyJyg">
 
-                <img src="https://img.youtube.com/vi/X0porxgyJyg/hqdefault.jpg"
-                    class="w-full h-96 object-cover rounded-lg">
+                <img src="https://img.youtube.com/vi/X0porxgyJyg/hqdefault.jpg" class="w-full h-96 object-cover rounded-lg">
 
                 <!-- Overlay -->
                 <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
@@ -676,7 +697,7 @@
                 <!-- Caption -->
                 <div class="absolute bottom-4 left-4 text-white">
                     <p class="font-semibold">
-                        UGREEN Uno Series Review
+                        Tempered Glass Series Review
                     </p>
                     <span class="text-sm opacity-80">
                         @creatorname
@@ -687,8 +708,7 @@
             <!-- Video Item 2 -->
             <div class="relative group cursor-pointer video-card w-80 shrink-0 lg:w-full" data-video-id="VJdcqjutVtA">
 
-                <img src="https://img.youtube.com/vi/VJdcqjutVtA/hqdefault.jpg"
-                    class="w-full h-96 object-cover rounded-lg">
+                <img src="https://img.youtube.com/vi/VJdcqjutVtA/hqdefault.jpg" class="w-full h-96 object-cover rounded-lg">
 
                 <!-- Overlay -->
                 <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
@@ -703,7 +723,7 @@
                 <!-- Caption -->
                 <div class="absolute bottom-4 left-4 text-white">
                     <p class="font-semibold">
-                        Tech Gadget Unboxing
+                        Tempered Glass Unboxing
                     </p>
                     <span class="text-sm opacity-80">
                         @techreviewer
@@ -714,8 +734,7 @@
             <!-- Video Item 3 -->
             <div class="relative group cursor-pointer video-card w-80 shrink-0 lg:w-full" data-video-id="9bZkp7q19f0">
 
-                <img src="https://img.youtube.com/vi/9bZkp7q19f0/hqdefault.jpg"
-                    class="w-full h-96 object-cover rounded-lg">
+                <img src="https://img.youtube.com/vi/9bZkp7q19f0/hqdefault.jpg" class="w-full h-96 object-cover rounded-lg">
 
                 <!-- Overlay -->
                 <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
@@ -741,8 +760,7 @@
             <!-- Video Item 4 -->
             <div class="relative group cursor-pointer video-card w-80 shrink-0 lg:w-full" data-video-id="kJQP7kiw5Fk">
 
-                <img src="https://img.youtube.com/vi/kJQP7kiw5Fk/hqdefault.jpg"
-                    class="w-full h-96 object-cover rounded-lg">
+                <img src="https://img.youtube.com/vi/kJQP7kiw5Fk/hqdefault.jpg" class="w-full h-96 object-cover rounded-lg">
 
                 <!-- Overlay -->
                 <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
@@ -778,8 +796,8 @@
             </button>
 
             <div class="aspect-video">
-                <iframe id="youtubeFrame" class="w-full h-full rounded-lg" src=""
-                    allow="autoplay; encrypted-media" allowfullscreen>
+                <iframe id="youtubeFrame" class="w-full h-full rounded-lg" src="" allow="autoplay; encrypted-media"
+                    allowfullscreen>
                 </iframe>
             </div>
 
