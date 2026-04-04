@@ -56,60 +56,119 @@
     </div>
     <div id="mega-menu-full-image-dropdown"
         class=" hidden mt-1 bg-neutral-primary-soft border-default shadow-xs border-y">
-        <div class="grid max-w-7xl px-4 py-5 mx-auto text-sm text-body md:grid-cols-3 md:px-6">
-            <ul class="mb-4 space-y-4 md:mb-0 md:block" aria-labelledby="mega-menu-full-image-button">
-                <li>
-                    <a href="{{ route('category', 'iphone13')}}" class="hover:underline hover:text-fg-brand">
-                        Iphone Series 13
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('category', 'iphone14') }}" class="hover:underline hover:text-fg-brand">
-                        Iphone Series 14
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('category', 'iphone15') }}" class="hover:underline hover:text-fg-brand">
-                        Iphone Series 15
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('category', 'iphone16') }}" class="hover:underline hover:text-fg-brand">
-                        Iphone Series 16
-                    </a>
-                </li>
-            </ul>
-            <ul class="mb-4 space-y-4 md:mb-0">
-                <li>
-                    <a href="{{ route('category', 'iphone17') }}" class="hover:underline hover:text-fg-brand">
-                        Iphone Series 17
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('category', 'g2g') }}" class="hover:underline hover:text-fg-brand">
-                        Glad To Glow
-                    </a>
-                </li>
-                <li>
-                    <a href="{{ route('category', 'softlens') }}" class="hover:underline hover:text-fg-brand">
-                        Softlens
-                    </a>
-                </li>
-            </ul>
-            <a href="#" class="p-8 bg-local bg-dark bg-center bg-no-repeat bg-cover rounded-lg bg-blend-multiply"
-                style="background-image: url('{{ asset('img/tes.png') }}')">
-                <p class="max-w-xl mb-5 font-medium leading-tight tracking-tight text-white">Lihat Semua Produk</p>
-                <button type="button"
-                    class="inline-flex items-center px-3 py-1.5 text-xs font-medium text-center text-white border border-white rounded-lg hover:bg-white hover:text-dark focus:ring-4 focus:outline-none">
-                    See All Product
-                    <svg class="w-4 h-4 ms-1.5 -me-0.5 rtl:rotate-180" aria-hidden="true"
-                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none"
-                        viewBox="0 0 24 24">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M19 12H5m14 0-4 4m4-4-4-4" />
-                    </svg>
-                </button>
-            </a>
+        <div class="grid max-w-7xl px-4 py-5 mx-auto text-sm text-body md:grid-cols-3 md:px-6 gap-6">
+            {{-- Column 1: Aksesoris iPhone --}}
+            <div>
+                <h3 class="mb-3 font-bold text-heading text-base">Aksesoris iPhone</h3>
+                <ul class="space-y-3" aria-labelledby="mega-menu-full-image-button">
+                    <li>
+                        <a href="{{ route('category', 'iphone13')}}" class="hover:underline hover:text-fg-brand">
+                            iPhone 13 Series
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('category', 'iphone14') }}" class="hover:underline hover:text-fg-brand">
+                            iPhone 14 Series
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('category', 'iphone15') }}" class="hover:underline hover:text-fg-brand">
+                            iPhone 15 Series
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('category', 'iphone16') }}" class="hover:underline hover:text-fg-brand">
+                            iPhone 16 Series
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('category', 'iphone17') }}" class="hover:underline hover:text-fg-brand">
+                            iPhone 17 Series
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('category', 'charger') }}" class="hover:underline hover:text-fg-brand">
+                            Charger
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('category', 'temperedglass') }}" class="hover:underline hover:text-fg-brand">
+                            Tempered Glass
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            {{-- Column 2: Sport --}}
+            <div>
+                <h3 class="mb-3 font-bold text-heading text-base">Sport Basket</h3>
+                <ul class="space-y-3 mb-6">
+                    <li>
+                        <a href="{{ route('category', 'sepatubs') }}" class="hover:underline hover:text-fg-brand">
+                            Sepatu Basket
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('category', 'kaoskakibs') }}" class="hover:underline hover:text-fg-brand">
+                            Kaos Kaki Basket
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('category', 'bajubs') }}" class="hover:underline hover:text-fg-brand">
+                            Baju Basket
+                        </a>
+                    </li>
+                </ul>
+                <h3 class="mb-3 font-bold text-heading text-base">Sport Futsal</h3>
+                <ul class="space-y-3">
+                    <li>
+                        <span class="text-gray-400">Kaos Kaki</span>
+                    </li>
+                    <li>
+                        <span class="text-gray-400">Sepatu</span>
+                    </li>
+                    <li>
+                        <span class="text-gray-400">Baju</span>
+                    </li>
+                </ul>
+            </div>
+
+            {{-- Column 3: Fashion & Cosmetik --}}
+            <div>
+                <h3 class="mb-3 font-bold text-heading text-base">Fashion Pria</h3>
+                <ul class="space-y-3 mb-6">
+                    <li>
+                        <span class="text-gray-400">Baju</span>
+                    </li>
+                    <li>
+                        <span class="text-gray-400">Sendal</span>
+                    </li>
+                    <li>
+                        <span class="text-gray-400">Jaket</span>
+                    </li>
+                </ul>
+                <h3 class="mb-3 font-bold text-heading text-base">Cosmetik G2G</h3>
+                <ul class="space-y-3">
+                    <li>
+                        <span class="text-gray-400">Facewash</span>
+                    </li>
+                    <li>
+                        <span class="text-gray-400">Moisturizer</span>
+                    </li>
+                    <li>
+                        <span class="text-gray-400">Serum</span>
+                    </li>
+                    <li>
+                        <span class="text-gray-400">Cleanser</span>
+                    </li>
+                    <li>
+                        <span class="text-gray-400">Toner</span>
+                    </li>
+                    <li>
+                        <span class="text-gray-400">Body Lotion</span>
+                    </li>
+                </ul>
+            </div>
         </div>
     </div>
 </nav>

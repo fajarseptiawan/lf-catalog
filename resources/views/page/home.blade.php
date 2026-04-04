@@ -86,66 +86,43 @@
                 class="flex overflow-x-auto pb-8 hide-scrollbar snap-x items-end justify-start md:justify-center space-x-8 md:space-x-12">
 
                 <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
-                    onclick="window.location='{{ route('category', 'iphone13') }}'">
+                    onclick="document.getElementById('section-aksesoris-iphone').scrollIntoView({behavior: 'smooth', block: 'start'})">
                     <div class="h-24 flex items-end mb-4">
-                        <img src="{{ asset('img/13series.jpg') }}" alt="iphone13" class="h-full">
+                        <img src="{{ asset('img/16series.png') }}" alt="Aksesoris iPhone" class="h-full">
                     </div>
-                    <span class="text-sm font-medium text-gray-900">Iphone 13 Series</span>
-                    <span class="text-xs text-orange-600 mt-1">Mulai Dari Rp10 ribu</span>
+                    <span class="text-sm font-medium text-gray-900">Aksesoris iPhone</span>
                 </div>
 
                 <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
-                    onclick="window.location='{{ route('category', 'iphone14') }}'">
+                    onclick="document.getElementById('section-sport-basket').scrollIntoView({behavior: 'smooth', block: 'start'})">
                     <div class="h-24 flex items-end mb-4">
-                        <img src="{{ asset('img/14series.jpg') }}" alt="iphone14" class="h-full">
+                        <img src="{{ asset('img/tes.png') }}" alt="Sport Basket" class="h-full">
                     </div>
-                    <span class="text-sm font-medium text-gray-900">iPhone 14 Series</span>
-                    <span class="text-xs text-orange-600 mt-1">Mulai Rp10 ribu</span>
+                    <span class="text-sm font-medium text-gray-900">Sport Basket</span>
                 </div>
 
                 <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
-                    onclick="window.location='{{ route('category', 'iphone15') }}'">
+                    onclick="document.getElementById('section-sport-futsal').scrollIntoView({behavior: 'smooth', block: 'start'})">
                     <div class="h-24 flex items-end mb-4">
-                        <img src="{{ asset('img/15series.jpg') }}" alt="iphone15" class="h-full">
+                        <img src="{{ asset('img/tes.png') }}" alt="Sport Futsal" class="h-full">
                     </div>
-                    <span class="text-sm font-medium text-gray-900">Iphone 15 Series</span>
-                    <span class="text-xs text-orange-600 mt-1">Mulai Rp10 ribu</span>
+                    <span class="text-sm font-medium text-gray-900">Sport Futsal</span>
                 </div>
 
                 <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
-                    onclick="window.location='{{ route('category', 'iphone16') }}'">
+                    onclick="document.getElementById('section-fashion-pria').scrollIntoView({behavior: 'smooth', block: 'start'})">
                     <div class="h-24 flex items-end mb-4">
-                        <img src="{{ asset('img/16series.png') }}" alt="iphone16" class="h-full">
+                        <img src="{{ asset('img/tes.png') }}" alt="Fashion Pria" class="h-full">
                     </div>
-                    <span class="text-sm font-medium text-gray-900">Iphone 16 Series</span>
-                    <span class="text-xs text-orange-600 mt-1">Mulai Rp10 ribu</span>
+                    <span class="text-sm font-medium text-gray-900">Fashion Pria</span>
                 </div>
 
                 <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
-                    onclick="window.location='{{ route('category', 'iphone17') }}'">
+                    onclick="document.getElementById('section-cosmetik-g2g').scrollIntoView({behavior: 'smooth', block: 'start'})">
                     <div class="h-24 flex items-end mb-4">
-                        <img src="{{ asset('img/17series.png') }}" alt="iphone17" class="h-full">
+                        <img src="{{ asset('img/g2g.jpg') }}" alt="Cosmetik G2G" class="h-full">
                     </div>
-                    <span class="text-sm font-medium text-gray-900">Iphone 17 Series</span>
-                    <span class="text-xs text-orange-600 mt-1">Mulai Rp10 ribu</span>
-                </div>
-
-                <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
-                    onclick="window.location='{{ route('category', 'g2g') }}'">
-                    <div class="h-24 flex items-end mb-4">
-                        <img src="{{ asset('img/g2g.jpg') }}" alt="g2g" class="h-full">
-                    </div>
-                    <span class="text-sm font-medium text-gray-900">G2G</span>
-                    <span class="text-xs text-orange-600 mt-1">Mulai Rp10 ribu</span>
-                </div>
-
-                <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
-                    onclick="window.location='{{ route('category', 'softlens') }}'">
-                    <div class="h-24 flex items-end mb-4">
-                        <img src="{{ asset('img/softlens.png') }}" alt="softlens" class="h-full">
-                    </div>
-                    <span class="text-sm font-medium text-gray-900">Softlens</span>
-                    <span class="text-xs text-orange-600 mt-1">Mulai Rp10 ribu</span>
+                    <span class="text-sm font-medium text-gray-900">Cosmetik G2G</span>
                 </div>
 
             </div>
@@ -254,7 +231,98 @@
         </div>
     </section>
 
-    <section
+    <section id="section-aksesoris-iphone"
+        class="max-w-7xl mx-auto px-6 py-10 reveal-left opacity-0 translate-y-20 transition-all duration-1000 ease-out">
+        <h2 class="text-center text-xl font-semibold mb-8">Jelajahi Produk Aksesoris iPhone</h2>
+
+        <div id="carousel-iphone" class="relative" data-carousel="static">
+            <!-- Carousel wrapper -->
+            <div>
+                <!-- Container overflow-x-auto dan scroll-smooth -->
+                <div class="flex overflow-x-auto scroll-smooth no-scrollbar" data-carousel-items-container>
+                    <!-- iPhone 13 Series -->
+                    <a href="{{ route('category', 'iphone13') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                        <div class="rounded-lg p-4 flex flex-col items-center">
+                            <img src="{{ asset('img/13series.jpg') }}" alt="iPhone 13 Series"
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span class="mt-3 font-semibold text-center text-gray-900">iPhone 13 Series</span>
+                        </div>
+                    </a>
+                    <!-- iPhone 14 Series -->
+                    <a href="{{ route('category', 'iphone14') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                        <div class="rounded-lg p-4 flex flex-col items-center">
+                            <img src="{{ asset('img/14series.jpg') }}" alt="iPhone 14 Series"
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span class="mt-3 font-semibold text-center text-gray-900">iPhone 14 Series</span>
+                        </div>
+                    </a>
+                    <!-- iPhone 15 Series -->
+                    <a href="{{ route('category', 'iphone15') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                        <div class="rounded-lg p-4 flex flex-col items-center">
+                            <img src="{{ asset('img/15series.jpg') }}" alt="iPhone 15 Series"
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span class="mt-3 font-semibold text-center text-gray-900">iPhone 15 Series</span>
+                        </div>
+                    </a>
+                    <!-- iPhone 16 Series -->
+                    <a href="{{ route('category', 'iphone16') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                        <div class="rounded-lg p-4 flex flex-col items-center">
+                            <img src="{{ asset('img/16series.png') }}" alt="iPhone 16 Series"
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span class="mt-3 font-semibold text-center text-gray-900">iPhone 16 Series</span>
+                        </div>
+                    </a>
+                    <!-- iPhone 17 Series -->
+                    <a href="{{ route('category', 'iphone17') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                        <div class="rounded-lg p-4 flex flex-col items-center">
+                            <img src="{{ asset('img/17series.png') }}" alt="iPhone 17 Series"
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span class="mt-3 font-semibold text-center text-gray-900">iPhone 17 Series</span>
+                        </div>
+                    </a>
+                    <!-- Charger -->
+                    <a href="{{ route('category', 'charger') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                        <div class="rounded-lg p-4 flex flex-col items-center">
+                            <img src="{{ asset('img/charger.png') }}" alt="Charger iPhone"
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span class="mt-3 font-semibold text-center text-gray-900">Charger</span>
+                        </div>
+                    </a>
+                    <!-- Tempered Glass -->
+                    <a href="{{ route('category', 'temperedglass') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                        <div class="rounded-lg p-4 flex flex-col items-center">
+                            <img src="{{ asset('img/temperedglass.png') }}" alt="Tempered Glass"
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span class="mt-3 font-semibold text-center text-gray-900">Tempered Glass</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="flex justify-end">
+                <a href="#" class="text-sm sm:text-base font-medium hover:underline">
+                    See more &gt;
+                </a>
+            </div>
+
+            <!-- Controls -->
+            <button type="button" id="prevBtn-iphone"
+                class="absolute top-1/2 left-2 -translate-y-1/2 rounded-full bg-white p-2 shadow hover:bg-gray-200 focus:outline-none z-30">
+                <span class="sr-only">Previous</span>
+                <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button type="button" id="nextBtn-iphone"
+                class="absolute top-1/2 right-2 -translate-y-1/2 rounded-full bg-white p-2 shadow hover:bg-gray-200 focus:outline-none z-30">
+                <span class="sr-only">Next</span>
+                <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <section id="section-sport-basket"
         class="max-w-7xl mx-auto px-6 py-10 reveal-left opacity-0 translate-y-20 transition-all duration-1000 ease-out">
         <h2 class="text-center text-xl font-semibold mb-8">Jelajahi Produk Sport Basket</h2>
 
@@ -263,61 +331,28 @@
             <div>
                 <!-- Container harus overflow-x-auto dan scroll-smooth -->
                 <div class="flex overflow-x-auto scroll-smooth no-scrollbar" data-carousel-items-container>
-                    <!-- Items dengan flex: 0 0 20% agar 5 item muncul, tambahkan min-w untuk konsistensi di HP -->
+                    <!-- Kaos Kaki Basket -->
                     <a href="{{ route('category', 'kaoskakibs') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Power Banks"
+                            <img src="{{ asset('img/tes.png') }}" alt="Kaos Kaki Basket"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Kaos Kaki</span>
                         </div>
                     </a>
+                    <!-- Sepatu Basket -->
                     <a href="{{ route('category', 'sepatubs') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Chargers"
+                            <img src="{{ asset('img/tes.png') }}" alt="Sepatu Basket"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Sepatu</span>
                         </div>
                     </a>
-                    <a href="{{ route('category', 'bajubs') }}"
-                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <!-- Baju Basket -->
+                    <a href="{{ route('category', 'bajubs') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Wireless Chargers"
+                            <img src="{{ asset('img/tes.png') }}" alt="Baju Basket"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Baju</span>
-                        </div>
-                    </a>
-                    <a href="{{ route('category', 'iphone14') }}"
-                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
-                        <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/14series.jpg') }}" alt="Car Chargers"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
-                            <span class="mt-3 font-semibold text-center text-gray-900">Iphone 14 Series</span>
-                        </div>
-                    </a>
-                    <a href="{{ route('category', 'iphone15') }}"
-                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
-                        <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/15series.jpg') }}" alt="Power Strip"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
-                            <span class="mt-3 font-semibold text-center text-gray-900">Iphone 15 Series</span>
-                        </div>
-                    </a>
-                    <!-- Item 6 -->
-                    <a href="{{ route('category', 'iphone16') }}"
-                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
-                        <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/16series.png') }}" alt="Item 6"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
-                            <span class="mt-3 font-semibold text-center text-gray-900">Iphone 16 Series</span>
-                        </div>
-                    </a>
-                    <!-- Item 7 -->
-                    <a href="{{ route('category', 'iphone17') }}"
-                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
-                        <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/17series.png') }}" alt="Item 7"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
-                            <span class="mt-3 font-semibold text-center text-gray-900">Iphone 17 Series</span>
                         </div>
                     </a>
                 </div>
@@ -347,7 +382,7 @@
         </div>
     </section>
 
-    <section
+    <section id="section-sport-futsal"
         class="max-w-7xl mx-auto px-6 py-10 reveal-left opacity-0 translate-y-20 transition-all duration-1000 ease-out">
         <h2 class="text-center text-xl font-semibold mb-8">Jelajahi Sport Futsal</h2>
 
@@ -356,58 +391,28 @@
             <div>
                 <!-- Container harus overflow-x-auto dan scroll-smooth -->
                 <div class="flex overflow-x-auto scroll-smooth no-scrollbar" data-carousel-items-container>
-                    <!-- Items dengan flex: 0 0 20% agar 5 item muncul, tambahkan min-w untuk konsistensi di HP -->
-                    <a href="{{ route('category', 'softlens') }}"
-                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <!-- Kaos Kaki Futsal -->
+                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/softlens.png') }}" alt="Power Banks"
+                            <img src="{{ asset('img/tes.png') }}" alt="Kaos Kaki Futsal"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
-                            <span class="mt-3 font-semibold text-center text-gray-900">Softlens</span>
+                            <span class="mt-3 font-semibold text-center text-gray-900">Kaos Kaki</span>
                         </div>
                     </a>
-                    <a href="{{ route('category', 'g2g') }}"
-                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <!-- Sepatu Futsal -->
+                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/g2g.jpg') }}" alt="Chargers"
+                            <img src="{{ asset('img/tes.png') }}" alt="Sepatu Futsal"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
-                            <span class="mt-3 font-semibold text-center text-gray-900">G2G</span>
+                            <span class="mt-3 font-semibold text-center text-gray-900">Sepatu</span>
                         </div>
                     </a>
-                    <a href="/wireless-chargers" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <!-- Baju Futsal -->
+                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Wireless Chargers"
+                            <img src="{{ asset('img/tes.png') }}" alt="Baju Futsal"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
-                            <span class="mt-3 font-semibold text-center text-gray-900">Brand3</span>
-                        </div>
-                    </a>
-                    <a href="/car-chargers" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
-                        <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Car Chargers"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
-                            <span class="mt-3 font-semibold text-center text-gray-900">Brand4</span>
-                        </div>
-                    </a>
-                    <a href="/power-strip" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
-                        <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Power Strip"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
-                            <span class="mt-3 font-semibold text-center text-gray-900">Brand5</span>
-                        </div>
-                    </a>
-                    <!-- Item 6 -->
-                    <a href="/item6" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
-                        <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Item 6"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
-                            <span class="mt-3 font-semibold text-center text-gray-900">Brand6</span>
-                        </div>
-                    </a>
-                    <!-- Item 7 -->
-                    <a href="/item7" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
-                        <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Item 7"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
-                            <span class="mt-3 font-semibold text-center text-gray-900">Brand7</span>
+                            <span class="mt-3 font-semibold text-center text-gray-900">Baju</span>
                         </div>
                     </a>
                 </div>
@@ -428,6 +433,146 @@
                 </svg>
             </button>
             <button type="button" id="nextBtn-2"
+                class="absolute top-1/2 right-2 -translate-y-1/2 rounded-full bg-white p-2 shadow hover:bg-gray-200 focus:outline-none z-30">
+                <span class="sr-only">Next</span>
+                <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <section id="section-fashion-pria"
+        class="max-w-7xl mx-auto px-6 py-10 reveal-left opacity-0 translate-y-20 transition-all duration-1000 ease-out">
+        <h2 class="text-center text-xl font-semibold mb-8">Jelajahi Produk Fashion Pria</h2>
+
+        <div id="carousel-fashion" class="relative" data-carousel="static">
+            <!-- Carousel wrapper -->
+            <div>
+                <div class="flex overflow-x-auto scroll-smooth no-scrollbar" data-carousel-items-container>
+                    <!-- Baju -->
+                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                        <div class="rounded-lg p-4 flex flex-col items-center">
+                            <img src="{{ asset('img/tes.png') }}" alt="Baju"
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span class="mt-3 font-semibold text-center text-gray-900">Baju</span>
+                        </div>
+                    </a>
+                    <!-- Sendal -->
+                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                        <div class="rounded-lg p-4 flex flex-col items-center">
+                            <img src="{{ asset('img/tes.png') }}" alt="Sendal"
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span class="mt-3 font-semibold text-center text-gray-900">Sendal</span>
+                        </div>
+                    </a>
+                    <!-- Jaket -->
+                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                        <div class="rounded-lg p-4 flex flex-col items-center">
+                            <img src="{{ asset('img/tes.png') }}" alt="Jaket"
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span class="mt-3 font-semibold text-center text-gray-900">Jaket</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="flex justify-end">
+                <a href="#" class="text-sm sm:text-base font-medium hover:underline">
+                    See more &gt;
+                </a>
+            </div>
+
+            <!-- Controls -->
+            <button type="button" id="prevBtn-fashion"
+                class="absolute top-1/2 left-2 -translate-y-1/2 rounded-full bg-white p-2 shadow hover:bg-gray-200 focus:outline-none z-30">
+                <span class="sr-only">Previous</span>
+                <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button type="button" id="nextBtn-fashion"
+                class="absolute top-1/2 right-2 -translate-y-1/2 rounded-full bg-white p-2 shadow hover:bg-gray-200 focus:outline-none z-30">
+                <span class="sr-only">Next</span>
+                <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                </svg>
+            </button>
+        </div>
+    </section>
+
+    <section id="section-cosmetik-g2g"
+        class="max-w-7xl mx-auto px-6 py-10 reveal-left opacity-0 translate-y-20 transition-all duration-1000 ease-out">
+        <h2 class="text-center text-xl font-semibold mb-8">Jelajahi Produk Cosmetik G2G</h2>
+
+        <div id="carousel-cosmetik" class="relative" data-carousel="static">
+            <!-- Carousel wrapper -->
+            <div>
+                <div class="flex overflow-x-auto scroll-smooth no-scrollbar" data-carousel-items-container>
+                    <!-- Facewash -->
+                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                        <div class="rounded-lg p-4 flex flex-col items-center">
+                            <img src="{{ asset('img/g2g.jpg') }}" alt="Facewash"
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span class="mt-3 font-semibold text-center text-gray-900">Facewash</span>
+                        </div>
+                    </a>
+                    <!-- Moisturizer -->
+                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                        <div class="rounded-lg p-4 flex flex-col items-center">
+                            <img src="{{ asset('img/g2g.jpg') }}" alt="Moisturizer"
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span class="mt-3 font-semibold text-center text-gray-900">Moisturizer</span>
+                        </div>
+                    </a>
+                    <!-- Serum -->
+                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                        <div class="rounded-lg p-4 flex flex-col items-center">
+                            <img src="{{ asset('img/g2g.jpg') }}" alt="Serum"
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span class="mt-3 font-semibold text-center text-gray-900">Serum</span>
+                        </div>
+                    </a>
+                    <!-- Cleanser -->
+                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                        <div class="rounded-lg p-4 flex flex-col items-center">
+                            <img src="{{ asset('img/g2g.jpg') }}" alt="Cleanser"
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span class="mt-3 font-semibold text-center text-gray-900">Cleanser</span>
+                        </div>
+                    </a>
+                    <!-- Toner -->
+                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                        <div class="rounded-lg p-4 flex flex-col items-center">
+                            <img src="{{ asset('img/g2g.jpg') }}" alt="Toner"
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span class="mt-3 font-semibold text-center text-gray-900">Toner</span>
+                        </div>
+                    </a>
+                    <!-- Body Lotion -->
+                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                        <div class="rounded-lg p-4 flex flex-col items-center">
+                            <img src="{{ asset('img/g2g.jpg') }}" alt="Body Lotion"
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span class="mt-3 font-semibold text-center text-gray-900">Body Lotion</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="flex justify-end">
+                <a href="#" class="text-sm sm:text-base font-medium hover:underline">
+                    See more &gt;
+                </a>
+            </div>
+
+            <!-- Controls -->
+            <button type="button" id="prevBtn-cosmetik"
+                class="absolute top-1/2 left-2 -translate-y-1/2 rounded-full bg-white p-2 shadow hover:bg-gray-200 focus:outline-none z-30">
+                <span class="sr-only">Previous</span>
+                <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                </svg>
+            </button>
+            <button type="button" id="nextBtn-cosmetik"
                 class="absolute top-1/2 right-2 -translate-y-1/2 rounded-full bg-white p-2 shadow hover:bg-gray-200 focus:outline-none z-30">
                 <span class="sr-only">Next</span>
                 <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24">

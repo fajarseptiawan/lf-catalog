@@ -1,3 +1,24 @@
+// Script untuk carousel iPhone Aksesoris
+        const containerIphone = document.querySelector('#carousel-iphone [data-carousel-items-container]');
+        const prevBtnIphone = document.getElementById('prevBtn-iphone');
+        const nextBtnIphone = document.getElementById('nextBtn-iphone');
+
+        const itemWidthIphone = containerIphone.querySelector('a').offsetWidth;
+
+        prevBtnIphone.addEventListener('click', () => {
+            containerIphone.scrollBy({
+                left: -itemWidthIphone,
+                behavior: 'smooth'
+            });
+        });
+
+        nextBtnIphone.addEventListener('click', () => {
+            containerIphone.scrollBy({
+                left: itemWidthIphone,
+                behavior: 'smooth'
+            });
+        });
+
 // Script untuk carousel pertama
         const container1 = document.querySelector('#carousel-multi [data-carousel-items-container]');
         const prevBtn1 = document.getElementById('prevBtn');
@@ -41,6 +62,52 @@
                 behavior: 'smooth'
             });
         });
+
+        // Script untuk carousel Fashion Pria
+        const containerFashion = document.querySelector('#carousel-fashion [data-carousel-items-container]');
+        const prevBtnFashion = document.getElementById('prevBtn-fashion');
+        const nextBtnFashion = document.getElementById('nextBtn-fashion');
+
+        if (containerFashion && containerFashion.querySelector('a')) {
+            const itemWidthFashion = containerFashion.querySelector('a').offsetWidth;
+
+            prevBtnFashion.addEventListener('click', () => {
+                containerFashion.scrollBy({
+                    left: -itemWidthFashion,
+                    behavior: 'smooth'
+                });
+            });
+
+            nextBtnFashion.addEventListener('click', () => {
+                containerFashion.scrollBy({
+                    left: itemWidthFashion,
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Script untuk carousel Cosmetik G2G
+        const containerCosmetik = document.querySelector('#carousel-cosmetik [data-carousel-items-container]');
+        const prevBtnCosmetik = document.getElementById('prevBtn-cosmetik');
+        const nextBtnCosmetik = document.getElementById('nextBtn-cosmetik');
+
+        if (containerCosmetik && containerCosmetik.querySelector('a')) {
+            const itemWidthCosmetik = containerCosmetik.querySelector('a').offsetWidth;
+
+            prevBtnCosmetik.addEventListener('click', () => {
+                containerCosmetik.scrollBy({
+                    left: -itemWidthCosmetik,
+                    behavior: 'smooth'
+                });
+            });
+
+            nextBtnCosmetik.addEventListener('click', () => {
+                containerCosmetik.scrollBy({
+                    left: itemWidthCosmetik,
+                    behavior: 'smooth'
+                });
+            });
+        }
 
         // Animasi scroll
         const observer = new IntersectionObserver((entries) => {
