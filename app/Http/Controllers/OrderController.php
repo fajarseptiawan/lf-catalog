@@ -32,9 +32,6 @@ class OrderController extends Controller
             'status' => 'pending',
         ]);
 
-        // Dispatch Telegram notification to mitra via queue
-        $order->load('product.mitra');
-        TelegramService::dispatchMitraNotifications($order);
 
         $waMessage = "Halo LF Catalog, saya ingin memesan produk:" . PHP_EOL . PHP_EOL .
             "*Produk:* " . $product->name . PHP_EOL .

@@ -21,13 +21,13 @@
         <div class="max-w-xl mx-auto px-4">
             <span class="text-orange-600 font-bold text-sm tracking-widest uppercase mb-2 block">New</span>
             <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                Sepatu Basket
+                Celana Basket
             </h1>
             <p class="text-md md:text-2xl text-gray-800 mb-2">
-                SUPER SLIM
+                SUPER COMFORT
             </p>
             <p class="text-sm text-gray-500 mb-8">
-                Mulai dari Rp10.999.000
+                Mulai dari Rp299.000
             </p>
 
             <div class="flex justify-center items-center gap-6 mb-12">
@@ -41,7 +41,7 @@
             </div>
 
             <div class="reveal-left opacity-0 translate-y-20 transition-all duration-1000 ease-out">
-                <img src="{{ asset('img/tes.png') }}" class="mx-auto max-w-4xl w-full" alt="MacBook Pro M5">
+                <img src="{{ asset('img/tes.png') }}" class="mx-auto max-w-4xl w-full" alt="Celana Basket">
             </div>
         </div>
     </section>
@@ -83,11 +83,7 @@
 
 
 
-
-
-
-
     @push('js')
-        <script src="{{ asset('assets/kaoskakibs.js') }}"></script>
+        <script src="{{ asset('assets/celanabs.js') }}"></script>
     @endpush
 @endsection

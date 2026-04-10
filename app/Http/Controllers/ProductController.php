@@ -41,6 +41,20 @@ class ProductController extends Controller
             'sepatubs' => 'page.sepatubs',
             'kaoskakibs' => 'page.kaoskakibs',
             'bajubs' => 'page.bajubs',
+            'celanabs' => 'page.celanabs',
+            'kaoskakifs' => 'page.kaoskakifs',
+            'sepatufs' => 'page.sepatufs',
+            'bajufs' => 'page.bajufs',
+            'bajufp' => 'page.bajufp',
+            'sendalfp' => 'page.sendalfp',
+            'jaketfp' => 'page.jaketfp',
+            'topifp' => 'page.topifp',
+            'facewashg2g' => 'page.facewashg2g',
+            'moisturizerg2g' => 'page.moisturizerg2g',
+            'serumg2g' => 'page.serumg2g',
+            'cleanserg2g' => 'page.cleanserg2g',
+            'tonerg2g' => 'page.tonerg2g',
+            'bodylotiong2g' => 'page.bodylotiong2g',
         ];
 
         $view = $viewMap[$category] ?? 'page.category';

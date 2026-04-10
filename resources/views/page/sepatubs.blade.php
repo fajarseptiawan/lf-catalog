@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <section class="w-full mx-auto px-4 py-6 border-b border-gray-300">
+    <section class="w-full mx-auto px-4 pt-20 py-6 border-b border-gray-300">
         <div id="controls-carousel" class="relative w-full max-w-7xl mx-auto">
             <div class="relative h-48 sm:h-56 md:h-64 lg:h-80 xl:h-96 overflow-hidden rounded-lg">
                 <div class="w-full h-full">

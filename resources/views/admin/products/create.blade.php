@@ -55,15 +55,42 @@
                     <label class="block text-sm font-semibold text-gray-700 mb-2">Kategori <span class="text-red-500">*</span></label>
                     <select name="category" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-orange-500 focus:ring-2 focus:ring-orange-200 transition outline-none @error('category') border-red-400 @enderror" required>
                         <option value="">-- Pilih Kategori --</option>
-                        <option value="iphone17" {{ old('category') == 'iphone17' ? 'selected' : '' }}>iPhone 17 Series</option>
-                        <option value="iphone16" {{ old('category') == 'iphone16' ? 'selected' : '' }}>iPhone 16 Series</option>
-                        <option value="iphone15" {{ old('category') == 'iphone15' ? 'selected' : '' }}>iPhone 15 Series</option>
-                        <option value="iphone14" {{ old('category') == 'iphone14' ? 'selected' : '' }}>iPhone 14 Series</option>
-                        <option value="iphone13" {{ old('category') == 'iphone13' ? 'selected' : '' }}>iPhone 13 Series</option>
-                        <option value="g2g" {{ old('category') == 'g2g' ? 'selected' : '' }}>G2G</option>
-                        <option value="softlens" {{ old('category') == 'softlens' ? 'selected' : '' }}>Softlens</option>
-                        <option value="charger" {{ old('category') == 'charger' ? 'selected' : '' }}>Charger iPhone</option>
-                        <option value="aksesoris" {{ old('category') == 'aksesoris' ? 'selected' : '' }}>Aksesoris HP (Universal)</option>
+                        <optgroup label="Aksesoris iPhone">
+                            <option value="iphone17" {{ old('category') == 'iphone17' ? 'selected' : '' }}>iPhone 17 Series</option>
+                            <option value="iphone16" {{ old('category') == 'iphone16' ? 'selected' : '' }}>iPhone 16 Series</option>
+                            <option value="iphone15" {{ old('category') == 'iphone15' ? 'selected' : '' }}>iPhone 15 Series</option>
+                            <option value="iphone14" {{ old('category') == 'iphone14' ? 'selected' : '' }}>iPhone 14 Series</option>
+                            <option value="iphone13" {{ old('category') == 'iphone13' ? 'selected' : '' }}>iPhone 13 Series</option>
+                            <option value="charger" {{ old('category') == 'charger' ? 'selected' : '' }}>Charger iPhone</option>
+                            <option value="aksesoris" {{ old('category') == 'aksesoris' ? 'selected' : '' }}>Aksesoris HP (Universal)</option>
+                            <option value="softlens" {{ old('category') == 'softlens' ? 'selected' : '' }}>Softlens</option>
+                        </optgroup>
+                        <optgroup label="Sport Basket">
+                            <option value="sepatubs" {{ old('category') == 'sepatubs' ? 'selected' : '' }}>Sepatu Basket</option>
+                            <option value="kaoskakibs" {{ old('category') == 'kaoskakibs' ? 'selected' : '' }}>Kaos Kaki Basket</option>
+                            <option value="bajubs" {{ old('category') == 'bajubs' ? 'selected' : '' }}>Baju Basket</option>
+                            <option value="celanabs" {{ old('category') == 'celanabs' ? 'selected' : '' }}>Celana Basket</option>
+                        </optgroup>
+                        <optgroup label="Sport Futsal">
+                            <option value="sepatufs" {{ old('category') == 'sepatufs' ? 'selected' : '' }}>Sepatu Futsal</option>
+                            <option value="kaoskakifs" {{ old('category') == 'kaoskakifs' ? 'selected' : '' }}>Kaos Kaki Futsal</option>
+                            <option value="bajufs" {{ old('category') == 'bajufs' ? 'selected' : '' }}>Baju Futsal</option>
+                        </optgroup>
+                        <optgroup label="Fashion Pria">
+                            <option value="bajufp" {{ old('category') == 'bajufp' ? 'selected' : '' }}>Baju Pria</option>
+                            <option value="sendalfp" {{ old('category') == 'sendalfp' ? 'selected' : '' }}>Sendal Pria</option>
+                            <option value="jaketfp" {{ old('category') == 'jaketfp' ? 'selected' : '' }}>Jaket Pria</option>
+                            <option value="topifp" {{ old('category') == 'topifp' ? 'selected' : '' }}>Topi Pria</option>
+                        </optgroup>
+                        <optgroup label="Cosmetik G2G">
+                            <option value="g2g" {{ old('category') == 'g2g' ? 'selected' : '' }}>G2G (Semua)</option>
+                            <option value="facewashg2g" {{ old('category') == 'facewashg2g' ? 'selected' : '' }}>Facewash G2G</option>
+                            <option value="moisturizerg2g" {{ old('category') == 'moisturizerg2g' ? 'selected' : '' }}>Moisturizer G2G</option>
+                            <option value="serumg2g" {{ old('category') == 'serumg2g' ? 'selected' : '' }}>Serum G2G</option>
+                            <option value="cleanserg2g" {{ old('category') == 'cleanserg2g' ? 'selected' : '' }}>Cleanser G2G</option>
+                            <option value="tonerg2g" {{ old('category') == 'tonerg2g' ? 'selected' : '' }}>Toner G2G</option>
+                            <option value="bodylotiong2g" {{ old('category') == 'bodylotiong2g' ? 'selected' : '' }}>Body Lotion G2G</option>
+                        </optgroup>
                     </select>
                     @error('category')<p class="text-red-500 text-xs mt-1">{{ $message }}</p>@enderror
                     <label class="flex items-center gap-2 mt-3 cursor-pointer">

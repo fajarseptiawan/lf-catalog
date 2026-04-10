@@ -375,6 +375,15 @@
                             <span class="mt-3 font-semibold text-center text-gray-900">Baju</span>
                         </div>
                     </a>
+                    <!-- Celana Basket -->
+                    <a href="{{ route('category', 'celanabs') }}"
+                        class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                        <div class="rounded-lg p-4 flex flex-col items-center">
+                            <img src="{{ asset('img/tes.png') }}" alt="Celana Basket"
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span class="mt-3 font-semibold text-center text-gray-900">Celana</span>
+                        </div>
+                    </a>
                 </div>
             </div>
             <div class="flex justify-end">
@@ -412,7 +421,7 @@
                 <!-- Container harus overflow-x-auto dan scroll-smooth -->
                 <div class="flex overflow-x-auto scroll-smooth no-scrollbar" data-carousel-items-container>
                     <!-- Kaos Kaki Futsal -->
-                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'kaoskakifs') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/tes.png') }}" alt="Kaos Kaki Futsal"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -420,7 +429,7 @@
                         </div>
                     </a>
                     <!-- Sepatu Futsal -->
-                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'sepatufs') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/tes.png') }}" alt="Sepatu Futsal"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -428,7 +437,7 @@
                         </div>
                     </a>
                     <!-- Baju Futsal -->
-                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'bajufs') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/tes.png') }}" alt="Baju Futsal"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -471,7 +480,7 @@
             <div>
                 <div class="flex overflow-x-auto scroll-smooth no-scrollbar" data-carousel-items-container>
                     <!-- Baju -->
-                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'bajufp') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/tes.png') }}" alt="Baju"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -479,7 +488,7 @@
                         </div>
                     </a>
                     <!-- Sendal -->
-                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'sendalfp') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/tes.png') }}" alt="Sendal"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -487,11 +496,19 @@
                         </div>
                     </a>
                     <!-- Jaket -->
-                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'jaketfp') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/tes.png') }}" alt="Jaket"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Jaket</span>
+                        </div>
+                    </a>
+                    <!-- Topi -->
+                    <a href="{{ route('category', 'topifp') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                        <div class="rounded-lg p-4 flex flex-col items-center">
+                            <img src="{{ asset('img/tes.png') }}" alt="Topi"
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span class="mt-3 font-semibold text-center text-gray-900">Topi</span>
                         </div>
                     </a>
                 </div>
@@ -529,7 +546,7 @@
             <div>
                 <div class="flex overflow-x-auto scroll-smooth no-scrollbar" data-carousel-items-container>
                     <!-- Facewash -->
-                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'facewashg2g') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/g2g.jpg') }}" alt="Facewash"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -537,7 +554,7 @@
                         </div>
                     </a>
                     <!-- Moisturizer -->
-                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'moisturizerg2g') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/g2g.jpg') }}" alt="Moisturizer"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -545,7 +562,7 @@
                         </div>
                     </a>
                     <!-- Serum -->
-                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'serumg2g') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/g2g.jpg') }}" alt="Serum"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -553,7 +570,7 @@
                         </div>
                     </a>
                     <!-- Cleanser -->
-                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'cleanserg2g') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/g2g.jpg') }}" alt="Cleanser"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -561,7 +578,7 @@
                         </div>
                     </a>
                     <!-- Toner -->
-                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'tonerg2g') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/g2g.jpg') }}" alt="Toner"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
@@ -569,7 +586,7 @@
                         </div>
                     </a>
                     <!-- Body Lotion -->
-                    <a href="#" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <a href="{{ route('category', 'bodylotiong2g') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/g2g.jpg') }}" alt="Body Lotion"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />

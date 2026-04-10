@@ -14,20 +14,17 @@
         </div>
     </section>
 
-
-
-
     <section class="pt-20 pb-10 text-center bg-white border-b border-gray-300">
         <div class="max-w-xl mx-auto px-4">
             <span class="text-orange-600 font-bold text-sm tracking-widest uppercase mb-2 block">New</span>
             <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                Sepatu Basket
+                Baju Pria
             </h1>
             <p class="text-md md:text-2xl text-gray-800 mb-2">
-                SUPER SLIM
+                SUPER STYLE
             </p>
             <p class="text-sm text-gray-500 mb-8">
-                Mulai dari Rp10.999.000
+                Mulai dari Rp129.000
             </p>
 
             <div class="flex justify-center items-center gap-6 mb-12">
@@ -41,11 +38,10 @@
             </div>
 
             <div class="reveal-left opacity-0 translate-y-20 transition-all duration-1000 ease-out">
-                <img src="{{ asset('img/tes.png') }}" class="mx-auto max-w-4xl w-full" alt="MacBook Pro M5">
+                <img src="{{ asset('img/tes.png') }}" class="mx-auto max-w-4xl w-full" alt="Baju Pria">
             </div>
         </div>
     </section>
-
 
     @foreach ($products as $product)
         <section class="py-20 bg-white border-b border-gray-300 cursor-pointer"
@@ -80,14 +76,7 @@
         </section>
     @endforeach
 
-
-
-
-
-
-
-
     @push('js')
-        <script src="{{ asset('assets/kaoskakibs.js') }}"></script>
+        <script src="{{ asset('assets/bajufp.js') }}"></script>
     @endpush
 @endsection

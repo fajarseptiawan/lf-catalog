@@ -12,6 +12,7 @@ use App\Models\User;
 use App\Models\Mitra;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use App\Services\TelegramService;
 
 class AdminController extends Controller
 {
@@ -333,6 +334,10 @@ class AdminController extends Controller
                     $item->product->decrement('stock', $item->quantity);
                 }
                 $order->update(['status' => 'paid']);
+
+                // Kirim notifikasi Telegram ke mitra terkait
+                TelegramService::dispatchMitraNotifications($order);
+
                 return back()->with('success', 'Pesanan berhasil diverifikasi.');
             }
 
@@ -346,6 +351,10 @@ class AdminController extends Controller
             if ($product->stock >= $quantity) {
                 $product->decrement('stock', $quantity);
                 $order->update(['status' => 'paid']);
+
+                // Kirim notifikasi Telegram ke mitra terkait
+                TelegramService::dispatchMitraNotifications($order);
+
                 return back()->with('success', "Pesanan berhasil diverifikasi. Stok berkurang {$quantity}.");
             }
 

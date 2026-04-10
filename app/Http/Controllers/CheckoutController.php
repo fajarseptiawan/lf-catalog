@@ -86,9 +86,6 @@ class CheckoutController extends Controller
             return $order;
         });
 
-        // Dispatch Telegram notifications to mitra(s) via queue
-        $order->load('items.product.mitra');
-        TelegramService::dispatchMitraNotifications($order);
 
         return redirect()->route('checkout.success', $order->invoice_code);
     }

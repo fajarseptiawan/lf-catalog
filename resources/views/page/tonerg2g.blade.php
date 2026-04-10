@@ -8,26 +8,23 @@
         <div id="controls-carousel" class="relative w-full max-w-7xl mx-auto">
             <div class="relative h-48 sm:h-56 md:h-64 lg:h-80 xl:h-96 overflow-hidden rounded-lg">
                 <div class="w-full h-full">
-                    <img src="{{ asset('img/tes.png') }}" class="w-full h-full object-cover" alt="...">
+                    <img src="{{ asset('img/g2g.jpg') }}" class="w-full h-full object-cover" alt="...">
                 </div>
             </div>
         </div>
     </section>
 
-
-
-
     <section class="pt-20 pb-10 text-center bg-white border-b border-gray-300">
         <div class="max-w-xl mx-auto px-4">
             <span class="text-orange-600 font-bold text-sm tracking-widest uppercase mb-2 block">New</span>
             <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                Sepatu Basket
+                Toner G2G
             </h1>
             <p class="text-md md:text-2xl text-gray-800 mb-2">
-                SUPER SLIM
+                FRESH BALANCE
             </p>
             <p class="text-sm text-gray-500 mb-8">
-                Mulai dari Rp10.999.000
+                Mulai dari Rp50.000
             </p>
 
             <div class="flex justify-center items-center gap-6 mb-12">
@@ -41,19 +38,16 @@
             </div>
 
             <div class="reveal-left opacity-0 translate-y-20 transition-all duration-1000 ease-out">
-                <img src="{{ asset('img/tes.png') }}" class="mx-auto max-w-4xl w-full" alt="MacBook Pro M5">
+                <img src="{{ asset('img/g2g.jpg') }}" class="mx-auto max-w-4xl w-full" alt="Toner G2G">
             </div>
         </div>
     </section>
-
 
     @foreach ($products as $product)
         <section class="py-20 bg-white border-b border-gray-300 cursor-pointer"
             onclick="window.location='{{ route('product.detail', $product->slug) }}'">
             <div class="max-w-7xl px-4 mx-auto">
                 <div class="grid gap-8 md:grid-cols-2 items-center">
-
-                    <!-- Bagian Tulisan (Kiri) -->
                     <div
                         class="order-2 md:order-1 text-center md:text-left reveal-left opacity-0 -translate-x-20 transition-all duration-1000 ease-out">
                         <h3 class="text-3xl font-bold text-gray-900">{{ $product->name }}</h3>
@@ -67,27 +61,17 @@
                             </span>
                         </div>
                     </div>
-
-                    <!-- Bagian Gambar (Kanan) -->
                     <div
                         class="order-1 md:order-2 flex justify-center reveal-left opacity-0 translate-x-20 transition-all duration-1000 ease-out">
                         <img src="{{ asset($product->image) }}" class="h-40 md:h-48 lg:h-56 object-contain"
                             alt="{{ $product->name }}">
                     </div>
-
                 </div>
             </div>
         </section>
     @endforeach
 
-
-
-
-
-
-
-
     @push('js')
-        <script src="{{ asset('assets/kaoskakibs.js') }}"></script>
+        <script src="{{ asset('assets/tonerg2g.js') }}"></script>
     @endpush
 @endsection
