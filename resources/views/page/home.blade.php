@@ -10,7 +10,7 @@
         <div class="relative aspect-[16/7] md:aspect-[16/5] overflow-hidden">
             <!-- Item 1 -->
             <div class="hidden duration-700 ease-in-out" data-carousel-item>
-                <img src="{{ asset('img/sl1new.png') }}"
+                <img src="{{ asset('img/sl1.jpg') }}"
                     class="absolute block w-full h-full object-cover -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
                     alt="...">
             </div>
