@@ -24,7 +24,7 @@
                 SUPER COMFORT
             </p>
             <p class="text-sm text-gray-500 mb-8">
-                Mulai dari Rp89.000
+                Harga Mulai Dari Rp{{ number_format($products->min('price'), 0, ',', '.') }}
             </p>
 
             <div class="flex justify-center items-center gap-6 mb-12">
@@ -54,7 +54,7 @@
                         class="order-2 md:order-1 text-center md:text-left reveal-left opacity-0 -translate-x-20 transition-all duration-1000 ease-out">
                         <h3 class="text-3xl font-bold text-gray-900">{{ $product->name }}</h3>
                         <p class="mt-2 text-gray-600">{{ $product->description }}</p>
-                        <p class="mt-1 text-sm text-gray-500">Mulai dari Rp
+                        <p class="mt-1 text-sm text-gray-500">Harga Rp
                             {{ number_format($product->price, 0, ',', '.') }}</p>
                         <div class="mt-6">
                             <span
