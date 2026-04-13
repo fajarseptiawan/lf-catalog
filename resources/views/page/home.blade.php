@@ -98,13 +98,13 @@
                     <span class="text-sm font-medium text-gray-900">Aksesoris iPhone</span>
                 </div>
 
-                <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
+              <!--  <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
                     onclick="document.getElementById('section-sport-basket').scrollIntoView({behavior: 'smooth', block: 'start'})">
                     <div class="h-24 flex items-end mb-4">
                         <img src="{{ asset('img/tes.png') }}" alt="Sport Basket" class="h-full">
                     </div>
                     <span class="text-sm font-medium text-gray-900">Sport Basket</span>
-                </div>
+                </div> -->
 
                 <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
                     onclick="document.getElementById('section-sport-futsal').scrollIntoView({behavior: 'smooth', block: 'start'})">
@@ -339,6 +339,7 @@
         </div>
     </section>
 
+    {{-- Sport Basket - Hidden: produk belum ready
     <section id="section-sport-basket"
         class="max-w-7xl mx-auto px-6 py-10 reveal-left opacity-0 translate-y-20 transition-all duration-1000 ease-out">
         <h2 class="text-center text-xl font-semibold mb-8">Jelajahi Produk Sport Basket</h2>
@@ -410,6 +411,7 @@
             </button>
         </div>
     </section>
+    --}}
 
     <section id="section-sport-futsal"
         class="max-w-7xl mx-auto px-6 py-10 reveal-left opacity-0 translate-y-20 transition-all duration-1000 ease-out">

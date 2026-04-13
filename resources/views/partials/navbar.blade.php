@@ -101,6 +101,7 @@
 
             {{-- Column 2: Sport --}}
             <div>
+                {{-- Sport Basket - Hidden: produk belum ready
                 <h3 class="mb-3 font-bold text-heading text-base">Sport Basket</h3>
                 <ul class="space-y-3 mb-6">
                     <li>
@@ -119,6 +120,7 @@
                         </a>
                     </li>
                 </ul>
+                --}}
                 <h3 class="mb-3 font-bold text-heading text-base">Sport Futsal</h3>
                 <ul class="space-y-3">
                     <li>
