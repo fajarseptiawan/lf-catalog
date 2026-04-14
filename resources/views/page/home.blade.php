@@ -109,7 +109,7 @@
                 <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
                     onclick="document.getElementById('section-sport-futsal').scrollIntoView({behavior: 'smooth', block: 'start'})">
                     <div class="h-24 flex items-end mb-4">
-                        <img src="{{ asset('img/tes.png') }}" alt="Sport Futsal" class="h-full">
+                        <img src="{{ asset('img/futsal.png') }}" alt="Sport Futsal" class="h-full">
                     </div>
                     <span class="text-sm font-medium text-gray-900">Sport Futsal</span>
                 </div>
@@ -117,7 +117,7 @@
                 <div class="shrink-0 flex flex-col items-center text-center snap-center group cursor-pointer"
                     onclick="document.getElementById('section-fashion-pria').scrollIntoView({behavior: 'smooth', block: 'start'})">
                     <div class="h-24 flex items-end mb-4">
-                        <img src="{{ asset('img/tes.png') }}" alt="Fashion Pria" class="h-full">
+                        <img src="{{ asset('img/fashion.png') }}" alt="Fashion Pria" class="h-full">
                     </div>
                     <span class="text-sm font-medium text-gray-900">Fashion Pria</span>
                 </div>
@@ -145,13 +145,13 @@
             <div class="signature-card relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] group cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl reveal-left opacity-0 -translate-x-20 transition-all duration-1000 ease-out"
                 onclick="window.location='#'">
                 <div class="relative w-full h-[280px] sm:h-[350px] md:h-[420px] lg:h-[480px]">
-                    <img src="{{ asset('img/sig3.jpg') }}" alt="Signature 1"
+                    <img src="{{ asset('img/mockup_aksesoris.jpg') }}" alt="Signature 1"
                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-8 z-10">
-                        <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-1 sm:mb-2">Judul Produk 1
+                        <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-1 sm:mb-2">Aksesoris Iphone
                         </h3>
-                        <p class="text-xs sm:text-sm text-white/80 mb-3 sm:mb-5 font-medium">Deskripsi singkat produk 1</p>
+                        <p class="text-xs sm:text-sm text-white/80 mb-3 sm:mb-5 font-medium">Best Quality For Iphone</p>
                         <span
                             class="inline-block px-6 sm:px-10 py-2 sm:py-2.5 border-2 border-white text-white rounded-full text-xs sm:text-sm font-bold hover:bg-white hover:text-gray-900 transition-all transform group-hover:scale-105">
                             Learn More
@@ -164,13 +164,13 @@
             <div class="signature-card relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] group cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl reveal-right opacity-0 translate-x-20 transition-all duration-1000 ease-out"
                 onclick="window.location='#'">
                 <div class="relative w-full h-[280px] sm:h-[350px] md:h-[420px] lg:h-[480px]">
-                    <img src="{{ asset('img/sig1.webp') }}" alt="Signature 2"
+                    <img src="{{ asset('img/mockup_futsal.jpg') }}" alt="Signature 2"
                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-8 z-10">
-                        <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-1 sm:mb-2">Judul Produk 2
+                        <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-1 sm:mb-2">Perlengkapan Futsal
                         </h3>
-                        <p class="text-xs sm:text-sm text-white/80 mb-3 sm:mb-5 font-medium">Deskripsi singkat produk 2</p>
+                        <p class="text-xs sm:text-sm text-white/80 mb-3 sm:mb-5 font-medium">Best Quality</p>
                         <span
                             class="inline-block px-6 sm:px-10 py-2 sm:py-2.5 border-2 border-white text-white rounded-full text-xs sm:text-sm font-bold hover:bg-white hover:text-gray-900 transition-all transform group-hover:scale-105">
                             Learn More
@@ -186,13 +186,13 @@
             <div class="signature-card relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] group cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl reveal-left opacity-0 -translate-x-20 transition-all duration-1000 ease-out"
                 onclick="window.location='#'">
                 <div class="relative w-full h-[250px] sm:h-[280px] md:h-[320px] lg:h-[360px]">
-                    <img src="{{ asset('img/sig6.png') }}" alt="Signature 3"
+                    <img src="{{ asset('img/mockup_fashion.jpg') }}" alt="Signature 3"
                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-10">
-                        <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-1 sm:mb-2">Judul Produk 3
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-1 sm:mb-2">Fashion Pria
                         </h3>
-                        <p class="text-xs sm:text-sm text-white/80 mb-3 sm:mb-4 font-medium">Deskripsi singkat produk 3</p>
+                        <p class="text-xs sm:text-sm text-white/80 mb-3 sm:mb-4 font-medium">Best Quality</p>
                         <span
                             class="inline-block px-5 sm:px-6 py-1.5 sm:py-2 border-2 border-white text-white rounded-full text-xs font-bold hover:bg-white hover:text-gray-900 transition-all transform group-hover:scale-105">
                             Learn More
@@ -205,13 +205,13 @@
             <div class="signature-card relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] group cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl reveal-right opacity-0 translate-y-20 transition-all duration-1000 ease-out"
                 onclick="window.location='#'">
                 <div class="relative w-full h-[250px] sm:h-[280px] md:h-[320px] lg:h-[360px]">
-                    <img src="{{ asset('img/sig5.jpeg') }}" alt="Signature 4"
+                    <img src="{{ asset('img/sig6.png') }}" alt="Signature 4"
                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-10">
-                        <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-1 sm:mb-2">Judul Produk 4
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-1 sm:mb-2">Glad to Glow
                         </h3>
-                        <p class="text-xs sm:text-sm text-white/80 mb-3 sm:mb-4 font-medium">Deskripsi singkat produk 4</p>
+                        <p class="text-xs sm:text-sm text-white/80 mb-3 sm:mb-4 font-medium">Best Product</p>
                         <span
                             class="inline-block px-5 sm:px-6 py-1.5 sm:py-2 border-2 border-white text-white rounded-full text-xs font-bold hover:bg-white hover:text-gray-900 transition-all transform group-hover:scale-105">
                             Learn More
@@ -224,13 +224,13 @@
             <div class="signature-card relative overflow-hidden rounded-2xl sm:rounded-[2.5rem] group cursor-pointer shadow-sm transition-all duration-500 hover:shadow-xl sm:col-span-2 md:col-span-1 reveal-left opacity-0 translate-x-20 transition-all duration-1000 ease-out"
                 onclick="window.location='#'">
                 <div class="relative w-full h-[250px] sm:h-[280px] md:h-[320px] lg:h-[360px]">
-                    <img src="{{ asset('img/sig4.jpg') }}" alt="Signature 5"
+                    <img src="{{ asset('img/tes.png') }}" alt="Signature 5"
                         class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-10">
-                        <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-1 sm:mb-2">Judul Produk 5
+                        <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-1 sm:mb-2">LF Catalog
                         </h3>
-                        <p class="text-xs sm:text-sm text-white/80 mb-3 sm:mb-4 font-medium">Deskripsi singkat produk 5</p>
+                        <p class="text-xs sm:text-sm text-white/80 mb-3 sm:mb-4 font-medium">All You Needs, One Catalog</p>
                         <span
                             class="inline-block px-5 sm:px-6 py-1.5 sm:py-2 border-2 border-white text-white rounded-full text-xs font-bold hover:bg-white hover:text-gray-900 transition-all transform group-hover:scale-105">
                             Learn More
@@ -425,7 +425,7 @@
                     <!-- Kaos Kaki Futsal -->
                     <a href="{{ route('category', 'kaoskakifs') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Kaos Kaki Futsal"
+                            <img src="{{ asset('img/kaoskakifs.jpg') }}" alt="Kaos Kaki Futsal"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Kaos Kaki</span>
                         </div>
@@ -433,7 +433,7 @@
                     <!-- Sepatu Futsal -->
                     <a href="{{ route('category', 'sepatufs') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Sepatu Futsal"
+                            <img src="{{ asset('img/sepatufs.png') }}" alt="Sepatu Futsal"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Sepatu</span>
                         </div>
@@ -441,7 +441,7 @@
                     <!-- Baju Futsal -->
                     <a href="{{ route('category', 'bajufs') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Baju Futsal"
+                            <img src="{{ asset('img/bajufs.png') }}" alt="Baju Futsal"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Baju</span>
                         </div>
@@ -484,7 +484,7 @@
                     <!-- Baju -->
                     <a href="{{ route('category', 'bajufp') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Baju"
+                            <img src="{{ asset('img/bajufsh.jpg') }}" alt="Baju"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Baju</span>
                         </div>
@@ -492,7 +492,7 @@
                     <!-- Sendal -->
                     <a href="{{ route('category', 'sendalfp') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Sendal"
+                            <img src="{{ asset('img/sendalfsh.jpg') }}" alt="Sendal"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Sendal</span>
                         </div>
@@ -500,7 +500,7 @@
                     <!-- Jaket -->
                     <a href="{{ route('category', 'jaketfp') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Jaket"
+                            <img src="{{ asset('img/jaketfsh.jpg') }}" alt="Jaket"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Jaket</span>
                         </div>
@@ -508,9 +508,17 @@
                     <!-- Topi -->
                     <a href="{{ route('category', 'topifp') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/tes.png') }}" alt="Topi"
+                            <img src="{{ asset('img/topifsh.jpg') }}" alt="Topi"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Topi</span>
+                        </div>
+                    </a>
+                    <!-- Celana -->
+                    <a href="{{ route('category', 'celanafp') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                        <div class="rounded-lg p-4 flex flex-col items-center">
+                            <img src="{{ asset('img/celanafsh.jpg') }}" alt="Celana"
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                            <span class="mt-3 font-semibold text-center text-gray-900">Celana</span>
                         </div>
                     </a>
                 </div>
@@ -550,7 +558,7 @@
                     <!-- Facewash -->
                     <a href="{{ route('category', 'facewashg2g') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/g2g.jpg') }}" alt="Facewash"
+                            <img src="{{ asset('img/facewash.jpg') }}" alt="Facewash"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Facewash</span>
                         </div>
@@ -558,7 +566,7 @@
                     <!-- Moisturizer -->
                     <a href="{{ route('category', 'moisturizerg2g') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/g2g.jpg') }}" alt="Moisturizer"
+                            <img src="{{ asset('img/mois.jpg') }}" alt="Moisturizer"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Moisturizer</span>
                         </div>
@@ -566,31 +574,23 @@
                     <!-- Serum -->
                     <a href="{{ route('category', 'serumg2g') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/g2g.jpg') }}" alt="Serum"
+                            <img src="{{ asset('img/serum.jpg') }}" alt="Serum"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Serum</span>
                         </div>
                     </a>
-                    <!-- Cleanser -->
-                    <a href="{{ route('category', 'cleanserg2g') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
+                    <!-- Micelar Water -->
+                    <a href="{{ route('category', 'micelarwaterg2g') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/g2g.jpg') }}" alt="Cleanser"
+                            <img src="{{ asset('img/micelar.jpg') }}" alt="Micelar Water"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
-                            <span class="mt-3 font-semibold text-center text-gray-900">Cleanser</span>
-                        </div>
-                    </a>
-                    <!-- Toner -->
-                    <a href="{{ route('category', 'tonerg2g') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
-                        <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/g2g.jpg') }}" alt="Toner"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
-                            <span class="mt-3 font-semibold text-center text-gray-900">Toner</span>
+                            <span class="mt-3 font-semibold text-center text-gray-900">Micelar Water</span>
                         </div>
                     </a>
                     <!-- Body Lotion -->
                     <a href="{{ route('category', 'bodylotiong2g') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
-                            <img src="{{ asset('img/g2g.jpg') }}" alt="Body Lotion"
+                            <img src="{{ asset('img/body_lotion.jpg') }}" alt="Body Lotion"
                                 class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Body Lotion</span>
                         </div>
@@ -630,7 +630,7 @@
             </h2>
 
             <div class="relative mb-12 reveal-left opacity-0 -translate-x-20 transition-all duration-1000 ease-out">
-                <img src="{{ asset('img/tes.png') }}" class="h-auto max-w-full rounded-lg shadow-2xl mx-auto"
+                <img src="{{ asset('img/sl1.jpg') }}" class="h-auto max-w-full rounded-lg shadow-2xl mx-auto"
                     alt="Workspace Setup">
             </div>
 

@@ -11,13 +11,13 @@
             </div>
             <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
                 <div>
-                    <h2 class="mb-6 text-sm font-semibold text-heading uppercase">Resources</h2>
+                    <h2 class="mb-6 text-sm font-semibold text-heading uppercase">Resource</h2>
                     <ul class="text-body font-medium">
                         <li class="mb-4">
-                            <a href="https://flowbite.com/" class="hover:underline">Flowbite</a>
+                            <a href="https://flowbite.com/" class="hover:underline">-</a>
                         </li>
                         <li>
-                            <a href="https://tailwindcss.com/" class="hover:underline">Tailwind CSS</a>
+                            <a href="https://tailwindcss.com/" class="hover:underline">-</a>
                         </li>
                     </ul>
                 </div>
@@ -25,10 +25,10 @@
                     <h2 class="mb-6 text-sm font-semibold text-heading uppercase">Follow us</h2>
                     <ul class="text-body font-medium">
                         <li class="mb-4">
-                            <a href="https://instagram.com/" class="hover:underline ">Instagram</a>
+                            <a href="https://www.instagram.com/lf_catalog/" class="hover:underline ">Instagram</a>
                         </li>
                         <li>
-                            <a href="https://tiktok.com/" class="hover:underline">Tiktok</a>
+                            <a href="https://www.instagram.com/lf_catalog/" class="hover:underline">Tiktok</a>
                         </li>
                     </ul>
                 </div>

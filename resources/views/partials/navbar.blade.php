@@ -148,6 +148,11 @@
                     <li>
                         <span class="text-gray-400">Jaket</span>
                     </li>
+                    <li>
+                        <a href="{{ route('category', 'celanafp') }}" class="hover:underline hover:text-fg-brand">
+                            Celana Pria
+                        </a>
+                    </li>
                 </ul>
                 <h3 class="mb-3 font-bold text-heading text-base">Cosmetik G2G</h3>
                 <ul class="space-y-3">
@@ -161,10 +166,9 @@
                         <span class="text-gray-400">Serum</span>
                     </li>
                     <li>
-                        <span class="text-gray-400">Cleanser</span>
-                    </li>
-                    <li>
-                        <span class="text-gray-400">Toner</span>
+                        <a href="{{ route('category', 'micelarwaterg2g') }}" class="hover:underline hover:text-fg-brand">
+                            Micelar Water
+                        </a>
                     </li>
                     <li>
                         <span class="text-gray-400">Body Lotion</span>

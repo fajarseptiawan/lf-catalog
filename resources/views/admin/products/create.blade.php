@@ -81,14 +81,14 @@
                             <option value="sendalfp" {{ old('category') == 'sendalfp' ? 'selected' : '' }}>Sendal Pria</option>
                             <option value="jaketfp" {{ old('category') == 'jaketfp' ? 'selected' : '' }}>Jaket Pria</option>
                             <option value="topifp" {{ old('category') == 'topifp' ? 'selected' : '' }}>Topi Pria</option>
+                            <option value="celanafp" {{ old('category') == 'celanafp' ? 'selected' : '' }}>Celana Pria</option>
                         </optgroup>
                         <optgroup label="Cosmetik G2G">
                             <option value="g2g" {{ old('category') == 'g2g' ? 'selected' : '' }}>G2G (Semua)</option>
                             <option value="facewashg2g" {{ old('category') == 'facewashg2g' ? 'selected' : '' }}>Facewash G2G</option>
                             <option value="moisturizerg2g" {{ old('category') == 'moisturizerg2g' ? 'selected' : '' }}>Moisturizer G2G</option>
                             <option value="serumg2g" {{ old('category') == 'serumg2g' ? 'selected' : '' }}>Serum G2G</option>
-                            <option value="cleanserg2g" {{ old('category') == 'cleanserg2g' ? 'selected' : '' }}>Cleanser G2G</option>
-                            <option value="tonerg2g" {{ old('category') == 'tonerg2g' ? 'selected' : '' }}>Toner G2G</option>
+                            <option value="micelarwaterg2g" {{ old('category') == 'micelarwaterg2g' ? 'selected' : '' }}>Micelar Water G2G</option>
                             <option value="bodylotiong2g" {{ old('category') == 'bodylotiong2g' ? 'selected' : '' }}>Body Lotion G2G</option>
                         </optgroup>
                     </select>

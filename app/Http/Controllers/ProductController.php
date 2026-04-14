@@ -49,11 +49,11 @@ class ProductController extends Controller
             'sendalfp' => 'page.sendalfp',
             'jaketfp' => 'page.jaketfp',
             'topifp' => 'page.topifp',
+            'celanafp' => 'page.celanafp',
             'facewashg2g' => 'page.facewashg2g',
             'moisturizerg2g' => 'page.moisturizerg2g',
             'serumg2g' => 'page.serumg2g',
-            'cleanserg2g' => 'page.cleanserg2g',
-            'tonerg2g' => 'page.tonerg2g',
+            'micelarwaterg2g' => 'page.micelarwaterg2g',
             'bodylotiong2g' => 'page.bodylotiong2g',
         ];
 
