@@ -146,7 +146,7 @@
                 onclick="window.location='#'">
                 <div class="relative w-full h-[280px] sm:h-[350px] md:h-[420px] lg:h-[480px]">
                     <img src="{{ asset('img/mockup_aksesoris.jpg') }}" alt="Signature 1"
-                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" loading="lazy" decoding="async" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-8 z-10">
                         <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-1 sm:mb-2">Aksesoris Iphone
@@ -165,7 +165,7 @@
                 onclick="window.location='#'">
                 <div class="relative w-full h-[280px] sm:h-[350px] md:h-[420px] lg:h-[480px]">
                     <img src="{{ asset('img/mockup_futsal.jpg') }}" alt="Signature 2"
-                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" loading="lazy" decoding="async" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-5 sm:p-8 z-10">
                         <h3 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-white mb-1 sm:mb-2">Perlengkapan Futsal
@@ -187,7 +187,7 @@
                 onclick="window.location='#'">
                 <div class="relative w-full h-[250px] sm:h-[280px] md:h-[320px] lg:h-[360px]">
                     <img src="{{ asset('img/mockup_fashion.jpg') }}" alt="Signature 3"
-                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" loading="lazy" decoding="async" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-10">
                         <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-1 sm:mb-2">Fashion Pria
@@ -206,7 +206,7 @@
                 onclick="window.location='#'">
                 <div class="relative w-full h-[250px] sm:h-[280px] md:h-[320px] lg:h-[360px]">
                     <img src="{{ asset('img/sig6.png') }}" alt="Signature 4"
-                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" loading="lazy" decoding="async" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-10">
                         <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-1 sm:mb-2">Glad to Glow
@@ -225,7 +225,7 @@
                 onclick="window.location='#'">
                 <div class="relative w-full h-[250px] sm:h-[280px] md:h-[320px] lg:h-[360px]">
                     <img src="{{ asset('img/tes.png') }}" alt="Signature 5"
-                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" />
+                        class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-105" loading="lazy" decoding="async" />
                     <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-4 sm:p-6 z-10">
                         <h3 class="text-xl sm:text-2xl md:text-3xl font-extrabold text-white mb-1 sm:mb-2">LF Catalog
@@ -255,7 +255,7 @@
                         class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/13series.jpg') }}" alt="iPhone 13 Series"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">iPhone 13 Series</span>
                         </div>
                     </a>
@@ -264,7 +264,7 @@
                         class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/14series.jpg') }}" alt="iPhone 14 Series"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">iPhone 14 Series</span>
                         </div>
                     </a>
@@ -273,7 +273,7 @@
                         class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/15series.jpg') }}" alt="iPhone 15 Series"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">iPhone 15 Series</span>
                         </div>
                     </a>
@@ -282,7 +282,7 @@
                         class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/16series.png') }}" alt="iPhone 16 Series"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">iPhone 16 Series</span>
                         </div>
                     </a>
@@ -291,7 +291,7 @@
                         class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/17series.png') }}" alt="iPhone 17 Series"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">iPhone 17 Series</span>
                         </div>
                     </a>
@@ -300,7 +300,7 @@
                         class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/charger.png') }}" alt="Charger iPhone"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Charger</span>
                         </div>
                     </a>
@@ -309,7 +309,7 @@
                         class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/temperedglass.png') }}" alt="Tempered Glass"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Tempered Glass</span>
                         </div>
                     </a>
@@ -354,7 +354,7 @@
                         class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/tes.png') }}" alt="Kaos Kaki Basket"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Kaos Kaki</span>
                         </div>
                     </a>
@@ -363,7 +363,7 @@
                         class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/tes.png') }}" alt="Sepatu Basket"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Sepatu</span>
                         </div>
                     </a>
@@ -372,7 +372,7 @@
                         class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/tes.png') }}" alt="Baju Basket"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Baju</span>
                         </div>
                     </a>
@@ -381,7 +381,7 @@
                         class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/tes.png') }}" alt="Celana Basket"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Celana</span>
                         </div>
                     </a>
@@ -426,7 +426,7 @@
                     <a href="{{ route('category', 'kaoskakifs') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/kaoskakifs.jpg') }}" alt="Kaos Kaki Futsal"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Kaos Kaki</span>
                         </div>
                     </a>
@@ -434,7 +434,7 @@
                     <a href="{{ route('category', 'sepatufs') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/sepatufs.png') }}" alt="Sepatu Futsal"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Sepatu</span>
                         </div>
                     </a>
@@ -442,7 +442,7 @@
                     <a href="{{ route('category', 'bajufs') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/bajufs.png') }}" alt="Baju Futsal"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Baju</span>
                         </div>
                     </a>
@@ -485,7 +485,7 @@
                     <a href="{{ route('category', 'bajufp') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/bajufsh.jpg') }}" alt="Baju"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Baju</span>
                         </div>
                     </a>
@@ -493,7 +493,7 @@
                     <a href="{{ route('category', 'sendalfp') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/sendalfsh.jpg') }}" alt="Sendal"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Sendal</span>
                         </div>
                     </a>
@@ -501,7 +501,7 @@
                     <a href="{{ route('category', 'jaketfp') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/jaketfsh.jpg') }}" alt="Jaket"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Jaket</span>
                         </div>
                     </a>
@@ -509,7 +509,7 @@
                     <a href="{{ route('category', 'topifp') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/topifsh.jpg') }}" alt="Topi"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Topi</span>
                         </div>
                     </a>
@@ -517,7 +517,7 @@
                     <a href="{{ route('category', 'celanafp') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/celanafsh.jpg') }}" alt="Celana"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Celana</span>
                         </div>
                     </a>
@@ -559,7 +559,7 @@
                     <a href="{{ route('category', 'facewashg2g') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/facewash.jpg') }}" alt="Facewash"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Facewash</span>
                         </div>
                     </a>
@@ -567,7 +567,7 @@
                     <a href="{{ route('category', 'moisturizerg2g') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/mois.jpg') }}" alt="Moisturizer"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Moisturizer</span>
                         </div>
                     </a>
@@ -575,7 +575,7 @@
                     <a href="{{ route('category', 'serumg2g') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/serum.jpg') }}" alt="Serum"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Serum</span>
                         </div>
                     </a>
@@ -583,7 +583,7 @@
                     <a href="{{ route('category', 'micelarwaterg2g') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/micelar.jpg') }}" alt="Micelar Water"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Micelar Water</span>
                         </div>
                     </a>
@@ -591,7 +591,7 @@
                     <a href="{{ route('category', 'bodylotiong2g') }}" class="shrink-0 grow-0 basis-1/5 min-w-35 px-2 group cursor-pointer">
                         <div class="rounded-lg p-4 flex flex-col items-center">
                             <img src="{{ asset('img/body_lotion.jpg') }}" alt="Body Lotion"
-                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" />
+                                class="w-32 h-32 object-contain transition-transform duration-300 ease-in-out group-hover:scale-110" loading="lazy" decoding="async" />
                             <span class="mt-3 font-semibold text-center text-gray-900">Body Lotion</span>
                         </div>
                     </a>
@@ -701,7 +701,7 @@
             <!-- Video Item 1 -->
             <div class="relative group cursor-pointer video-card w-80 shrink-0 lg:w-full" data-video-id="X0porxgyJyg">
 
-                <img src="https://img.youtube.com/vi/X0porxgyJyg/hqdefault.jpg" class="w-full h-96 object-cover rounded-lg">
+                <img src="https://img.youtube.com/vi/X0porxgyJyg/hqdefault.jpg" class="w-full h-96 object-cover rounded-lg" loading="lazy" decoding="async">
 
                 <!-- Overlay -->
                 <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
@@ -727,7 +727,7 @@
             <!-- Video Item 2 -->
             <div class="relative group cursor-pointer video-card w-80 shrink-0 lg:w-full" data-video-id="VJdcqjutVtA">
 
-                <img src="https://img.youtube.com/vi/VJdcqjutVtA/hqdefault.jpg" class="w-full h-96 object-cover rounded-lg">
+                <img src="https://img.youtube.com/vi/VJdcqjutVtA/hqdefault.jpg" class="w-full h-96 object-cover rounded-lg" loading="lazy" decoding="async">
 
                 <!-- Overlay -->
                 <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
@@ -753,7 +753,7 @@
             <!-- Video Item 3 -->
             <div class="relative group cursor-pointer video-card w-80 shrink-0 lg:w-full" data-video-id="9bZkp7q19f0">
 
-                <img src="https://img.youtube.com/vi/9bZkp7q19f0/hqdefault.jpg" class="w-full h-96 object-cover rounded-lg">
+                <img src="https://img.youtube.com/vi/9bZkp7q19f0/hqdefault.jpg" class="w-full h-96 object-cover rounded-lg" loading="lazy" decoding="async">
 
                 <!-- Overlay -->
                 <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
@@ -779,7 +779,7 @@
             <!-- Video Item 4 -->
             <div class="relative group cursor-pointer video-card w-80 shrink-0 lg:w-full" data-video-id="kJQP7kiw5Fk">
 
-                <img src="https://img.youtube.com/vi/kJQP7kiw5Fk/hqdefault.jpg" class="w-full h-96 object-cover rounded-lg">
+                <img src="https://img.youtube.com/vi/kJQP7kiw5Fk/hqdefault.jpg" class="w-full h-96 object-cover rounded-lg" loading="lazy" decoding="async">
 
                 <!-- Overlay -->
                 <div class="absolute inset-0 bg-black/40 rounded-lg"></div>
