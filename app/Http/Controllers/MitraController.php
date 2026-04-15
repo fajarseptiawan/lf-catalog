@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
 use App\Models\Order;
 use App\Models\OrderItem;
+use App\Models\StockHistory;
 
 class MitraController extends Controller
 {
@@ -43,8 +44,9 @@ class MitraController extends Controller
 
         $totalRevenue = $legacyRevenue + $multiRevenue;
 
-        // Recent orders
+        // Recent orders (hanya yang sudah lunas)
         $recentOrders = Order::with(['product', 'items.product'])
+            ->where('status', 'paid')
             ->where(function ($q) use ($mitraProductIds, $multiOrderIds) {
                 $q->whereIn('product_id', $mitraProductIds)
                   ->orWhereIn('id', $multiOrderIds);
@@ -53,8 +55,14 @@ class MitraController extends Controller
             ->take(5)
             ->get();
 
+        // Total pengeluaran belanja (stok) untuk produk milik mitra
+        $totalExpenditure = StockHistory::whereIn('product_id', $mitraProductIds)->sum('total_cost');
+
+        // Total stok produk milik mitra
+        $totalStock = Product::where('mitra_id', $mitra->id)->sum('stock');
+
         return view('mitra.dashboard', compact(
-            'mitra', 'totalProducts', 'totalOrders', 'totalRevenue', 'recentOrders'
+            'mitra', 'totalProducts', 'totalOrders', 'totalRevenue', 'totalExpenditure', 'totalStock', 'recentOrders'
         ));
     }
 
