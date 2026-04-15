@@ -128,10 +128,16 @@ class AdminController extends Controller
                 $counter++;
             }
 
+            // Simpan gambar ke folder kategori: public/img/{category}/
+            $categoryFolder = 'img/' . $data['category'];
+            if (!file_exists(public_path($categoryFolder))) {
+                mkdir(public_path($categoryFolder), 0755, true);
+            }
+
             if ($request->hasFile('image')) {
                 $imageName = time() . '.' . $request->image->extension();
-                $request->image->move(public_path('img'), $imageName);
-                $data['image'] = 'img/' . $imageName;
+                $request->image->move(public_path($categoryFolder), $imageName);
+                $data['image'] = $categoryFolder . '/' . $imageName;
             }
             else {
                 $data['image'] = 'img/tes.png';
@@ -142,8 +148,8 @@ class AdminController extends Controller
                 $imagesPaths = [];
                 foreach ($request->file('images') as $idx => $img) {
                     $imgName = time() . '_' . $idx . '.' . $img->extension();
-                    $img->move(public_path('img'), $imgName);
-                    $imagesPaths[] = 'img/' . $imgName;
+                    $img->move(public_path($categoryFolder), $imgName);
+                    $imagesPaths[] = $categoryFolder . '/' . $imgName;
                 }
                 $data['images'] = $imagesPaths;
             }
@@ -204,10 +210,16 @@ class AdminController extends Controller
             $counter++;
         }
 
+        // Simpan gambar ke folder kategori: public/img/{category}/
+        $categoryFolder = 'img/' . $data['category'];
+        if (!file_exists(public_path($categoryFolder))) {
+            mkdir(public_path($categoryFolder), 0755, true);
+        }
+
         if ($request->hasFile('image')) {
             $imageName = time() . '.' . $request->image->extension();
-            $request->image->move(public_path('img'), $imageName);
-            $data['image'] = 'img/' . $imageName;
+            $request->image->move(public_path($categoryFolder), $imageName);
+            $data['image'] = $categoryFolder . '/' . $imageName;
         }
 
         // Handle multiple images
@@ -215,8 +227,8 @@ class AdminController extends Controller
             $imagesPaths = $product->images ?? [];
             foreach ($request->file('images') as $idx => $img) {
                 $imgName = time() . '_' . $idx . '.' . $img->extension();
-                $img->move(public_path('img'), $imgName);
-                $imagesPaths[] = 'img/' . $imgName;
+                $img->move(public_path($categoryFolder), $imgName);
+                $imagesPaths[] = $categoryFolder . '/' . $imgName;
             }
             $data['images'] = $imagesPaths;
         }
