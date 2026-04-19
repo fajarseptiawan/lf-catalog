@@ -22,7 +22,14 @@ class ProductController extends Controller
             $products = Product::where('is_temperedglass', true)->get();
         }
         elseif (in_array($category, $iphoneCategories)) {
-            $products = Product::whereIn('category', [$category, 'aksesoris', 'charger'])->get();
+            $categoriesToFetch = [$category, 'aksesoris', 'charger'];
+
+            // iPhone 13/14 combo: show on both iphone13 and iphone14 pages
+            if (in_array($category, ['iphone13', 'iphone14'])) {
+                $categoriesToFetch[] = 'iphone1314';
+            }
+
+            $products = Product::whereIn('category', $categoriesToFetch)->get();
         }
         else {
             $products = Product::where('category', $category)->get();

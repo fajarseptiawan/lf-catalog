@@ -95,6 +95,7 @@
                             <option value="iphone15" {{ old('category', $product->category) == 'iphone15' ? 'selected' : '' }}>iPhone 15 Series</option>
                             <option value="iphone14" {{ old('category', $product->category) == 'iphone14' ? 'selected' : '' }}>iPhone 14 Series</option>
                             <option value="iphone13" {{ old('category', $product->category) == 'iphone13' ? 'selected' : '' }}>iPhone 13 Series</option>
+                            <option value="iphone1314" {{ old('category', $product->category) == 'iphone1314' ? 'selected' : '' }}>iPhone 13/14 Series</option>
                             <option value="charger" {{ old('category', $product->category) == 'charger' ? 'selected' : '' }}>Charger iPhone</option>
                             <option value="aksesoris" {{ old('category', $product->category) == 'aksesoris' ? 'selected' : '' }}>Aksesoris HP (Universal)</option>
                             <option value="softlens" {{ old('category', $product->category) == 'softlens' ? 'selected' : '' }}>Softlens</option>
