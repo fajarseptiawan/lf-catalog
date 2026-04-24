@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
@@ -13,6 +13,11 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias([
             'admin' => \App\Http\Middleware\AdminMiddleware::class,
+        ]);
+
+        // Track visitors on all web requests (terminable — zero impact on response time)
+        $middleware->web(append: [
+            \App\Http\Middleware\TrackVisitor::class,
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {

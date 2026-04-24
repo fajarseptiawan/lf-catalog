@@ -49,6 +49,9 @@ Route::middleware([\App\Http\Middleware\AdminMiddleware::class])->prefix('admin'
     Route::post('/mitras/sync-telegram', [AdminController::class , 'syncTelegram'])->name('mitras.sync-telegram');
     Route::post('/mitras/regenerate-link/{id}', [AdminController::class , 'regenerateLinkCode'])->name('mitras.regenerate-link');
 
+    // Analytics
+    Route::get('/analytics', [AdminController::class , 'analytics'])->name('analytics');
+
     // Settings
     Route::get('/settings', [AdminController::class , 'settings'])->name('settings');
     Route::post('/settings/add-admin', [AdminController::class , 'addAdmin'])->name('settings.add-admin');

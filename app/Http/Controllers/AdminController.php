@@ -10,6 +10,7 @@ use App\Models\Order;
 use App\Models\StockHistory;
 use App\Models\User;
 use App\Models\Mitra;
+use App\Models\Visitor;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Services\TelegramService;
@@ -604,5 +605,115 @@ class AdminController extends Controller
         ]);
 
         return back()->with('success', "Kode link Telegram untuk {$mitra->store_name} berhasil di-reset.");
+    }
+
+    // ===== Analytics / Visitor Tracking =====
+
+    public function analytics()
+    {
+        $today = now()->toDateString();
+        $currentMonth = now()->month;
+        $currentYear = now()->year;
+
+        // Stat cards
+        $visitorsToday = Visitor::whereDate('created_at', $today)->count();
+        $uniqueVisitorsToday = Visitor::whereDate('created_at', $today)->distinct('ip_address')->count('ip_address');
+        $visitorsMonth = Visitor::whereMonth('created_at', $currentMonth)
+            ->whereYear('created_at', $currentYear)->count();
+        $visitorsTotal = Visitor::count();
+        $uniqueDevices = Visitor::distinct('ip_address')->count('ip_address');
+
+        // Monthly chart data (last 12 months)
+        $monthlyData = [];
+        for ($i = 11; $i >= 0; $i--) {
+            $date = now()->subMonths($i);
+            $count = Visitor::whereMonth('created_at', $date->month)
+                ->whereYear('created_at', $date->year)
+                ->count();
+            $uniqueCount = Visitor::whereMonth('created_at', $date->month)
+                ->whereYear('created_at', $date->year)
+                ->distinct('ip_address')
+                ->count('ip_address');
+            $monthlyData[] = [
+                'label' => $date->translatedFormat('M Y'),
+                'total' => $count,
+                'unique' => $uniqueCount,
+            ];
+        }
+
+        // Daily summary (last 30 days)
+        $dailySummary = DB::table('visitors')
+            ->select(
+                DB::raw('DATE(created_at) as visit_date'),
+                DB::raw('COUNT(*) as total_visits'),
+                DB::raw('COUNT(DISTINCT ip_address) as unique_visitors'),
+                DB::raw("SUM(CASE WHEN device_type = 'Mobile' THEN 1 ELSE 0 END) as mobile_count"),
+                DB::raw("SUM(CASE WHEN device_type = 'Desktop' THEN 1 ELSE 0 END) as desktop_count"),
+                DB::raw("SUM(CASE WHEN device_type = 'Tablet' THEN 1 ELSE 0 END) as tablet_count"),
+            )
+            ->where('created_at', '>=', now()->subDays(30))
+            ->groupBy(DB::raw('DATE(created_at)'))
+            ->orderByDesc('visit_date')
+            ->get();
+
+        // Top browsers & OS (for daily summary enrichment)
+        $dailyBrowsers = DB::table('visitors')
+            ->select(
+                DB::raw('DATE(created_at) as visit_date'),
+                'browser',
+                DB::raw('COUNT(*) as cnt')
+            )
+            ->where('created_at', '>=', now()->subDays(30))
+            ->groupBy(DB::raw('DATE(created_at)'), 'browser')
+            ->orderByDesc('cnt')
+            ->get()
+            ->groupBy('visit_date');
+
+        $dailyOS = DB::table('visitors')
+            ->select(
+                DB::raw('DATE(created_at) as visit_date'),
+                'os',
+                DB::raw('COUNT(*) as cnt')
+            )
+            ->where('created_at', '>=', now()->subDays(30))
+            ->groupBy(DB::raw('DATE(created_at)'), 'os')
+            ->orderByDesc('cnt')
+            ->get()
+            ->groupBy('visit_date');
+
+        // Enrich daily summary with top browser/OS
+        foreach ($dailySummary as $day) {
+            $day->top_browser = isset($dailyBrowsers[$day->visit_date])
+                ? $dailyBrowsers[$day->visit_date]->first()->browser
+                : '-';
+            $day->top_os = isset($dailyOS[$day->visit_date])
+                ? $dailyOS[$day->visit_date]->first()->os
+                : '-';
+        }
+
+        // Today's visitor detail
+        $todayVisitors = Visitor::whereDate('created_at', $today)
+            ->latest()
+            ->get();
+
+        // Top pages today
+        $topPages = Visitor::whereDate('created_at', $today)
+            ->select('url', DB::raw('COUNT(*) as visits'))
+            ->groupBy('url')
+            ->orderByDesc('visits')
+            ->limit(10)
+            ->get();
+
+        return view('admin.analytics', compact(
+            'visitorsToday',
+            'uniqueVisitorsToday',
+            'visitorsMonth',
+            'visitorsTotal',
+            'uniqueDevices',
+            'monthlyData',
+            'dailySummary',
+            'todayVisitors',
+            'topPages'
+        ));
     }
 }
